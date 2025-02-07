@@ -1,0 +1,121 @@
+
+01-APR-23 
+
+ => display employees working as clerk,manager ? 
+ 
+     SELECT * FROM EMP  
+                  WHERE JOB = 'CLERK'  OR JOB='MANAGER' 
+
+ => display employees whose name = sachin,vijay,satish ?
+ 
+     SELECT *
+     FROM EMP
+     WHERE   ENAME='SACHIN'  OR  ENAME='VIJAY' OR ENAME='SATISH' 
+
+ => display employees working as clerk and working for dept 20 ?
+ 
+      SELECT *
+      FROM EMP 
+      WHERE  JOB='CLERK'  AND  DNO=20
+   
+=> display employees working for 10th dept and earning more than 5000 ?
+
+    SELECT *
+    FROM EMP
+    WHERE  DNO=10   AND   SAL>5000
+
+ => display employees earning more than 5000 and less than 10000 ?
+
+     SELECT *
+     FROM EMP
+     WHERE SAL>5000     AND   SAL<10000
+
+=> employees joined in 2020 year ?
+
+    SELECT *
+    FROM EMP
+    WHERE HIREDATE  >= '2020-01-01'
+                  AND
+                  HIREDATE <= '2020-12-31'
+
+  scenario :- 
+  --------------
+
+   STUDENT
+   SNO    SNAME    S1     S2     S3
+   1          A              80     90     70
+   2         B               30     60     50
+
+ CREATE TABLE STUDENT
+ (
+  SID  INT,
+  SNAME VARCHAR(10),
+  S1 INT,S2 INT,S3 INT
+  )
+
+   INSERT INTO STUDENT VALUES(1,'A',80,90,70),
+                                                        (2,'B',30,60,50)
+
+   => display list of students who are passed ?
+
+     SELECT * 
+     FROM STUDENT
+     WHERE  S1>=35  AND   S2>=35   AND    S3>=35
+
+    => list of students who are failed ?
+ 
+       SELECT *
+       FROM STUDENT 
+       WHERE  S1<35   OR  S2<35    OR    S3<35
+
+  IN operator :-  
+  ------------------
+
+ => use IN operator for comparision with list of values.
+ => use IN operator for "=" comparision with multiple values.
+
+       WHERE  COLNAME =  V1,V2,V3,--       =>  INVALID
+ 
+       WHERE COLNAME IN (V1,V2,V3,----)   =>  VALID
+
+ => employees whose id = 100,103,105 ?
+
+      SELECT * 
+      FROM EMP
+      WHERE EMPID IN (100,103,105) 
+ 
+ => employees not working for dept 10,20  ?
+ 
+     SELECT *
+     FROM EMP
+     WHERE DEPTNO <> 10,20  => error
+        
+    SELECT *
+    FROM EMP
+    WHERE DNO NOT IN (10,20)
+
+ BETWEEN operator :- 
+ ----------------------------
+
+ => use BETWEEN operator for range comparision.
+ 
+    ex :-   100 to 500 
+              2020 to 2025
+              
+          WHERE  COLNAME  BETWEEN  V1 AND V2 
+ 
+ => display employees earning between 5000 and 10000 ?
+
+     SELECT * FROM EMP WHERE SAL BETWEEN 5000 AND 10000 
+
+                                                      (SAL>=5000 AND SAL<=10000)
+
+ => employees joined in 2020 ? 
+
+     SELECT * 
+     FROM EMP 
+     WHERE HIREDATE BETWEEN '2020-01-01' AND '2020-12-31' 
+
+  => not joined in 2020 ?
+
+       WHERE HIREDATE NOT BETWEEN '2020-01-01' AND '2020-12-31' 

@@ -1,0 +1,90 @@
+Front End Web Development
+1. HTML
+2. CSS
+3. Bootstrap
+4. Sass / Less
+5. JavaScript
+6. jQuery
+
+                                 Web Development
+1. What is a network?
+A. A group of computers connecting with each other for sharing information and resources.
+
+2. Types of Networks
+A. LAN, MAN, WAN
+
+3. What is Internet?
+A. It is a WAN that connects computers all over the world.
+    The first network was introduced in early 1960's - ARPANET - US-DOD
+    [Advanced Research Project Agency Network]
+
+4. What is Web?
+A. Web is a portion of internet with restricted access.
+     In early 1990's "Tim Berners Lee" introduced the concept of Web.
+     Web Standards are maintained by a group "W3C". [World Wide Web Consortium]
+     Web latest version is "Web-3".
+                w3.org
+
+5. What is a Web Server?
+A. It is a software and hardware that handles the client request by sending and reciving data.
+     Web Servers are classified into 2 types
+        a) Local Servers
+        b) Cloud Server
+
+    Local Server enables developer to build, debug, test and run application locally on
+    his device. The popular local servers used by developers
+            a) IIS [Internet Information Services Manager]
+            b) Apache Tomcat
+            c) WAMP
+            d) XAMP  etc..
+
+    Cloud Server enables developer to build, debug, test and deploy application
+      on a cloud environment, which is live environment. [Anytime, anywhere...]
+            a) Firebase
+            b) AWS
+            c) Azure
+            d) GIT HUB Pages etc..
+
+Finding Web Server on your PC:
+--------------------------------------------
+Windows 8:
+   Control Panel => Administrative Tools => IIS
+
+Window 10:
+   Programs => IIS
+
+Testing Web Server:
+---------------------------------
+1. Open any browser        : chrome, firefox, edge, safari....
+
+2. Type the following address    :    http://127.0.0.1        (or)  http://localhost
+
+
+
+6. What is a Website?
+A. Website is a virtual directory on webserver that provides access to resources on server.
+
+- Create a new folder in your PC
+
+        D:\college
+
+- Copy files into folder
+   
+        students.jpg
+
+- Open IIS on your PC
+
+- Expand "Sites" folder
+
+- Right click on "Default Website"
+
+- Select "Add Virtual Directory"
+
+        alias            :  college
+        physical path    :  d:\college
+
+- OK
+
+- Request from any browser
+
+    http://localhost/college/students.jpg

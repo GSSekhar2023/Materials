@@ -1,0 +1,78 @@
+public class Employee
+{
+ public void GetDetails()
+ {
+  return 
+ } 
+ public void GetSalary()
+ {
+  return 
+ } 
+
+}
+public class PEmployee:Employee
+{
+ public void CalculateSalary()
+ {
+  return 
+ } 
+ public void GetBonus()
+ {
+  return 
+ } 
+
+}
+public class CEmployee:Employee
+{
+ public void CalculateSalary()
+ {
+  return 
+ } 
+ public void GetBonus()
+ {
+  return 
+ } 
+
+}
+Public static void Main()
+{
+ 
+}
+================
+Public class Notification
+{
+
+ Public void Notify(type,from,to,message)
+ {
+  this.Notificatio=type;
+  if(type==Email)
+  {
+
+  }
+  else
+{
+
+}
+
+  
+ }
+   
+ 
+ TeamsIdTo:
+ From:
+ SMTP:
+ 
+}
+
+
+public class Staff
+{
+ public void NotifyPatient()
+{
+  Notification obj=new Notification();
+ obj.Notify(NotificationType, from, to, message)
+}
+}
+
+
+

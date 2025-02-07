@@ -1,0 +1,29 @@
+Given an unsorted array, find the max length of subsequence in which the numbers are in incremental order.
+For example: If the input array is {7, 1, 2, 3, 1, 2, 3, 5, 8, 9, 6}, a subsequence with the most numbers in incremental order is {1, 2, 3, 5, 8, 9} and the expected output is 6.
+
+
+Given a string, that contains special character together with alphabets (‘a’ to ‘z’ and ‘A’ to ‘Z’), reverse the string in a way that special characters are not affected.
+Examples:
+Input: str = "a,b$c"
+Output: str = "c,b$a"
+OR
+Input: str = "Ab,c,de!$"
+Output: str = "ed,c,bA!$"
+
+
+static void Main()
+{
+ String str="a,b$c";
+char[] c=new char(str);
+if(c.
+
+}
+Abstract and Interface differences
+need of Private constructor 
+Ienumberable and 
+abstract class required at least one abstract method  
+Protected Internal Access modifier
+Encapsulation and abstraction
+SOLID---I principle and L principle
+Disign patterns
+From API how to display the data and search the data 

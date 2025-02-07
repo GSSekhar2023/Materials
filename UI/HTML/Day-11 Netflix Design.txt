@@ -1,0 +1,251 @@
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Footer</title>
+    <style>
+        footer {
+            background-color: black;
+            color:white;
+            padding: 5px;
+            height: 300px;
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+        }
+        .left-panel {
+            display: grid;
+            grid-template-columns: 3fr 3fr 3fr 3fr;
+        }
+        .right-panel {
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            border-left: 2px solid white;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <div class="left-panel">
+            <div>col-1</div>
+            <div>col-2</div>
+            <div>col-3</div>
+            <div>col-4</div>
+        </div>
+        <div class="right-panel">
+            <div>col-1</div>
+            <div>col-2</div>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insta Footer</title>
+    <style>
+        footer {
+            font-family: Arial;
+            font-size: 16px;
+            text-align: center;
+        }
+        span {
+            margin-right: 10px;
+        }
+        div {
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <div>
+           <span> Meta</span>
+           <span>About</span>
+           <span>Blog</span>
+           <span>Jobs</span>
+           <span>Help</span>
+           <span>API</span>
+           <span>Privacy</span>
+           <span>Terms</span>
+           <span>Top Accounts</span>
+           <span>Locations</span>
+           <span>Instagram Lite</span>
+           <span>Contact Uploading & Non-Users</span>
+           <span>Meta Verified</span>
+        </div>
+        <div>
+            <span>English</span>
+            <span> &copy; 2023 Instagram from Meta </span>
+        </div>
+    </footer>
+</body>
+</html>
+
+                                        Main Element
+- Main in computer programming is considered as "Entry Point".
+- Usually the Getstarted content is kept in main element.
+
+Controlling Background Image using CSS:
+   
+background-size                    : width, height, contain, cover
+background-repeat                : no-repeat, repeat, repeat-x, repeat-y
+background-position            : sets position on screen [x, y]
+                                        [top, center, bottom]  vertical
+                                        [left, center, right]
+                                     
+background-attachment        : scroll, fixed
+background-color                : any color
+background-image                : url()  any image path.
+
+CSS Colors provide:
+    rgb()                    rgb(redValue, greenValue, buleValue)   0 to 255
+    rgba()                    rgba(red, green, blue, alpha)                 apha 0 to 1
+
+To Keep any content center screen:
+1. Keep all elements in one container
+
+            <body>
+            <main>
+                ....
+                ....
+            </main>
+            </body>
+
+2. Apply effects for body
+            {
+             display:flex;
+             justify-content:center;
+             align-items:center;
+            }
+
+Ex: Neflix Design
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix | Watch Movies & TV Shows</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        body {
+          background-size: cover;
+          color:white;
+          font-family: Arial;
+        }
+        .shade {
+            height: 500px;
+            width: 110%;
+            background-color: rgba(0,0,0,0.5);
+            margin-left: -10px;
+            margin-top: -20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .title {
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .sub-title {
+            font-size: 25px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        main {
+            text-align: center;
+        }
+        .email {
+            width: 300px;
+            background-color: white;
+            color:black;
+            height:20px;
+            text-align: center;
+            padding: 10px;
+        }
+        .button {
+            width: 200px;
+            background-color: red;
+            color:white;
+            height: 20px;
+            text-align: center;
+            padding: 10px;
+            margin-left: 10px;
+        }
+        .register-title {
+            margin-bottom: 20px;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body background="images/netflixBanner.jpg">
+    <div class="shade">
+        <main>
+            <div class="title">
+                Unlimited movies, TV shows and more.
+            </div>
+            <div class="sub-title">
+                Watch anywhere. Cancel anytime.
+            </div>
+            <div class="register">
+                <div class="register-title">Ready to watch? Enter your email to create or restart your membership.</div>
+                <div class="controls">
+                    <div class="email">
+                         Your email address
+                    </div>
+                    <div class="button">
+                        Get Started <span class="bi bi-chevron-right"></span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+        }
+        main {
+            text-align: center;
+            border:1px solid red;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+   <main>
+    <div class="brand">NETFLIX</div>
+    <div class="title">Movies and TV Shows</div>
+    <div class="sub-title">Watch any where and any time</div>
+   </main>
+</body>
+</html>

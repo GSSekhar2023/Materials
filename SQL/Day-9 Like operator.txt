@@ -1,0 +1,183 @@
+ 03-apr-23    
+ 
+   Question :- 
+
+   SELECT * FROM EMP WHERE SAL BETWEEN 10000 AND 5000 
+
+   A   ERROR
+   B   RETURNS ROWS 
+   C  RETURNS NO ROWS
+   D  NONE 
+
+   ANS :-  C
+
+   WHERE SAL BETWEEN 5000 AND 10000    (SAL>=5000 AND SAL<=10000)
+
+   WHERE SAL BETWEEN 10000 AND 5000    (SAL>=10000 AND SAL<=5000)
+
+   NOTE :- use BETWEEN operator with lower and upper
+                 don't use with upper and lower
+
+
+ => employees working as clerk,manager and earning between 5000 and 10000
+      and joined in 2020 and not working for dept 10,20 ?
+
+      SELECT *
+      FROM EMP
+      WHERE JOB  IN ('CLERK','MANAGER')
+                    AND
+                    SAL BETWEEN 5000 AND 10000
+                    AND
+                    HIREDATE BETWEEN  '2020-01-01' AND '2020-12-31'
+                    AND
+                    DNO NOT IN (10,20)
+
+=> 
+
+  PRODUCTS
+  PRODID    PNAME     PRICE     CATEGORY    BRAND
+  
+  display  samsung,redmi,realme mobile phones price between 10000 and 20000 ?
+
+     SELECT *
+     FROM PRODUCTS
+     WHERE  BRAND IN ('SAMSUNG','REDMI','REALME')
+                     AND
+                    CATEGORY='MOBILE PHONES'
+                    AND
+                    PRICE BETWEEN 10000 AND 20000
+
+   => 
+
+    CUSTOMERS
+    CID    NAME     GENDER     AGE     CITY  
+
+    list of male customers age between 30 and 40 and staying in hyd,blr,mum ?
+
+    SELECT *
+    FROM CUSTOMERS
+    WHERE GENDER='MALE'
+                   AND
+                   AGE BETWEEN 30 AND 40
+                   AND
+                   CITY IN ('HYD','BLR','MUM')
+
+ LIKE operator :- 
+ ---------------------
+
+ => use LIIKE operator for pattern comparision
+
+    
+       WHERE  COLNAME  LIKE  'PATTERN'
+       
+
+ => pattern contains alphabets,digits,special chars and wildcard chars.
+
+   wildcard chars :- 
+   -------------------------
+
+      %        => 0 or many chars
+
+      _         => exactly 1 char
+
+ 
+   => employees name starts with 'S' ?
+
+        SELECT * FROM EMP WHERE ENAME  LIKE  'S%' 
+
+  => employees name ends with 'R' ?
+
+      SELECT * FROM EMP WHERE ENAME  LIKE  '%R'
+
+  => employees name contains 'A" ?
+
+       SELECT * FROM EMP WHERE ENAME  LIKE  '%A%' 
+
+   => where  'A' is the 3rd char in their name ?
+ 
+        SELECT *
+        FROM EMP
+        WHERE ENAME LIKE  '__ A%' 
+
+  => where 'A' is the 3rd char from last ?
+
+       SELECT *
+       FROM EMP
+       WHERE  ENAME LIKE  ' %A__'
+
+ Question :- 
+
+  SELECT * FROM EMP WHERE JOB IN ('CLERK','MAN%')
+
+  A  ERROR 
+ B  RETURNS CLERK,MANAGER records
+ C  RETURNS ONLY CLERK records
+ D  NONE
+
+
+  ANS :- C
+
+  =>  'MAN%'  is not treated as pattern  because operator is not LIKE and it is IN
+        
+    SELECT * FROM EMP WHERE JOB='CLERK'   OR  JOB  LIKE  'MAN%'  
+
+    ANS :-  B
+
+    => employees joined in oct month ?            YYYY-MM-DD
+
+       SELECT * FROM EMP WHERE HIREDATE LIKE '_____10___'
+ 
+     => employees joined in 2020 year ?
+
+        SELECT * FROM EMP WHERE HIREDATE LIKE '2020%' 
+
+   => employees name starts with 'A','V','S' ?
+
+       SELECT * 
+        FROM EMP 
+        WHERE  ENAME LIKE  'A%'
+                       OR
+                       ENAME LIKE 'V%'
+                       OR 
+                       ENAME LIKE 'S%' 
+
+    SELECT *
+    FROM EMP 
+    WHERE ENAME  LIKE   '[AVS]%' 
+
+ 
+    [  ]  =>  use square brackets to specify group of chars in particular position.
+
+   => name starts between 'A' and 'P'  ?
+
+        SELECT *
+        FROM EMP
+        WHERE  ENAME  LIKE  ' [A-P]%' 
+
+  IS operator :- 
+  ------------------
+
+  => use IS operator for NULL comparision
+
+       WHERE  COLNAME IS NULL
+       WHERE  COLNAME IS NOT NULL
+
+ => find the employees not earning salary ?
+
+     SELECT *
+     FROM EMP
+     WHERE SAL  IS  NULL 
+
+ => find the employees earning salary ?
+
+     SELECT *
+     FROM EMP
+     WHERE SAL IS NOT NULL 
+
+ 
+ summary :- 
+
+ WHERE  COLNAME  IN  (V1,V2,V3,--)
+ WHERE  COLNAME BETWEEN V1 AND V2
+ WHERE  COLNAME LIKE 'PATTERN'
+ WHERE  COLNAME IS  NULL

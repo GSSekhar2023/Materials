@@ -1,0 +1,117 @@
+Multimedia
+- Marquee
+    scrollamount, direction, behavior, width, height, bgcolor, loop
+- Video and Audio
+
+                                        video & audio
+
+- HTML supports videos of type : avi, mkv, mov, mp4, ogg etc..
+- HTML supports audio of type  :  mp3, midi, wav etc..
+- HTML elements to embed audio and video are
+
+        <video>
+        <audio>
+        <embed>  => obsolute [no longer in use]
+
+Syntax:
+        <video  src="name.mp4"  controls   poster="image.jpg"> </video>
+        <audio  src="name.mp3"  controls  poster="image.jpg"> </audio>
+
+
+Ex:
+ <video src="videos/class.mkv" poster="images/asp.jpg" width="300" height="300" controls></video>
+
+
+
+
+
+
+
+                                           HTML Summary
+1. Browser Architecture
+2. HTML Parsing
+3. HTML Element Types
+4. HTML Page Structure
+        a) Declaration
+        b) Head
+        c) Body
+5. Head Section
+6. Body Section
+7. Semantics for Layout
+8. Headings, Pagraphs, Blockquotes
+9. Basic Entities and Elements
+10. Ordered List, Unordered List and Datalist
+11. Text formatting
+12. Images
+13. Links
+14. Forms
+15. Tables
+16. Multimedia
+
+                                                 Styles
+                                            ---------
+- Styles provide attributes, which are used to make HTML more interactive and responsive.
+- You can define styles for HTML elements in 3 ways
+
+        1. Inline Styles
+        2. Embedded Styles
+        3. External Style Sheets [CSS - Cascade Style Sheets]
+
+Inline Styles:
+==========
+- Styles are defined for every element individually by using "Style" attribute.
+
+            <h2  style="attribute:value; attribute:value">
+            <h2  style="color:red; border:2px solid red">
+
+- Inline styles are faster in rendering.
+- They are not good for reusability and extensibility.
+
+Ex:
+ <h2 style="color:red; border:2px solid red; background-color: yellow;">HTML</h2>
+
+Embedded Styles
+==============
+1. In embedded technique the styles are written in <style> container and kept inside page.
+2. You can reuse the styles.
+3. You can easily extend the styles.
+
+Syntax:
+            <style>
+                selector
+                {
+                  attribute:value;
+                  attribute:value;
+                }
+            </style>
+
+
+FAQ's:
+1. Where to embed the <style> in page? [head, body]
+A. You can embed style in both head and body.
+
+2. What is difference between styles in head and styles in body?
+A. Styles in head section are intended to load into browser memory and then applied to
+    page contents.
+    Styles in body section are intended to load directly into page.
+
+3. Can we embed styles in both head and body?
+A. Yes.
+
+4. If styles are defined in head and body, which set of effects will apply?
+A. If same set of attributes are defined then the effects of body section are applied.
+    If different attributes are defined then all will apply.
+
+
+5. Can we define multiple <style> containers in one section? If defined then which set of effects are applied?
+A. Yes. you can define multiple <style> containers. It uses LIFO [Last-In-First-Out].
+    If different attributes are defined, then all will apply.
+
+
+6. What is the MIME type for styles? Multi-Purpose Internet Mail Extentions [MIME]
+A. It specifies the file content type, which is "text/css" for styles.
+
+Syntax:
+        <style type="text/css">
+
+        </style>

@@ -1,0 +1,151 @@
+25-APR-23
+
+ FULL JOIN :- 
+ ------------------
+
+  => full join returns all rows from both tables 
+
+       SELECT  E.ENAME,D.DNAME
+          FROM  EMP AS E  FULL JOIN DEPT AS D
+               ON  E.DEPTNO = D.DEPTNO
+
+	A	ACCOUNTS
+	B	RESEARCH
+	C	SALES
+	D	ACCOUNTS
+ 	E	NULL        => unmatched from emp	
+                NULL	OPERATIONS => unmatched from dept
+
+ Displaying unmatched records :-
+ ---------------------------------------------
+
+ left table :- 
+ ---------------
+
+       SELECT  E.ENAME,D.DNAME
+          FROM  EMP AS E  LEFT JOIN DEPT AS D
+               ON  E.DEPTNO = D.DEPTNO
+        WHERE D.DNAME IS NULL 
+
+            E      NULL
+
+ right table :- 
+ ----------------
+ 
+       SELECT  E.ENAME,D.DNAME
+          FROM  EMP AS E RIGHT JOIN DEPT AS D
+              ON  E.DEPTNO = D.DEPTNO
+        WHERE  E.ENAME IS NULL
+
+      NULL	   OPERATIONS 
+
+ both tables :- 
+ ------------------
+
+       SELECT  E.ENAME,D.DNAME
+          FROM  EMP AS E FULL JOIN DEPT AS D
+               ON  E.DEPTNO = D.DEPTNO
+        WHERE E.ENAME IS NULL 
+	      OR
+	      D.DNAME IS NULL
+
+       E        	NULL
+      NULL   	OPERATIONS
+
+scenario :- 
+---------------
+
+  PROJECTS
+  projid     pname   duration 
+ 100        A             5 YEARS
+ 101        B            3 YEARS
+ 102        C            2  YEARS 
+ 
+  EMP
+  EMPNO	 ENAME	PROJID
+  1	 K	100
+  2	 M	101
+  3	 C	NULL
+
+ => display employee details with project details ?
+
+ => display employee details with project details and also display
+      employees not assigned to any project ?
+
+ => display employee details with project details and also display
+      projects where no employee assigned to it ?
+
+Non Equi Join :- 
+---------------------
+
+ =>  Non equi join is performed between the tables not sharing a common field
+ 
+     SELECT columns
+     FROM tab1  JOIN  tab2 
+         ON  join condition
+
+ => here join condition is not based on "=" operator  and may be based on 
+      >   <    between operators.
+
+     Example :-
+
+      EMP				SALGRADE
+      EMPNO    ENAME   SAL		GRADE	LOSAL	HISAL
+      1	       A             3000		1	700	1000
+      2               B             1000		2	1001	2000
+      3               C             4000		3	2001	3000
+      4               D             2000		4	3001	4000
+      5               E             1500		5	4001	9999
+
+    display  ENAME	SAL	GRADE  ?
+                 -------------------         ------------
+                         EMP                 SALGRADE
+
+      SELECT  E.ENAME,E.SAL,S.GRADE
+         FROM  EMP AS E  JOIN SALGRADE AS S
+             ON   E.SAL BETWEEN S.LOSAL AND S.HISAL 
+
+ 	A	3000	3
+	B	1000	1
+	C	4000	4
+	D	2000	2
+	E	1500	2
+
+ => display grade 4 employee list ?
+
+      SELECT  E.ENAME,E.SAL,S.GRADE
+         FROM  EMP AS E  JOIN SALGRADE AS S
+             ON   E.SAL BETWEEN S.LOSAL AND S.HISAL 
+       WHERE  S.GRADE = 4 
+
+ => display  ENAME    DNAME     GRADE    ?
+                   ----------    -----------     ----------
+                     EMP        DEPT        SALGRADE
+
+   SELECT E.ENAME,D.DNAME,S.GRADE
+       FROM EMP AS E  INNER JOIN DEPT AS D
+           ON  E.DEPTNO = D.DEPTNO
+                                     JOIN SALGRADE S
+            ON E.SAL  BETWEEN S.LOSAL AND S.HISAL 
+
+ SELF JOIN :- 
+ ------------------
+
+  => joining a table to itself is called self join.
+  => in self join a record in one table joined with another record of same table.
+  => to perform self join the same table must be declared two times with
+       different alias.
+
+           FROM  EMP AS  X   JOIN   EMP AS  Y
+
+ Example :- 
+
+   EMP X				  	EMP Y	
+   EMPNO	     ENAME	MGR		EMPNO	ENAME	MGR
+   1	     A		NULL		1	A	NULL
+   2	     B		1		2	B	1
+   3	     C		1		3	C	1
+   4	     D		2		4	D	2
+   5	     E		3		5	E	3
+  
+ => display  ENAME	    MGRNAME   ?

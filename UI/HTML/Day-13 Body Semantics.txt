@@ -1,0 +1,329 @@
+Body Semantics
+- header
+- footer
+- section
+- main
+- nav
+- div
+- span
+- article
+
+                                        aside
+
+ - It represents content which is not relative to current page.
+ - It is mostly used for ads.
+ - It is also used for navigating to the networks of current page. [Social Bar]
+
+CSS Styles
+a) position:absolute        : removes for specified location, but keeps along with content
+b) position:fixed            : removes from specified location, and keeps the position fixed.
+                              [not with content, it is with page].
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aside</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        aside {
+            font-size: 20px;
+            color:cadetblue;
+            background-color: white;
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            width: 22px;
+        }
+        aside div {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    We understand that you may have questions about the Microsoft Services Agreement. We have an FAQ page (https://www.microsoft.com/en-us/servicesagreement/upcoming-faq.aspx) that provides more information, including what Microsoft products and services it covers. Whenever we make changes, we provide a summary of the most notable changes to the current Microsoft Services Agreement. We will also continue to provide a summary of the changes to the previous version, and a link to the previous version, of the Microsoft Services Agreement on the Summary of Changes (https://www.microsoft.com/en-us/servicesagreement/upcoming-updates.aspx) page.
+   
+
+    <aside>
+        <div class="bi bi-facebook"></div>
+        <div class="bi bi-instagram"></div>
+        <div class="bi bi-twitter"></div>
+        <div class="bi bi-linkedin"></div>
+        <div class="bi bi-youtube"></div>
+    </aside>
+</body>
+</html>
+
+                                        dialog
+
+- It is used to create popup window in page.
+- Dialog is by default hidden, you can show by using "open" attribute.
+
+Syntax:
+        <dialog open>
+        ...... your ..content...
+        </dialog>
+
+                                    Figure with Caption
+- <figure> is an element used to encapsulate a picture with caption so that it can be SEO friendly.
+
+Syntax:
+        <figure>
+            .... your image....
+            <figcaption> Caption </figcaption>
+        </figure>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aside</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        figure {
+            width: 200px;
+            height: 150px;
+            border:1px solid black;
+            padding: 20px;
+        }
+        figure div {
+            width: 100px;
+            height: 100px;
+            border:1px dotted gray;
+        }
+    </style>
+</head>
+<body>
+    <figure>
+        <div>Your Image</div>
+        <figcaption>Fig: Realme Mobile </figcaption>
+    </figure>
+</body>
+</html>
+
+                                    Nav with Menu
+- The navigation is defined in page by using <nav> element.
+- If naviagation comprises of various categories then better use <menu>
+
+Syntax:
+    <nav>
+        <menu>
+
+        </menu>
+    </nav>
+
+                                      Details and Summary
+- Details and summary is used to create expandable and collapsable content in page.
+
+Syntax:
+        <details>
+            <summary> Title </summary>
+            .......
+            .......
+        </details>
+
+- Details is by default in collapsed state, you can use "open" attribute to expand.
+
+        <details open>
+       
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aside</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+       nav {
+        width: 150px;
+        border: 1px solid gray;
+        height: 350px;
+        padding: 20px;
+        overflow: auto;
+       }
+       nav div {
+           width: 100px;
+           padding: 4px;
+           background-color: black;
+           color:white;
+           border-radius: 5px;
+           margin-bottom: 10px;
+           margin-top: 5px;
+           margin-left: 10px;
+       }
+       menu {
+        margin-left: -40px;
+       }
+       nav div:hover {
+         background-color: yellow;
+         color:black;
+         font-size: 23px;
+         cursor: grab;
+         transition: 2s;
+       }
+    </style>
+</head>
+<body>
+   <nav>
+      <div>Home</div>
+      <menu>
+         <details open>
+             <summary>Electronics</summary>
+             <div>Televisions</div>
+             <div>Mobiles</div>
+             <div>Watches</div>
+         </details>
+         <details>
+            <summary>Footwear</summary>
+            <div>Casuals</div>
+            <div>Sneakers</div>
+            <div>Boots</div>
+         </details>
+         <details>
+            <summary>Fashion</summary>
+            <div>Kids</div>
+            <div>Women</div>
+            <div>Men</div>
+         </details>
+      </menu>
+   </nav>
+</body>
+</html>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aside</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        nav div {
+            background-color: black;
+            color:white;
+            padding: 5px;
+            border-radius: 50px;
+            width: 18px;
+            transition: 2s;
+        }
+        .title {
+            margin-bottom: 10px;
+        }
+        .icon+span {
+            display: none;
+        }
+        .icon:hover+span {
+            display: inline;
+            font-size: 20px;
+        }
+        .icon+span {
+            font-size: 15px;
+        }
+        nav div:hover {
+            font-size: 20px;
+            transition: 2s;
+        }
+    </style>
+</head>
+<body>
+   <nav>
+      <div class="icon">
+        <span class="bi bi-house"></span>
+      </div>
+      <span class="title">Home</span>
+      <div class="icon">
+        <span class="bi bi-calendar-date-fill"></span>
+      </div>
+      <span class="title">Schedule</span>
+      <div class="icon">
+        <span class="bi bi-person-fill"></span>
+      </div>
+      <span class="title">Sigin</span>
+      <div class="icon">
+        <span class="bi bi-cart4"></span>
+      </div>
+      <span class="title">Cart</span>
+   </nav>
+</body>
+</html>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aside</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+       .title {
+        display: none;
+       }
+       nav div:hover .title {
+        display: inline;
+        color: red;
+       }
+    </style>
+</head>
+<body>
+    <nav>
+        <div>
+            <span class="bi bi-house-fill"></span>
+            <span class="title">House</span>
+        </div>
+        <div>
+            <span class="bi bi-person-fill"></span>
+            <span class="title">Singin</span>
+        </div>
+    </nav>
+</body>
+</html>
+
+FAQ: What is ":hover"?
+Ans : It is a CSS class that defines effects when mouse pointer is over the element.
+
+FAQ: What is ":active"?
+Ans: It is a CSS class that defines effects when you hold down mouse button on element.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Body Semantics for Layout:
+1. header
+2. footer
+3. section
+4. main
+5. article
+6. aside
+7. figure
+8. figcaption
+9. nav
+10. div
+11. span
+12. dialog
+13. menu
+14. details
+15. summary

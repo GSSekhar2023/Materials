@@ -1,0 +1,9 @@
+        int ? a = null;
+         
+         
+  
+        int b = a ?? 3;
+         
+      
+        Console.WriteLine(b);
+

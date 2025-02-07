@@ -1,0 +1,415 @@
+Datalist with Terms and Definitions
+
+- Data List is defined by using
+        <dl>
+- Data list contains terms defined using
+        <dt>
+- Every terms have definition defined using
+        <dd>
+
+Syntax:
+        <dl>
+            <dt> Term </dt>
+            <dd> Definition </dd>
+        </dl>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        dt {
+            background-color: gray;
+            color:white;
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding: 5px;
+            text-align:left;
+        }
+    </style>
+</head>
+<body>
+    <h2>Web Technologies</h2>
+    <dl>
+        <dt>HTML</dt>
+        <dd>It is a markup language.</dd>
+        <dd>It is used for presentation.</dd>
+        <dt>CSS</dt>
+        <dt>Styles</dt>
+        <dd>It defines styles for HTML.</dd>
+        <dt>JavaScript</dt>
+        <dd>It manipulates DOM.</dd>
+    </dl>
+</body>
+</html>
+
+Ex: Side By Side
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        dt {
+            background-color: black;
+            color:white;
+            padding: 3px;
+            margin-bottom: 10px;
+        }
+        dd {
+            background-color: lightblue;
+            margin-bottom: 10px;
+            padding: 3px;
+        }
+        dl {
+            display: grid;
+            grid-template-columns: 3fr 9fr;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Product Details</h2>
+    <dl>
+        <dt>Name</dt>
+        <dd>Samsung TV</dd>
+        <dt>Price</dt>
+        <dd>56000.44</dd>
+        <dt>Stock</dt>
+        <dd>Available</dd>
+        <dt>Preview</dt>
+        <dd>
+            <img src="images/tv.jpg" width="100" height="100">
+        </dd>
+
+    </dl>
+</body>
+</html>
+
+Ex:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       dt {
+        background-color: black;
+        color:white;
+        padding: 4px;
+        width: 150px;
+        position: sticky;
+        top: 0px;
+       }
+       dd {
+         background-color: lightgray;
+         margin-bottom: 10px;
+         margin-top: 5px;
+         width: 100px;
+       }
+    </style>
+</head>
+<body>
+   <dl>
+      <h2>Shopper.</h2>
+      <dt>Electronics</dt>
+      <dd>Televisions</dd>
+      <dd>Mobiles</dd>
+      <dd>Watches</dd>
+      <dd>Televisions</dd>
+      <dd>Mobiles</dd>
+      <dd>Watches</dd>
+      <dd>Televisions</dd>
+      <dd>Mobiles</dd>
+      <dd>Watches</dd>
+      <dd>Televisions</dd>
+      <dd>Mobiles</dd>
+      <dd>Watches</dd>
+      <dd>Televisions</dd>
+      <dd>Mobiles</dd>
+      <dd>Watches</dd>
+      <dd>Televisions</dd>
+      <dd>Mobiles</dd>
+      <dd>Watches</dd>
+      <dt>Footwear</dt>
+      <dd>Casuals</dd>
+      <dd>Sneakers</dd>
+      <dd>Boots</dd>
+      <dd>Casuals</dd>
+      <dd>Sneakers</dd>
+      <dd>Boots</dd>
+      <dd>Casuals</dd>
+      <dd>Sneakers</dd>
+      <dd>Boots</dd>
+      <dd>Casuals</dd>
+      <dd>Sneakers</dd>
+      <dd>Boots</dd>
+      <dd>Casuals</dd>
+      <dd>Sneakers</dd>
+      <dd>Boots</dd>
+      <dd>Casuals</dd>
+      <dd>Sneakers</dd>
+      <dd>Boots</dd>
+      <dt>Fashion</dt>
+      <dd>Kids</dd>
+      <dd>Men</dd>
+      <dd>Women</dd>
+      <dd>Kids</dd>
+      <dd>Men</dd>
+      <dd>Women</dd>
+      <dd>Kids</dd>
+      <dd>Men</dd>
+      <dd>Women</dd>
+      <dd>Kids</dd>
+      <dd>Men</dd>
+      <dd>Women</dd>
+      <dd>Kids</dd>
+      <dd>Men</dd>
+      <dd>Women</dd>
+      <dd>Kids</dd>
+      <dd>Men</dd>
+      <dd>Women</dd>
+      <dd>Kids</dd>
+      <dd>Men</dd>
+      <dd>Women</dd>
+      <dd>Kids</dd>
+      <dd>Men</dd>
+      <dd>Women</dd>
+      <dd>Kids</dd>
+      <dd>Men</dd>
+      <dd>Women</dd>
+   </dl>
+</body>
+</html>
+
+                                Fieldset and Legend
+
+- Fieldset sets a frame for your content.
+- Legend sets a caption for frame.
+
+Syntax:
+        <fieldset>
+            <legend> Title </legend>
+             .........................
+             your content
+             ..............
+        </fieldset>
+
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        dl {
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+        }
+        dt {
+            background-color: black;
+            color:white;
+            padding: 3px;
+            margin-bottom: 10px;
+        }
+        dd {
+            background-color: yellow;
+            margin-bottom: 10px;
+            padding: 3px;
+        }
+        fieldset {
+            margin-bottom: 20px;
+            box-shadow: 2px 2px 2px gray;
+        }
+        legend {
+            background-color: black;
+            color:white;
+            box-shadow: 5px 5px 2px gray;
+            border-radius: 3px;
+            padding: 3px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+   <fieldset>
+     <legend>Personal Details</legend>
+    <dl>
+        <dt>First Name</dt>
+        <dd>some name</dd>
+        <dt>Last Name</dt>
+        <dd>some name</dd>
+        <dt>Age</dt>
+        <dd>some number</dd>
+      </dl>
+   </fieldset>
+
+   <fieldset>
+    <legend>Contact Details</legend>
+    <dl>
+        <dt>City</dt>
+        <dd>some city</dd>
+        <dt>State</dt>
+        <dd>some state</dd>
+        <dt>Postal Code</dt>
+        <dd>some code</dd>
+       </dl>
+   </fieldset>
+</body>
+</html>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        legend {
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        fieldset {
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
+            text-align: center;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>New to Amazon?</legend>
+        <button>New to Amanon - Register</button>
+    </fieldset>
+</body>
+</html>
+                                    Links in HTML
+
+- Links are used to design navigation for website.
+- Link is clickable text, picture or graphic, that navigates the user to any specified location.
+- Links are classified into 2 types
+        a) Intra Document Links
+        b) Inter Document Links
+
+- Intra Document links navigate user from one location to another with in the same page.
+- Inter document links will navigate user from one page to another.
+
+- Links are created by using HTML anchor element  <a>.
+
+Intra Document Links:
+1. Define ID for any element
+        <h2 id="home">
+
+2. Refer ID by using <a> anchor
+
+        <a href="#home> Home </a>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <style>
+        header {
+            font-size: 30px;
+            text-align: center;
+            padding: 5px;
+            background-color: black;
+            color:white;
+        }
+        section {
+            display: grid;
+            grid-template-columns: 3fr 9fr;
+        }
+        ul {
+            list-style: none;
+            margin-left: -30px;
+        }
+        li {
+            background-color: black;
+            color: white;
+            padding: 2px;
+            font-size: 20px;
+            margin-bottom: 20px;
+            width: 150px;
+        }
+        main {
+            height: 400px;
+            overflow: auto;
+        }
+        a {
+            color:white;
+            text-decoration: none;
+        }
+        .back {
+            background-color: slategray;
+            color:white;
+            text-align: center;
+            color:white;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Shopper.
+    </header>
+    <section>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#women">Women's Fashion</a></li>
+            <li><a href="#men">Men's Fashion</a></li>
+            <li><a href="#kid">Kid's Fashion</a></li>
+          </ul>
+        </nav>
+        <main>
+            <h2 id="home">Home</h2>
+            <p>We understand that you may have questions about the Microsoft Services Agreement. We have an FAQ page (https://www.microsoft.com/en-us/servicesagreement/upcoming-faq.aspx) that provides more information, including what Microsoft products and services it covers. Whenever we make changes, we provide a summary of the most notable changes to the current Microsoft Services Agreement. We will also continue to provide a summary of the changes to the previous version, and a link to the previous version, of the Microsoft Services Agreement on the Summary of Changes (https://www.microsoft.com/en-us/servicesagreement/upcoming-updates.aspx) page.</p>
+            <h2 id="women">Women's Fashion</h2>
+           
+            <img src="images/fashion1.jpg" width="200" height="200">
+            <div class="back">
+                <a href="#home">Back to Top</a>
+            </div>
+            <p>We understand that you may have questions about the Microsoft Services Agreement. We have an FAQ page (https://www.microsoft.com/en-us/servicesagreement/upcoming-faq.aspx) that provides more information, including what Microsoft products and services it covers. Whenever we make changes, we provide a summary of the most notable changes to the current Microsoft Services Agreement. We will also continue to provide a summary of the changes to the previous version, and a link to the previous version, of the Microsoft Services Agreement on the Summary of Changes (https://www.microsoft.com/en-us/servicesagreement/upcoming-updates.aspx) page.</p>
+            <h2 id="men">Men's Fashion</h2>
+            <img src="images/fashion2.jpg" width="200" height="200">
+            <div class="back">
+                <a href="#home">Back to Top</a>
+            </div>
+            <p>We understand that you may have questions about the Microsoft Services Agreement. We have an FAQ page (https://www.microsoft.com/en-us/servicesagreement/upcoming-faq.aspx) that provides more information, including what Microsoft products and services it covers. Whenever we make changes, we provide a summary of the most notable changes to the current Microsoft Services Agreement. We will also continue to provide a summary of the changes to the previous version, and a link to the previous version, of the Microsoft Services Agreement on the Summary of Changes (https://www.microsoft.com/en-us/servicesagreement/upcoming-updates.aspx) page.</p>
+            <p>We understand that you may have questions about the Microsoft Services Agreement. We have an FAQ page (https://www.microsoft.com/en-us/servicesagreement/upcoming-faq.aspx) that provides more information, including what Microsoft products and services it covers. Whenever we make changes, we provide a summary of the most notable changes to the current Microsoft Services Agreement. We will also continue to provide a summary of the changes to the previous version, and a link to the previous version, of the Microsoft Services Agreement on the Summary of Changes (https://www.microsoft.com/en-us/servicesagreement/upcoming-updates.aspx) page.</p>
+            <h2 id="kid">Kids Fashion</h2>
+            <img src="images/fashion3.png" width="200" height="200">
+            <div class="back">
+                <a href="#home">Back to Top</a>
+            </div>
+            <p>We understand that you may have questions about the Microsoft Services Agreement. We have an FAQ page (https://www.microsoft.com/en-us/servicesagreement/upcoming-faq.aspx) that provides more information, including what Microsoft products and services it covers. Whenever we make changes, we provide a summary of the most notable changes to the current Microsoft Services Agreement. We will also continue to provide a summary of the changes to the previous version, and a link to the previous version, of the Microsoft Services Agreement on the Summary of Changes (https://www.microsoft.com/en-us/servicesagreement/upcoming-updates.aspx) page.</p>
+           
+        </main>
+    </section>
+</body>
+</html>

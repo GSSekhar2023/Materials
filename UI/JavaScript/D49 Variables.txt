@@ -1,0 +1,264 @@
+Input Techniques
+- prompt()
+- form input elements
+
+Ex: Inox-Movies
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inox-Movies</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script type="text/javascript">
+        function BookClick(){
+            document.getElementById("SummaryContainer").style.display = "block";
+
+            document.getElementById("lblMovie").innerHTML = document.getElementById("lstMovies").value;
+            document.getElementById("lblCinema").innerHTML = document.getElementById("lstCinema").value;
+            document.getElementById("lblDate").innerHTML = document.getElementById("lstDate").value;
+            document.getElementById("lblTime").innerHTML = document.getElementById("lstTime").value;
+            document.getElementById("lblSeats").innerHTML = document.getElementById("lstSeats").value;
+
+            poster = document.getElementById("imgPoster");
+            movie = document.getElementById("lstMovies").value;
+
+            if(movie=="Fast X") {
+                poster.src="../public/images/fastX.jpg";
+            } else {
+                poster.src="../public/images/kerala.jpg";
+            }
+           
+           
+           
+        }
+    </script>
+</head>    
+<body class="container-fluid">
+    <button data-bs-target="#booking" data-bs-toggle="modal" class="btn btn-danger mt-4">Quick Booking</button>
+    <div class="modal fade" id="booking">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Quick Booking</h2>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-around p-2">
+                        <div>
+                            <select class="form-select" id="lstMovies">
+                                <option>Select Movie</option>
+                                <option>Fast X</option>
+                                <option>Kerala Story</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select class="form-select" id="lstCinema">
+                                <option>Select Cinema</option>
+                                <option>INOX GVK B'Hills</option>
+                                <option>INOX Ameerpet</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select class="form-select" id="lstDate">
+                                <option>Select Date</option>
+                                <option>TODAY 19 May</option>
+                                <option>TOMORROW 20 May</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select class="form-select" id="lstTime">
+                                <option>Select Time</option>
+                                <option>10:20 AM</option>
+                                <option>10:30 PM</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select class="form-select" id="lstSeats">
+                                <option>Select Seats</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button onclick="BookClick()" data-bs-dismiss="modal" class="btn btn-danger">Book</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="SummaryContainer" class="w-25 mt-2" style="display: none;">
+        <p class="bg-dark text-white w-100 p-2">BOOKING SUMMARY</p>
+        <img id="imgPoster" width="100%" height="200">
+        <dl class="row">
+            <dt class="col-6 mb-3 mt-4">Movie</dt>
+            <dd class="col-6" id="lblMovie"></dd>
+            <dt class="col-6 mb-3">Cinema</dt>
+            <dd class="col-6" id="lblCinema"></dd>
+            <dt class="col-6 mb-3">Date</dt>
+            <dd class="col-6" id="lblDate"></dd>
+            <dt class="col-6 mb-3">Time</dt>
+            <dd class="col-6" id="lblTime"></dd>
+            <dt class="col-6 mb-3">Seats</dt>
+            <dd class="col-6" id="lblSeats"></dd>
+        </dl>
+        <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#booking">Edit Booking</button>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
+                                        Query String
+
+- Query String is defined in browser address bar as a part of URL.
+- It is appended into URL using "?".
+- Query String comprises of Key and Value.
+
+                ?key=value
+Ex:
+            http://localhost:5500/page.html?key=value
+
+- JavaScript provides "location.search"  to access querystring.
+
+                string="?key=value";
+
+                string.substring()
+                string.indexOf()            finds the index number of character in a string.
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query String</title>
+    <script type="text/javascript">
+        function bodyload(){
+            querystring = location.search;
+            term = querystring.substring(querystring.indexOf("=")+1);
+            document.querySelector("p").innerHTML = "Your Search Term :" + term;
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <p></p>
+</body>
+</html>
+
+                            JavaScript Language Basics
+1. Variables
+2. Data Types
+3. Operators
+4. Statements
+5. Functions
+
+                                        Variables
+- Variables are storage locations in memory, where you can store a value and use as a part of any expression.
+
+- Every variable configuration comprises of 3 phases
+
+    a) Declaraing
+    b) Initialization
+    c) Assignment
+
+    var x;                => Declaring
+    x = 10;            => Assignment
+
+    var y = 20;        => Initialization
+    y = 30;            => Assignment
+    y = 40;            => Assignment
+
+- You can assign value into a variable directly without declaring if JavaScript is not in strict mode.
+                <script>
+                    x = 10;                            // valid
+                    document.write("x=" + x);
+                </script>
+
+                <script>
+                    "use strict";
+                    x = 10;                            // invalid
+                    document.write("x=" + x);
+                </script>
+- In strict mode variable must be declared or initialized.
+- JavaScript variables are declared or initialized by using 3 keywords
+
+        a) var
+        b) let
+        c) const
+
+var
+- It defines a function scope variable.
+- It can be declared in any block of a function and can be accessed from any another block.
+
+Ex:
+<script>
+    function f1(){
+        var x;          // declaring
+        x = 10;         // assigning
+        if(x==10)
+        {
+            var y = 20;   // intialization
+            y=30;
+            document.write("x=" + x  + "<br> y=" + y);
+        }
+       
+    }
+    f1();
+</script>
+
+- The process of configuring members in outer block and accessing in inner block
+   is known as "Closure".
+- A closure allows the member of outer block accessible to inner block.
+- The scope of outer block is known as "Lexical Scope".
+
+<script>
+    function f1(){
+        var x;          // declaring
+        x = 10;         // assigning
+        if(x==10)
+        {
+            var y = 20;   // intialization
+            y=30;
+            document.write("x=" + x  + "<br> y=" + y);
+        }
+        // lexical scope
+    }
+    f1();
+</script>
+
+- var allows declaring, assigning and initialization.
+- var allows shadowing.
+- Shadowing is the process of re-declaring or intializing a variable again with in the scope.
+
+<script>
+    function f1(){
+        var x;          // declaring
+        x = 10;         // assigning
+        if(x==10)
+        {
+            var y = 20;   // intialization
+            var y = 40;   // shadowing
+            document.write("x=" + x  + "<br> y=" + y);
+        }
+        // lexical scope
+    }
+    f1();
+</script>
+
+- var allows hoisting.
+
+<script>
+    "use strict";
+    function f1(){
+       x = 10;
+       document.write("x=" + x);
+       var x;  // hoisting
+    }
+    f1();
+</script>

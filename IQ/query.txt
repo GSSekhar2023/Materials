@@ -1,0 +1,10 @@
+select top 1 emp_id,emp_name,emp_sal from emp 
+where(select top 2 emp_id,emp_name,emp_sal from emp order by emp_sal desc) 
+order by emp_sal asc
+
+ SQL (Stored Proc, Views, CTE, Cluster/Non Cluster Index, SQL Transaction etc.)
+
+====>t1 2000
+     t2 1000
+
+t2 1000

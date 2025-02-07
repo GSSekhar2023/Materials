@@ -1,0 +1,29 @@
+Input: nums = [1,1,2]Output: 2, nums = [1,2,_]
+
+
+
+int[] nums=new int[1,1,2];
+char[] c=nums;
+for(int i=0;i<nums.length;i++)
+{
+ if(nums[i]==c[i])
+ for(int j=0;j<nums.len)
+ console.WriteLine(nums[i])
+
+}
+
+
+list.Remove
+===================================
+emp id ,name, salary
+
+select ID,Name,Salary from emp 
+from emp as a 
+string str= "sekhar"
+char ch=str.ToCharArray();
+int count=0;
+for(int i=0;i<ch.length;i++)
+{
+ count+=count;
+}
+Console.WriteLine("Count of given string:{0}",count);

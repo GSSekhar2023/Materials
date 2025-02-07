@@ -1,0 +1,126 @@
+singleton
+
+
+using System;
+
+    public class SortArr
+      {
+        public string Result()
+        {
+          string[] arr=new string{"Sekhar","Ram"};
+
+          foreach(string s in arr)
+          {
+            Console.WriteLine(s);  
+          }
+        }     
+ public static void Main()
+{
+  SortArr sa=new SortArr();
+  Console.WriteLine(sa.Result);
+  Console.ReadLine();
+}
+      }
+
+
+
+Action result middleware how can you differenciate
+filters
+partial class
+partial view
+Encapsulation,abstruction with example
+Interface and abstruction on which seceniro we can use
+stored procedures how to call 
+DB context how to call
+Ienumerable and enumerable
+Bundling and minification
+
+lazy loading and early bindig
+Authentication and authorization
+Indexes drawback
+.csproj in project contains
+
+Input: {0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1}
+Output: {0, 0, 0, 0, 0, 2, 2, 1, 1, 1, 1, 1}
+public int sorting()
+{
+	int[] j=new int[10];
+	int[] arr=new int{0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1}
+	for(int i=0;i<arr.length-1;i++)
+	{
+		if(arr[i]=0)
+    {
+    	j[i]=arr[i];
+    }
+    if(arr[i]=0)
+    {
+    	j[i]=arr[i];
+    }
+	}
+}
+
+Singleton Design pattern
+Extention methods
+view bag and temp
+cross join
+Abstraction and Interface
+global adn temp tables
+==============================================
+http return
+which tools u r using in testing
+
+=============================
+Method overloading is possible using Inheritance 
+Are u create constructor in Abstract class
+IS & AS Keywords
+Asyc and asyncwait
+IEnumerable and 
+Leskovs substitution method
+Any design pattern 
+================================================
+  var cc = null;
+dynamic dd = null;
+object oo = null;
+
+   No
+
+  No
+
+   Yes
+
+Find common data in this list using LINQ OR SQL
+{​​1,2,3}​​;
+{​​4,2,6}​​;
+{​​7,8,2}​​;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

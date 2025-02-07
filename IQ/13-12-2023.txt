@@ -1,0 +1,19 @@
+Emp:id,name,mangId
+
+select Emp_id,Emp_Name from Employee where (select Emp_Id  from Employee where Emp_Id=MangID)
+
+
+public bool Method1(bool b)//b=true;
+{
+  this.b=b;
+  bool a=true;
+  switch
+  case1: a==b;
+         b=false;
+  break;
+  case2: a!=b;
+         b=true;
+  break;
+ return b;
+
+}

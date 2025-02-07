@@ -1,0 +1,37 @@
+DB:DOTNET
+TABLE EMP
+
+SQL:
+
+SELECT EMP_NAME,EMP_ID,EMP_ADD FROM EMP
+
+LINQ
+FROM E  E.EMP EMP_NAME,E.EMP_ID,E.EMP_ADD SELECT 
+=======================================================
+3rd largest number
+
+c#:
+
+public static void Main()
+{
+ int[] i=new int{3,5,2,22,33,55};
+ int[] j=i.Split(',');
+ int num,
+ int[] res=new int{i.Length};
+ bool b;
+ for(int k=0;k<=i.Length-1;k++)
+ {
+  for(int l=0;l<=i.Length-1;l++)
+  {
+    num=j[l];
+   if(num<=i[k] || res<=i[k] )
+   {
+    res=num
+   }
+     
+  }
+  
+ } 
+
+}
+

@@ -1,0 +1,46 @@
+API
+How to utilise API
+2 Key names are given
+why Database first approach in EF
+how to call db ...Dbcontext
+
+SQL:View,Indexes
+
+Tech Mahindra
+multiply a=3,b=7 without multiply operator
+using System;
+class mul
+{
+ static void Main()
+ {
+  int a=7,b=3;
+  int count=0;
+  for(int i=1;i<=3;i++)
+  {
+   count+=a;
+  }
+  Console.WriteLine($"Multiplication of {a} and {b} is {count}");
+ }
+
+}
+
+parallel for
+parallel foreach
+Coalesce---->Returns the first Non Null value.
+delegate
+generic collections
+abstract interface
+string dictionary ---how to store your name in five compines using dictionary
+Temp table and global table
+CTE
+Employee table--->ID varchar how to achieve this
+00001
+00002
+00003
+...
+.
+.
+.
+.
+99999
+

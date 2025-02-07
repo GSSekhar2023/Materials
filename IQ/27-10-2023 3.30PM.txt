@@ -1,0 +1,19 @@
+Console.WriteLine("Please Enter the word");
+string str=Console.ReadLine();
+string rev=String.Empty;
+if(str==rev)
+{
+ Console.WriteLine("Please Enter the word only");
+}
+
+else
+{
+char[] ch=str.ToCharArray();
+for(int i=str.Length;i>-1;i--)
+{
+ rev=rev+ch[i];
+
+}
+}
+Console.WriteLine("Revesed the Sting:"+rev);
+Console.ReadLine();

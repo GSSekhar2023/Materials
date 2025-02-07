@@ -1,0 +1,310 @@
+CSS Classes for Form Validation
+
+:required                : It defines effects for elements which are specified with required
+                          attribute.
+
+:in-range                : It verifies the value range that you input into any element.
+                          It can apply effect only if the value is in specified range.
+
+:out-of-range            : It sets effects if value is not within the specified range.
+
+:valid                    : It sets effects when field is valid.
+
+:invalid                : It sets  effects when field is invalid.
+
+:checked                : It is used to verify checked attribute of radio or checkbox
+
+Note: valid & invalid can verify any type of validation
+            required, minlength, maxlength, min, max, pattern, email, url etc..
+
+Ex: required
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Group</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        input+span {
+            display: none;
+        }
+        input:required+span {
+            color:red;
+            display: inline;
+            font-size: 25px;
+            padding-left: 5px;
+        }
+        input:required {
+            border:1px solid red;
+            box-shadow: 2px 2px 2px red;
+        }
+    </style>
+</head>
+<body class="p-4 m-4">
+    <form>
+        <h2>Register User</h2>
+        <dl>
+            <dt>User Name</dt>
+            <dd><input type="text" required><span>*</span></dd>
+            <dt>Password</dt>
+            <dd><input type="password"><span>*</span></dd>
+            <dt>Age</dt>
+            <dd><input type="number" required><span>*</span></dd>
+            <dt>Mobile</dt>
+            <dd><input type="text"><span>*</span></dd>
+        </dl>
+        <button>Register</button>
+    </form>
+</body>
+</html>
+
+Ex: In-range  & out-of-range
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Group</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        .Age:in-range+div {			//'+'=>beside/adjusent, 'space'=>inside
+            display: none;
+        }
+        .Age:out-of-range+div {
+            display: block;			//below
+            color:red;
+        }
+    </style>
+</head>
+<body class="p-4 m-4">
+    <form>
+        <h2>Register User</h2>
+        <dl>
+            <dt>User Name</dt>
+            <dd><input type="text"></dd>
+            <dt>Password</dt>
+            <dd><input type="password"></dd>
+            <dt>Age</dt>
+            <dd>
+                <input type="number" min="15" max="30" class="Age">
+                <div>Age 15 to 30 only</div>
+            </dd>
+            <dt>Mobile</dt>
+            <dd><input type="text"></dd>
+        </dl>
+        <button>Register</button>
+    </form>
+</body>
+</html>
+
+
+Ex: valid & invalid
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Group</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+       .UserName+div {
+         display: none;
+       }
+       .UserName:invalid+div {
+         display: block;
+         color:red;
+       }
+       .Mobile+div {
+        display: none;
+       }
+       .Mobile:invalid+div {
+        display: block;
+        color:red;
+       }
+       .UserName:invalid {
+          box-shadow: 2px 2px 2px red;
+          border:2px solid red;
+       }
+       .UserName:valid {
+        box-shadow: 2px 2px 2px green;
+          border:2px solid green;
+       }
+    </style>
+</head>
+<body class="p-4 m-4">
+    <form>
+        <h2>Register User</h2>
+        <dl>
+            <dt>User Name</dt>
+            <dd>
+                <input type="text" class="UserName" required>
+                <div>User Name Required</div>
+            </dd>
+            <dt>Mobile</dt>
+            <dd>
+                <input type="text" class="Mobile" pattern="\+91\d{10}">
+                <div>Invalid Mobile: +91 and 10 digits required</div>
+            </dd>
+        </dl>
+        <button>Register</button>
+    </form>
+</body>
+</html>
+
+Ex: Checked
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Group</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        .terms:checked+span {
+            color:green;
+        }
+        .terms+span {
+            color:red;
+        }
+        .terms~button {
+            display: none;
+        }
+        .terms:checked~button {
+            display: block;
+        }
+    </style>
+</head>
+<body class="p-4 m-4">
+      <dl>
+        <dt>Terms of Service</dt>
+        <dd>
+            <textarea rows="4" cols="40" disabled>Read our terms of service..</textarea>
+        </dd>
+        <dd>
+            <input type="checkbox" class="terms"> <span>I Accept</span>
+            <br><br>
+            <button>Submit</button>
+        </dd>
+      </dl>
+</body>
+</html>
+                                   Tables in HTML
+
+- Tables arrange content in rows and columns.
+- Table allows to change data dynamically.
+- It is easy for adding, updating and removing data from table.
+- It is good for sorting and filtering data using table.
+- Table in HTML is configured by using following elements
+
+        <table>
+        <caption>
+        <thead>
+        <tbody>
+        <tfoot>
+        <tr>
+        <th>
+        <td>
+        <colgroup>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <table width="500" border="1">
+        <caption>Products Table</caption>
+        <colgroup span="2"></colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Preview</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Realme</td>
+                <td> &#8377; 10,000/-</td>
+                <td>Available</td>
+                <td>
+                    <img src="images/realme1.jpg" width="100" height="100">
+                </td>
+                <td>
+                    <button><span class="bi bi-eye-fill"></span></button><br>
+                    <button><span class="bi bi-pen-fill"></span></button> <br>
+                    <button><span class="bi bi-trash-fill"></span></button>
+                </td>
+            </tr>
+            <tr>
+                <td>Realme</td>
+                <td> &#8377; 11,000/-</td>
+                <td>Available</td>
+                <td>
+                    <img src="images/realme2.jpg" width="100" height="100">
+                </td>
+                <td>
+                    <button><span class="bi bi-eye-fill"></span></button><br>
+                    <button><span class="bi bi-pen-fill"></span></button> <br>
+                    <button><span class="bi bi-trash-fill"></span></button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>&copy; copyright</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
+
+Table Attributes:
+1. Frame, Rules and Border
+
+    Frame            : It is defined for entire table. It have options
+                        "box, void, rhs, lhs, above, below"
+
+                     <table  frame="box|void|rhs...">
+   
+    Rules            :  Rules are defined for rows, cols, groups and all.
+
+                      <table  rules="all | rows | cols | groups | none">
+
+    Border        : It is for cells in table. It uses  1=true 0=false.
+
+                       <table border="1"  frame="void">
+
+
+Note: You can't set border if "rules" attribute is defined in table. You have to remove rules to set border.
+
+2. cellspacing and cellpadding
+
+        cellspacing            : It sets space between cells.
+        cellpadding            : It sets space between cellborder and its content.
+
+            <table  cellspacing="10" cellpadding="10">

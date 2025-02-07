@@ -1,0 +1,319 @@
+28-04-2023
+
+
+CSS Selectors
+CSS Rules
+CSS Inheritance
+CSS Colors
+        rgb()
+        rgba()
+        hsl()
+        hsla()
+
+                                        Gradient Colors
+- It is a combination of multiple colors.
+- You have to set gradient only by using "background-image".
+
+        a) Linear Gradient
+        b) Radial Gradient
+
+- Linear-Gradient : It sets horizontal and vertical orientation for colors.
+
+Syntax:
+            background-image: linear-gradient(direction, colors);
+            background-image: linear-gradient(to right, red, green);
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 700px;
+            background-image: linear-gradient(to top left, pink 20% ,yellow,green);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        container text 
+        <h2>Heading Text</h2>
+    </div>
+</body>
+</html>
+
+
+- Radial-Gradient:  It sets orientation from center.
+
+Syntax:
+            background-image: radial-gradient(colors);
+
+Ex:
+     body {
+            height: 500px;
+            background-image: radial-gradient(red 20%, yellow, green);
+        }
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 700px;
+            background-image: radial-gradient( pink 40%,yellow,green);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        container text 
+        <h2>Heading Text</h2>
+    </div>
+</body>
+</html>
+
+                                       CSS Units
+- Units are required to set dimensions for any element.
+- CSS units are classified into 2 types
+
+        a) Absolute Units
+        b) Relative Units
+
+Absolute Units are individual and not effected by any adjacent or parent element.
+
+                cm            centimeters
+                mm
+                Q
+                in
+                pt
+                pc
+                px
+
+Relative units depends on the parent element or root element.
+
+                em                element size    
+                rem            root element size
+
+Syntax:    
+            parent {
+                font-size : 40px;
+            }
+            child-1 {
+                font-size: 1em;
+            }
+            child-2 {
+                font-size: 1rem;
+            }
+EX:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Units</title>
+    <style>
+        .container{
+            font-size: 40px;
+            border: 1px solid red;
+            width: 500px;
+            color: blue;
+        }
+        p{
+            font-size: 0.5em;
+            color: red;
+        }
+        span{
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    general text 
+    <div class="container">
+        container text 
+        <p>paragraph text</p>
+        <span>span text </span>
+    </div>
+</body>
+</html>
+                                    CSS Attributes
+
+1. CSS Box Model Attributes
+
+a) Margins
+b) Padding
+c) Border
+d) Border Radius
+e) Width
+f) Height
+
+                                        CSS Margins
+margin            : short hand for all directions
+                     
+Syntax:
+     margin : 20px;                            all directions 20px;
+     margin : top, right, bottom, left           all directions in short hand
+   
+Ex:
+     margin: 0px, 30px, 0px, 30px;                    
+
+margin-left            : only left margin
+margin-right            : only right margin
+margin-top            : only top margin
+margin-bottom        : only bottom margin
+
+                                        CSS Padding
+- It is distance between content and border.
+
+Attributes:
+padding                    : short hand all directions
+padding-left
+padding-right
+padding-top
+padding-bottom
+
+                                        CSS Border
+Attributes:
+
+border                    : short hand for all border effects
+border-width            : sets only size
+border-style            : sets line style, solid, double, dotted, dashed, groove etc..
+border-color            : sets color
+
+Border Orientation
+
+border-left            : short hand for left border
+border-left-width
+border-left-style
+border-left-color
+
+.... similarly all directions are defined....
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .container {
+          border-left: 15px double red;
+          border-top: 8px solid red;
+          border-right: 5px solid blue;
+          border-bottom: 18px double blue;
+          padding: 10px;
+          font-size: 40px;
+          margin: 50px 50px 50px 100px;
+       }
+       p {
+        font-size: 0.5em;
+       }
+       span {
+        font-size: 1rem;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        container text
+        <p>paragraph text</p>
+        <span>span text</span>
+    </div>
+</body>
+</html>
+
+border-image            : It uses image URL to set as border
+
+Syntax:
+         {
+          border : 10px solid transparent;
+          border-image: url("path")  stretch | space  1-100;
+        }
+
+Ex:
+      {
+        border: 10px solid transparent;
+        border-image: url("../public/images/border.png")  stretch 40;
+      }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .container {
+          border:20px solid transparent;
+          border-image: url("../public/images/border.png") space 90;
+          padding: 10px;
+          font-size: 40px;
+          margin: 50px 50px 50px 100px;
+       }
+       p {
+        font-size: 0.5em;
+       }
+       span {
+        font-size: 1rem;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        container text
+        <p>paragraph text</p>
+        <span>span text</span>
+    </div>
+</body>
+</html>
+
+Border Radius
+    border-radius            : short hand for all directions
+    border-top-right-radius
+    border-top-left-radius
+    border-bottom-right-radius
+    border-bottom-left-radius
+
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .container {
+          border:10px solid yellow;
+          border-top-right-radius: 100px;
+          border-bottom-left-radius: 100px;
+          margin: 50px 50px 50px 100px;
+          height: 200px;
+          background-image: url("../public/images/amazonBannerCropped.jpg");
+          background-size: cover;
+          box-shadow: 10px 10px 2px black;
+       }
+       img {
+        border-top-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+       
+    </div>
+    <img src="../public/images/fashion1.jpg" width="300" height="300">
+</body>
+</html>

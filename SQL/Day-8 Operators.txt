@@ -1,0 +1,130 @@
+
+31-mar-23
+
+ Displaying Data :- 
+ ------------------------
+
+ => "SELECT"  command is used to display data from table.
+ => we can display all rows or specific rows.
+ => we can display all columns or specific columns.
+
+  syn :-  SELECT  COLUMNS /  *   FROM TABNAME
+
+              SQL             =    ENGLISH
+              QUERIES    =    SENTENCES
+              CLAUSES  =     WORDS
+
+   =>  display  employee names and salaries ?
+
+         SELECT    ENAME,SAL   FROM  EMP        
+
+   => display  names,salaries and hiredates ?
+ 
+       SELECT  ENAME,SAL,HIREDATE FROM EMP 
+
+   => display all the data from emp table ?
+
+       SELECT  *  FROM EMP
+
+          *    =>  all columns 
+
+  Operators in sql server :- 
+  ---------------------------------
+
+1  Arithmetic Operators  =>  +   -    *     /      %
+
+  10+5  =>   15
+  10-5   =>   5
+  10*5   =>   50
+  10/5  =>   2
+  10%5 =>   0
+
+2  Relational Operators   =>     >     >=    <     <=    =     <>  or  !=
+
+    10>5      =>   TRUE 
+    10<5      =>   FALSE
+    10=5      =>   FALSE
+    10<>5    =>   TRUE
+
+ 3 Logical Operators  =>    AND     OR     NOT   
+
+ 4 Special Operators  =>   BETWEEN
+                                         IN
+                                         LIKE
+                                         IS
+                                         ANY
+                                         ALL
+                                         EXISTS
+                                         PIVOT
+
+ 5  Set Operators       =>    UNION
+                                         UNION ALL
+                                         INTERSECT
+                                         EXCEPT
+
+WHERE clause :- 
+------------------------
+
+ => used to fetch specific row/rows from table based on a condition.
+
+        SELECT COLUMNS
+        FROM TABNAME
+        WHERE  CONDITION 
+
+ CONDITION :- 
+ ------------------
+
+   => condition is a  relational expression
+
+           COLNAME   OP    VALUE
+
+   => OP must be any relational  operator like  >   >=   <    <=   =    <> 
+  => if  cond = true  row is selected.
+  => if cond = false row is not selected
+
+  Examples :- 
+  ----------------
+
+  => display  employee details whose id = 103 ? 
+
+       SELECT  *  FROM  EMP  WHERE  EMPID = 103 
+
+   => display employee details whose name = SATISH ?
+
+       SELECT * FROM EMP  WHERE ENAME='SATISH' 
+
+  => display employees earning more than 5000 ?
+
+       SELECT * FROM EMP WHERE SAL>5000
+
+   => display  employees joined after 2020 ?
+
+      SELECT * FROM EMP WHERE HIREDATE > 2020 => ERROR
+
+      SELECT * FROM EMP WHERE HIREDATE > '2020-12-31'
+
+  => display employees joined before 2020 ?
+
+      SELECT * FROM EMP WHERE  HIREDATE <  '2020-01-01' 
+
+ => employees not working for dept 20 ?
+ 
+     SELECT *  FROM  EMP  WHERE  DNO  <> 20 
+
+ compound condition :- 
+ -----------------------------
+
+ => multiple conditions combined with  AND / OR  operators is called
+      compound condition.
+
+     WHERE    COND1    AND    COND2            RESULT
+                        T		 T		T
+	        T                       F                             F
+                        F                       T                             F
+                        F                       F                             F
+
+     WHERE    COND1   OR     COND2             RESULT
+	        T                       T                         T
+                        T                       F                         T
+                        F                       T                         T
+                        F                       F                         F

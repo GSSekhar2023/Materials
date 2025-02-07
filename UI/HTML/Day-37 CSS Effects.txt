@@ -1,0 +1,364 @@
+CSS Text Styles
+
+Font Attributes:
+
+font-family            : It defines font name. [Arial, Jokerman, Sans Serif]
+font-variant            : It changes capitalization.
+font-size                : It changes text size
+font-weight            : It sets bold
+font-style                : It sets italic
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            font-family: Arial;
+            font-size: 40px;
+            font-weight: bold;
+            font-style: italic;
+            font-variant: small-caps;
+        }
+    </style>
+</head>
+<body>
+    <p>welcome to css</p>
+</body>
+</html>
+
+Text Attributes:
+
+text-align                    : It aligns left, center, right and justify
+text-indent                : It sets firstline indent
+text-transform            : It changes the capitalization
+text-decoration            : It sets text effects like underline, linethrough, overline.
+text-decoration-line        : underline, overline, linethrough
+text-decoration-style    : double, dotted, wavy ...
+text-decoration-color    : sets color
+text-decoration-thickness: size
+text-shadow                : It sets shadow for text.
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            font-family: Arial;
+            font-size: 40px;
+            font-weight: bold;
+            font-style: italic;
+            text-align: center;
+            text-transform: capitalize;
+            text-decoration-line: underline;
+            text-decoration-style: dashed;
+            text-decoration-color: red;
+            text-decoration-thickness: 12px;
+            text-shadow: 2px 2px 3px yellow;
+        }
+    </style>
+</head>
+<body>
+    <p>welcome to css</p>
+</body>
+</html>
+
+Word & Char Attributes:
+
+letter-spacing        : space between letters
+word-spacing            : space between words
+line-height            : space between lines
+text-overflow            : It defines how to display the overflowing content.
+word-break            : It breaks the words at right margin to reduce raggedness.
+white-space            : It controls the wrapping of text in a container.
+                          [nowrap, wrap]
+
+Syntax:
+    p {
+        border:1px solid black;
+        width: 400px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+Note: You can display screen tips for any content in page by using "title" attribute.
+
+
+EX:
+        <p> Site is hosted on <span title="Server resembles both hardware and software that satisfies the client request..">Server* </span></p>
+
+
+
+
+
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            word-break: break-all;
+            letter-spacing: 5px;
+            word-spacing: 10px;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+   <p>We understand that you may have questions about the Microsoft Services Agreement. We have an FAQ page (https://www.microsoft.com/en-us/servicesagreement/upcoming-faq.aspx) that provides more information, including what Microsoft products and services it covers. Whenever we make changes, we provide a summary of the most notable changes to the current Microsoft Services Agreement. We will also continue to provide a summary of the changes to the previous version, and a link to the previous version, of the Microsoft Services Agreement on the Summary of Changes (https://www.microsoft.com/en-us/servicesagreement/upcoming-updates.aspx) page.</p>
+</body>
+</html>
+
+
+
+
+EX:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+           width: 412px;
+           border:1px solid black;
+           white-space: nowrap;
+           overflow: hidden;
+           text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+   <p title="We understand that you may have questions about the Microsoft Services Agreement. We have an FAQ page (https://www.microsoft.com/en-us/servicesagreement/upcoming-faq.aspx) that provides more information, including what Microsoft products and services it covers. Whenever we make changes, we provide a summary of the most notable changes to the current Microsoft Services Agreement. We will also continue to provide a summary of the changes to the previous version, and a link to the previous version, of the Microsoft Services Agreement on the Summary of Changes (https://www.microsoft.com/en-us/servicesagreement/upcoming-updates.aspx) page.">We understand that you may have questions about the Microsoft Services Agreement. We have an FAQ page (https://www.microsoft.com/en-us/servicesagreement/upcoming-faq.aspx) that provides more information, including what Microsoft products and services it covers. Whenever we make changes, we provide a summary of the most notable changes to the current Microsoft Services Agreement. We will also continue to provide a summary of the changes to the previous version, and a link to the previous version, of the Microsoft Services Agreement on the Summary of Changes (https://www.microsoft.com/en-us/servicesagreement/upcoming-updates.aspx) page.</p>
+</body>
+</html>
+
+
+Note: Images in latest browsers require "title" attribute for screen tip instead of "alt".
+
+        <img  title="something about image" src="pic.jpg">
+
+FAQ: What are web safe fonts?
+Ans:  sans serif, serif, monospace.
+
+FAQ: How to remove underline for Hyperlink?
+Ans: Set "text-decoration:none".
+
+FAQ: What is difference between font-variant and text-transform?
+Ans:   variant is only for upper and lowercase.
+        transform is for various text styles like upper, lower, sentence, title etc..
+
+FAQ:  What is difference between text-overflow and overflow?
+Ans:    text-overflow is to define the appearence style for overflowing text. [ellipsis]
+        overflow is to control overflowing of content. [hidden, scroll, auto].
+
+FAQ: How to set size for text in child elements?
+Ans:  Text Size in child elements is defined by using "em". [relative unit]
+
+
+                                    CSS Float
+- It controls the floating of elements with regard to adjacent element.
+- It provides only 2 options : left, right
+- If float is continued to next element then you have to apply "clear".
+
+Attributes:
+    float : left | right;
+    clear: left | right | both;
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .card-1 img {
+            float: left;
+        }
+       .card-1 h1 {
+            float: right;
+            width: 390px;
+            text-align: center;
+        }
+        .card-1 {
+            width: 600px;
+            font-family: Arial;
+        }
+     
+    </style>
+</head>
+<body>
+    <div class="card-1">
+        <h1>Juicer Mixer Grinders Up to 70% Off</h1>
+        <img src="../public/images/mixer.jpg">
+    </div>
+
+</body>
+</html>
+
+Note: The float defined for current element will control the float of adjacent, which you can clear by using "clear" attribute.
+
+        {
+         clear: left | right | both;
+        }
+
+                                       
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       h1 {
+        float: left;
+       }
+       img {
+        float: right;
+       }
+       p {
+        clear: both;
+       }
+    </style>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <img src="../public/images/a1.jpg" width="150" height="150">
+    <p>Cleaning Accessories</p>
+</body>
+</html>
+
+                                      CSS List Styles
+
+- List styles are used to control <ol> and <ul>
+
+Attributes:
+list-style-image            : It sets image for list item.
+list-style-type                : disc, circle, square, upper-alpha, lower-alpha, upper-roman..
+list-style-position            : It can keep content inside or outside border.
+
+
+Note: @media query have width defined using
+            a) min-width        :  from specified units to the end.
+            b) max-width        :  from zero to specified units.
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       @media screen and (max-width:500px) {
+          ol {
+            list-style-type: upper-alpha;
+            list-style-position: inside;
+          }
+       }
+       li {
+         border:1px solid black;
+       }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ol>
+</body>
+</html>
+
+                                     CSS 2D Transforms
+- Transform is to change the position, size and orientation of element in page.
+- 2D refers to transform in 2 dimensions. [X and Y]
+- "transform" is attributes with various methods
+
+    translate()
+    scale()
+    skew()
+    rotate()
+    matrix()
+
+Syntax:
+     {
+      transform : translate() | scale() | skew() ..
+    }
+
+                                            translate()
+- It can change the position of element along X and Y axis.
+        translate()
+        translateX()
+        translateY()
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blocks {
+            width: 500px;
+            height: 30px;
+            display: flex;
+        }
+        .white-block {
+            background-color: white;
+            border:1px solid black;
+            width: 20px;
+        }
+        .black-block {
+            background-color: black;
+            color:white;
+            width: 20px;
+            transform: translateY(0px);
+            transition: 1s;
+        }
+        .black-block:hover {
+            transform: translateY(10px);
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+   <div class="blocks">
+        <div class="white-block"></div>
+        <div class="black-block"></div>
+        <div class="white-block"></div>
+        <div class="black-block"></div>
+        <div class="white-block"></div>
+        <div class="black-block"></div>
+        <div class="white-block"></div>
+        <div class="black-block"></div>
+        <div class="white-block"></div>
+        <div class="black-block"></div>
+        <div class="white-block"></div>
+   </div>
+</body>
+</html>

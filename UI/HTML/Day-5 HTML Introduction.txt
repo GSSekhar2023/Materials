@@ -1,0 +1,94 @@
+Setup Environment for Web Application
+- node js
+- vs code
+- extentions
+- create project
+- package.json
+- public
+- src
+To Start Project
+- Click "Go Live" button in status bar
+- Open any browser : chrome, edge, safari...
+
+        http://127.0.0.1:5500
+                (or)
+        http://localhost:5500
+
+                                        Web Page
+- It is a hyper text document that provides an UI from where user can interact with the resources in website.
+
+- The term "Hyper" means beyond.
+
+- A hyper text document contains information and takes user beyond what they see.
+
+- Hyper text documents that provide UI for website are known as "Web Pages".
+
+- Web Pages are classified into 2 types
+   
+        1. Static Pages
+        2. Dynamic Pages
+
+- Static Page have same information to display for every request. They have extention
+        .html, .htm
+
+- Dynamic page can handle the request from client and creates a customized response for every request.
+        .aspx, asp, jsp, php etc..
+
+- HTML is a language used to design both static and dynamic pages.
+
+- Every website starts with a static page called "index.html".
+
+Ex:
+1. Select your project root folder "flipkart"
+
+2. Add a new file
+            "index.html"
+      Welcome to HTML
+
+3. Go Live
+
+
+                                         HTML
+- Hyper Text Markup Language
+- Hyper means "beyond".
+- Hyper Text is the text that take the user beyond what they see on screen.
+- Markup Language is a language used for presentation.
+- Marking up is the process of preparing our content for presentation.
+- HTML is use to present on browser.
+
+Evolution of HTML
+- CERN Labs [Council for European Research  and Nuclier] developer a language called "GML" Generic Markup Language in early 1967.
+- GML was extended with more features and changed to SGML [Standard GML]
+- In early 1990's "Tim Berner Lee" introduced HTML.
+- HTML is superset to GML and SGML.
+- A group called IETF [Internet Engineering Task Force] developed HTML for several years upto version 3.1.
+- In early 2004  WHATWG [Web Hyper Text Application Technology Work Group] took responsibility of HTML and started evolving and maintaining HTML from version 4.0 to till date.
+- The latest version of HTML is 5.  [HTML 5]
+        https://whatwg.org/
+
+
+                                 Browser Architecture
+
+1. UI                        : It refers to browser interface that contains:
+                            title bar, buttons, addressbar, workspace, plugins etc..
+
+2. Browser Engine        : It is responsible for translating HTML, CSS, JavaScript...
+                              V8, Chakra, Gecko, Spider Monkey, Chromium etc..
+
+3. Rendering Engine    : It is responsible for rendering output into browser.
+
+4. Networking            : It is responsible to monitoring the page which is loaded into
+                              browser.
+
+5. JavaScript Interpreter: It is JavaScript line by line translator.
+
+6. UI backend            : It refers to extentions and plugins that work for browser
+                              in backend.
+
+7. Data Persistance        : It data storage for browser
+                                    Local Storage
+                                    Cookies
+                                    Session
+                                    Application
+
+HTML Translation in Browser

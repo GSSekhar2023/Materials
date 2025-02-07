@@ -1,0 +1,24 @@
+count owals:HELLO
+
+E=1;O=2;
+
+
+public static void Main()
+{
+ string str="HELLO";
+ int i;
+ string[] vow=new string[a,e,i,o,u];
+ 
+ char[] ch=str.ToCharArray();
+ for(int i=0;i<str.Length-1;i++)
+ {
+  
+ }
+
+}
+
+
+=================================================================
+with E
+SELECT ID,ROW_NUMBER(Patition By(SELECT Name from Student) ) as RowNumber
+Delete from  E where RowNumber>1

@@ -1,0 +1,35 @@
+how to return multiple values from a function in sql
+
+Table value functions
+
+primary key and unique key
+union and union all
+filters what type of filters are available
+SOLID Principles
+Is decimal value is identity column
+Singleton
+scoped
+stored procedures and functions
+Startup class
+StoredProcedure Debugging
+Routing
+
+
+
+using System;
+    class Program
+    {
+        int a;
+        static int b;
+        public static void Main()
+        {
+                a = 10;
+                b = 20;
+                Console.Write(a);
+                Console.Write(b);
+                
+        }
+    }
+
+
+O/P:

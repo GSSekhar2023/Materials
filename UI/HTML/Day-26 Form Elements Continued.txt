@@ -1,0 +1,384 @@
+Form Elements
+- Number
+- Range
+- Color
+- Date
+- Email
+- Tel
+- File
+- Radio
+
+                                     CheckBox
+- It allows the user to check and  uncheck any option.
+- User can choose one or multiple from a group of choices.
+
+Syntax:
+        <input type="checkbox"  checked   value=""> <label> Title </label>
+
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+          <legend>Select Courses</legend>
+          <ul>
+            <li> <input type="checkbox" name="course" value="UI"> <label>UI</label> </li>
+            <li> <input type="checkbox" name="course" value="Java" checked> <label>Java</label> </li>
+            <li> <input type="checkbox" name="course" value=".NET"> <label>.NET</label> </li>
+            <li> <input type="checkbox" name="course" value="PHP"> <label>PHP</label> </li>
+          </ul>
+          <button>Submit</button>
+        </fieldset>
+    </form>
+</body>
+</html>
+
+FAQ: How to design a checkbox list?
+Ans:  By using style attribute "overflow" with "height" and "width".
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      ul {
+         list-style: none;
+         border:1px solid gray;
+         width: 100px;
+         height: 50px;
+         overflow: auto;
+         padding-left: -30px;
+      }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+          <legend>Select Courses</legend>
+          <ul>
+            <li> <input type="checkbox" name="course" value="UI"> <label>UI</label> </li>
+            <li> <input type="checkbox" name="course" value="Java" checked> <label>Java</label> </li>
+            <li> <input type="checkbox" name="course" value=".NET"> <label>.NET</label> </li>
+            <li> <input type="checkbox" name="course" value="PHP"> <label>PHP</label> </li>
+          </ul>
+          <button>Submit</button>
+        </fieldset>
+    </form>
+</body>
+</html>
+
+                                    Dropdown List
+
+- It can configure a list of items, from where user can select any one item from list.
+- It is easy to add or remove items dynamically with script.
+- Dropdown List is created by using
+        <select>
+- Items in list are created by using
+        <option>
+- Items can be grouped by using
+        <optgroup>
+
+Syntax:
+        <select>
+            <optgroup label="Title">
+               <option> Item-1 </option>
+               <option> Item-2 </option>
+            </optgroup>
+        </select>
+
+- <select> element can have attributes:   id, name, class
+- <option> element can have attributes
+   
+        selected            It keeps the item selected automatically.
+        disabled            It will not allow to select item
+        value                It defines the value to submit.
+
+Syntax:
+        <option  selected>
+        <option  disabled>
+        <option  value="">
+
+Note: <select> and <option> are RC data type. They will not allow any icon or format
+           for element.
+
+Ex:
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+           <legend>Select a Product</legend>
+           <select name="Product">
+              <option>Choose One</option>
+              <optgroup label="Electronics">
+                <option value="ELETV001">Televisions</option>
+                <option value="ELEMOB01" selected>Mobiles</option>
+              </optgroup>
+              <optgroup label="Footwear">
+                <option disabled value="Nike Casuals 2023">Casuals</option>
+                <option>Boots</option>
+              </optgroup>
+           </select>
+           <button>Submit</button>
+        </fieldset>
+    </form>
+</body>
+</html>
+
+                                     ListBox
+- It is same like dropdown list, but allows to select multiple.
+- All elements are same as dropdown.
+- Dropdown will transform into listbox by using 2 attributes
+        a) size
+        b) multiple
+
+Syntax:
+            <select size="3"  multiple>
+               <optgroup label="Title">
+                <option value="" selected  disabled> </option>
+               </optgroup>
+            </select>
+
+                                          Textarea
+
+- It is used for multiline text.
+- Attributes
+        a) rows
+        b) cols
+        c) readonly
+        d) disabled
+
+Syntax:
+        <textarea rows="4" cols="40"></textarea>
+
+- Text area element is also RC data type.
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Your Comments</legend>
+            <dl>
+              <dt>Email</dt>
+              <dd><input type="email" size="40"></dd>
+              <dt>Your Message</dt>
+              <dd>
+                <textarea rows="4" cols="40"></textarea>
+              </dd>
+              <dt>License Terms</dt>
+              <dd>
+                <textarea rows="4" cols="40" disabled>Terms of Service - Accepts our terms and conditions</textarea>
+              </dd>
+              <dd>
+                 <input type="checkbox"> <label>I Accept</label>
+              </dd>
+            </dl>
+            <button>Post Comment</button>
+        </fieldset>
+    </form>
+</body>
+</html>
+                                        Meter
+- It is used to display grade meter.
+- You can change dynamically by using script.
+- You set grade meter with attributes
+        a) min
+        b) max
+        c) value
+        d) low
+        e) high
+
+Syntax:
+        <meter min="" max=""  value=""  low=""  high=""> </meter>
+
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+      meter {
+        width: 200px;
+      }
+    </style>
+</head>
+<body>
+    <form>
+        <h3>Reviews and Ratings</h3>
+        <div>
+           <label>5</label>
+           <span class="bi bi-star-fill"></span>
+           <meter min="1" max="100" value="100"></meter>
+           <label>159</label>
+        </div>
+        <div>
+          <label>4</label>
+          <span class="bi bi-star-fill"></span>
+          <meter min="1" max="100" value="30"></meter>
+          <label>60</label>
+       </div>
+       <div>
+        <label>2</label>
+        <span class="bi bi-star-fill"></span>
+        <meter min="1" max="100" low="40" high="80" value="100"></meter>
+        <label>20</label>
+     </div>
+     <div>
+      <label>1</label>
+      <span class="bi bi-star-fill"></span>
+      <meter min="1" max="100" low="60" high="80" value="100"></meter>
+      <label>5</label>
+   </div>
+    </form>
+</body>
+</html>
+
+                                        Progress
+- It is used to show the status of any task performed in page.
+- Installing, copying, downloading etc..
+
+Attributes:
+        a) min
+        b) max
+        c) value
+
+Syntax:
+        <progress min="1"  max="100"  value="100"> </progress>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+      progress {
+        width: 200px;
+      }
+    </style>
+</head>
+<body>
+    <form>
+        <dl>
+          <dt>Preparing for Download</dt>
+          <dd>
+            <progress></progress>
+          </dd>
+          <dt>40% Completed</dt>
+          <dd>
+            <progress min="1" max="100" value="40"></progress>
+          </dd>
+          <dt>80% Completed</dt>
+          <dd>
+            <progress min="1" max="100" value="80"></progress>
+          </dd>
+          <dt>Download Completed</dt>
+          <dd>
+            <progress min="1" max="100" value="100"></progress>
+          </dd>
+        </dl>
+    </form>
+</body>
+</html>
+
+                                        Buttons
+- Buttons are used for confirming user actions.
+- It includes various actions
+
+        Navigation            : previous, next, first, last, goto
+        Record                : New, Register, submit, reset, insert, update, delete
+        Miscelaneous        : print, save, open, close, minimize etc..
+
+- HTML provides 2 types of buttons
+        a) Generic
+        b) Non-Generic
+
+- Generic buttons have pre-defined functionality
+        a) submit            : it can submit form data
+        b) reset            : it can reset form data
+
+    HTML 4 Buttons                    : RC data type
+        <input type="submit">
+        <input type="reset">
+
+    HTML 5 Buttons
+         <button type="submit"> text | images | icon  </button>
+         <button type="reset"> text | image | icons </button>
+
+- Non-Generic button is ordinary button without functionality.
+
+    HTML 4
+        <input type="button" value="">
+
+    HTML 5
+        <button type="button"> </button>
+
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+      progress {
+        width: 200px;
+      }
+    </style>
+</head>
+<body>
+    <form>
+          User name :
+          <input type="text" name="UserName">
+          <input type="submit">
+          <input type="reset">
+          <button type="submit"> <span class="bi bi-person"></span> HTML 5 Submit</button>
+          <button type="reset">HTML 5 Reset</button>
+          <button type="button">Register</button>
+    </form>
+</body>
+</html>

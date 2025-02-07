@@ -1,0 +1,8 @@
+how to enable session in .net core
+diff b/w asp.net and asp.net core
+Routing
+In-Line query
+ORM
+most questions from API
+how to convert values from object to object
+what are the steps to create API

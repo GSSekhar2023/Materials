@@ -1,0 +1,374 @@
+Spinners
+- Used for showing status of task
+
+Classes
+.spinner-border
+.spinner-border-sm
+.spinner-grow
+.spinner-grow-sm
+
+Syntax:
+    <div class="spinner-border"> </div>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+   
+    </style>
+</head>
+<body class="container-fluid">
+    <button class="btn btn-primary mt-3">
+        <span class="spinner-border text-warning spinner-border-sm"></span> Loading
+    </button>
+    <button class="btn btn-primary mt-3">
+        <span class="spinner-grow spinner-grow-sm"></span> Loading
+    </button>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
+
+                                    Progress
+Classes:
+.progress
+.progress-bar
+.progress-bar-striped
+.progress-bar-animated
+
+Syntax:
+    <div class="progress">
+        <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width:40%">
+
+                40% completed
+
+        </div>
+    </div>            
+
+                                        Navbar
+- A dynamic navigation bar, with responsive design.
+
+Classes:
+.navbar
+.navbar-expand-lg | sm | xl
+.navbar-nav
+.navbar-toggler
+.navbar-toggler-icon
+.navbar-brand
+.navbar-collapse
+.nav
+.nav-item
+.nav-text
+.nav-link
+.navbar-dark
+.navbar-light
+
+Syntax:
+  <div class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <h2 class="navbar-brand"> Title </h2>
+          <button class="navbar-toggler">
+           <span class="navbar-toggler-icon"> </span>
+          </button>
+         <div class="navbar-collapse collapse" id="menu">
+             <ul class="navbar-nav">
+               <li class="nav-item"> <a class="nav-link"> <span> Home </span></a></li>
+            </ul>
+        </div>
+    </div>
+ </div>
+
+Note: Bootstrap 5.3 introduced new themes for navbar "data-bs-theme=dark|light"
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+   
+    </style>
+</head>
+<body class="container-fluid">
+    <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" data-bs-target="#menu" data-bs-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <h2 class="navbar-brand">Shopper.</h2>
+            <div class="navbar-collapse collapse" id="menu">
+               <ul class="navbar-nav">
+                <li class="nav-item"><a  class="nav-link"><span class="nav-text">Home</span></a></li>
+                <li class="nav-item"><a  class="nav-link"><span class="nav-text">Blog</span></a></li>
+                <li class="nav-item"><a  class="nav-link"><span class="nav-text">Pages</span></a></li>
+                <li class="nav-item"><a  class="nav-link"><span class="nav-text">Login</span></a></li>
+                <li class="nav-item input-group">
+                    <input type="text" placeholder="Search" class="form-control"> <button class="btn btn-warning"><span class="bi bi-search"></span></button>
+                </li>
+               </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
+
+                                        Tables
+.table
+.table-hover
+.table-{contextual}
+.table-bordered
+.table-borderless
+.table-stripped
+.table-responsive
+
+Syntax:
+    <div class="table-responsive">
+       <table class="table table-hover table-primary">
+
+       </table>
+    </div>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+   
+    </style>
+</head>
+<body class="container-fluid">
+    <h2>Products Table</h2>
+    <div class="table-responsive">
+        <table class="table table-primary table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mobile</td>
+                    <td>45000</td>
+                    <td>Available</td>
+                    <td>Mobile</td>
+                    <td>45000</td>
+                    <td>Available</td>
+                    <td>Mobile</td>
+                    <td>45000</td>
+                    <td>Available</td>
+                    <td>Mobile</td>
+                    <td>45000</td>
+                    <td>Available</td>
+                    <td>Mobile</td>
+                    <td>45000</td>
+                    <td>Available</td>
+                    <td>Mobile</td>
+                    <td>45000</td>
+                    <td>Available</td>
+                    <td>Mobile</td>
+                    <td>45000</td>
+                    <td>Available</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
+
+                                        Forms
+Classes
+.form-label
+.form-control
+.form-select
+.form-range
+.form-color
+.form-check-label
+.form-check-input
+.form-switch
+.form-file
+
+                                        Input Group
+.input-group
+.input-group-lg | sm
+.input-group-text
+
+                                        Text Classes
+.text-{contextual}
+.text-center | start | end | justify
+.fw-bold
+.fst-italic
+.h1, h2...
+.blockquote
+
+Syntax:
+        <p  class="text-primary  fw-bold  fst-italic"> Text </p>
+        <p  class="h2"> Text </p>
+
+                                           List Classes
+.list-unstyled
+.list-inline
+.lins-inline-block
+
+
+FAQ: What are the issues that you face with CSS as developer?
+Ans:
+- Code Resuability is not good in CSS
+- Code Extensibility is not easy
+- Accessibility of elements with selectors is not enough at high level.
+
+
+                            CSS Pre-Processors [Compilers]
+
+- Pre processors provide lot of programming features to developer for writing CSS.
+- It is a different language which is not understandable to browser.
+- It is transcompiled into CSS.
+- The pre-processors are
+            a) Sass
+            b) Less
+
+                                        Sass
+                        [Syntactically Awesome Style Sheet]
+- It is a css pre-processor.
+- It provides programming features to make css simplified.
+- It enables reusability and easy extensibility.
+- It is trans-compiled into CSS.
+
+Install Sass on your PC:
+
+    C:\> npm install -g  sass
+
+- Create a new folder in your project by name "scss"
+- Add a new file with extention ".scss"
+
+                effects.scss
+.container {
+  border:2px solid red;
+  padding: 20px;
+  background-color: yellow;
+  h2 {
+    color:red;
+  }
+  p {
+    color:gray;
+    font-style: italic;
+  }
+}
+
+- Open the sass file location in Terminal
+
+        D:\flipkart\scss> sass  effects.scss   effects.css
+
+
+- Link CSS file to webpage
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../scss/effects.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Sass</h2>
+        <p>Syntactically Awesome Stylesheet</p>
+    </div>
+</body>
+</html>

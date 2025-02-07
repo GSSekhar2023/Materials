@@ -1,0 +1,133 @@
+Form Element
+Form Attributes
+1. Id
+2. Name
+3. Class
+4. Method
+5. Action
+6. NoValidate
+
+- What are the form methods?
+- What is difference between GET and POST?
+- QueryString
+- Form Body
+- You can cache data on GET
+- What is the use of caching?  Saves round trips.
+- What is the limit of QueryString? 2048
+                                    Form Elements
+1. TextBox
+ - It is used to handle "string" type input.
+ - string is a group chars , alpha numeric with special chars.
+ - <input> is an element that presents text box.
+ - <input> allows any type of data.
+ - If you want to restrict only string type then you have to defined "type=text"
+
+Syntax:
+        <input type="text">
+
+Attributes:
+
+1. id                : It defines unique reference name.
+2. name            : It is used for a common reference.
+3. class            : It is used to defined multiple classes for CSS.
+
+Note: Every form element must have "name". If name attribute is not defined, then form can't submit its value.
+
+4. value            : It defines the default value to display.
+
+<input type="text"  name="UserName"   value="John">
+
+5. placeholder    : It defines the watermark text to display in textbox if value is not
+                      defined.
+
+<input type="text"  name="UserName"  value="John" placeholder="Name Required">
+
+6. readonly        : It will not allow to edit value. You can only view. It can submit value.
+
+7. disabled        : It will not allow to edit or submit.
+
+<input type="text"  name="UserName"  value="John"   readonly>
+<input type="text"  name="UserName"  value="John"   disabled>
+<input disabled type="text" name="UserName">
+
+8. size                : It sets width for textbox. Default width is 20.
+                      It is not limit for textbox, it is just width.
+
+Syntax:
+    <input type="text" name="OTP"  size="4">
+
+9. minlength        : It is validation for the lowerbound value in textbox. [min]
+
+10. maxlength    : It is restriction for upperbound value in textbox. [max]
+
+Syntax:
+<input type="text" name="OTP"  minlength="6" maxlength="6">
+
+11. required        : It will not allow to submit empty. It defines that value is mandatory.
+
+Syntax:
+ <input type="text" name="OTP"  required>
+
+12. autofocus    : It sets focus to element authomatically on page load.
+
+Syntax:
+  <input type="text" name="OTP" autofocus>
+
+13. list                : It defines the data list, which is displayed as auto complete text
+                      for textbox.
+                      Data list is designed by using "<datalist>".
+                      Every data list contains "<option>" elements.
+
+Syntax:
+    <input type="text" name="searchString"  list="terms">
+    <datalist id="terms">
+      <option> Item-1 </option>
+      <option> Item-2 </option>
+    </datalist>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form>
+       <div align="center">
+            <h1>Google</h1>
+            <input type="text" name="searchString" size="40" list="terms">
+            <datalist id="terms">
+                <option>JavaScript Examples</option>
+                <option>CSS Tutorial</option>
+                <option>JavaScript Projects</option>
+                <option>CSS Projects</option>
+                <option>CSS Examples</option>
+                <option>HTML Samples</option>
+                <option>HTML Templates</option>
+            </datalist>
+            <p>
+                <button>Search</button>
+            </p>
+       </div>
+   </form>
+</body>
+</html>
+
+14. pattern            : It is used to verify the format of input value by using a regular
+                          expression.
+
+- Regular Expression is used to validate the input value by verifying with a pattern.
+- Regular Expression is built by using
+        a) Meta Characters
+        b) Quantifiers
+
+Meta Character                    Description
+------------------------------------------------------------------------------------------------
+    ?                    It defines zero or one occurance of a character.
+
+      +                    It defines one or more occurances of a character.
+
+     *                    It defines zero or more occurance.

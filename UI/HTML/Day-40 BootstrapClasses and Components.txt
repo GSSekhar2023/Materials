@@ -1,0 +1,339 @@
+
+
+Bootstrap Classes and Attributes
+
+- Bootstrap provides type selectors, which apply styles for elements automatically when linked to HTML page.
+- Bootstrap provides pre-defined classes and attributes to control elements.
+   
+        classes            : comprises of styles
+        attributes            : comprises of logic
+
+Bootstrap Container classes:
+- container is used to keep content with margin and padding.
+- bootstrap have default containers for various devices
+
+        .container                mobile devices
+        .container-sm        tablet [tabs]
+        .container-lg            desktop
+        .container-xl            laptop upto 1200px
+        .container-xxl            laptop upto 1600px
+        .container-fluid        responsive
+
+Bootstrap Box Model Classes:
+
+Margins:
+    .m            all directions
+    .ms        left [start]
+    .me        right [end]
+    .mt            top
+    .mb        bottom
+
+    break-point
+    .m-{ }        => It is size for margin which can be 1 to 4
+    .m-4        
+    .mt-4
+    .ms-3
+
+Syntax:
+        <div class="mt-3 mb-3 ms-2 me-2"> Text </div>
+        <div class="m-4"> Text </div>
+
+Padding:
+    .p            all directions
+    .ps
+    .pe
+    .pt
+    .pb
+
+    break-point
+    .p-{size}        from 1 to 4
+
+Border:
+    .border
+    .border-{size}                    from 1 to 3
+    .border-{contextual}            primary, danger, warning, info, success, dark, light ..
+
+Border Radius:
+    .rounded
+    .rounded-{size}                from 1 to 3
+    .rounded-circle
+    .rounded-pill
+
+Width and Height:
+    .w
+    .w-{}                            from 25, 50,75, 100
+    .h
+    .h-{}                            from 0, 25, 50,100
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+    </style>
+</head>
+<body class="container-fluid">
+    <p class="border w-100 border-3 border-danger mt-2 ps-3 pt-2 pb-2">
+        We understand that you may have questions about the Microsoft Services Agreement. We have an FAQ page (https://www.microsoft.com/en-us/servicesagreement/upcoming-faq.aspx) that provides more information, including what Microsoft products and services it covers. Whenever we make changes, we provide a summary of the most notable changes to the current Microsoft Services Agreement. We will also continue to provide a summary of the changes to the previous version, and a link to the previous version, of the Microsoft Services Agreement on the Summary of Changes (https://www.microsoft.com/en-us/servicesagreement/upcoming-updates.aspx) page.
+    </p>
+    <img class="rounded rounded-circle border border-2 border-dark p-1" src="../public/images/asp.jpg" width="200" height="200">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
+
+Bootstrap Position Classes:
+
+.position-static
+.position-absolute
+.position-relative
+.position-fixed
+.position-sticky
+
+.start-{}        0, 50, 100
+.end            0, 50, 100
+.top            0, 50, 100
+.bottom        0, 50, 100
+
+Syntax:
+    <div class="position-fixed  top-0 end-0"> Text </div>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+    </style>
+</head>
+<body class="container-fluid">
+    <h2>Position</h2>
+    <button class="btn w-25 btn-primary position-relative">
+        Your Cart Items <span class="bi bi-cart4"></span>
+        <span class="badge bg-danger rounded-circle position-absolute end-0 top-0">3</span>
+    </button>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
+
+Bootstrap Display Classes:
+
+.d-flex
+.d-inline
+.d-block
+.d-none
+
+.flex-wrap
+.flex-nowrap
+.flex-row
+.flex-row-reverse
+.flex-column
+.flex-column-reverse
+
+.justify-content-between
+.justify-content-evenly
+.justify-content-center
+
+.align-items-baseline
+.align-items-center
+.align-items-top
+
+
+Ex:
+<div class="d-flex justify-content-center align-items-center" style="height:500px">
+        <button class="btn w-25 btn-primary position-relative">
+            Your Cart Items <span class="bi bi-cart4"></span>
+            <span class="badge bg-danger rounded-circle position-absolute end-0 top-0">3</span>
+        </button>
+ </div>
+
+Ex:
+ <nav class="d-flex justify-content-between">
+        <div class="border border-2 m-2 border-primary p-2 w-25">Home</div>
+        <div class="border border-2 m-2 border-primary p-2 w-25">About</div>
+        <div class="border border-2 m-2 border-primary p-2 w-25">Contact</div>
+    </nav>
+
+Bootstrap Grid with Row and Columns:
+.row
+.col                : responsive
+.col-{1 to 12}
+
+Ex:
+ <h2>Course Details</h2>
+    <dl class="row">
+        <dt class="col-3">Title</dt>
+        <dd class="col-9">ASP.NET</dd>
+        <dt class="col-3">Fee</dt>
+        <dd class="col-9">&#8377; 3,500.00</dd>
+        <dt class="col-3">Topics</dt>
+        <dd class="col-9">
+            <ul>
+                <li>Server Controls</li>
+                <li>Web API</li>
+                <li>MVC</li>
+            </ul>
+        </dd>
+    </dl>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+    </style>
+</head>
+<body class="container-fluid bg-dark">
+    <div class="m-4 p-4 bg-white rounded-1">
+        <h1 class="text-center mb-4">EMI Calculator</h1>
+        <div class="row mt-3 mb-4">
+            <div class="col">
+                 Amount you need <input type="text" size="20">
+            </div>
+            <div class="col">
+                for <input type="text" size="2"> years
+            </div>
+            <div class="col">
+                Interest rate <input type="text" size="2"> %
+            </div>
+        </div>
+        <div class="row mt-4 mb-3">
+            <div class="col">
+                &#8377; 50,000 <input style="width:150px" min="50000" max="1000000" value="50000" type="range" class="ms-2 me-2 form-range">  &#8377; 10,50,000
+            </div>
+            <div class="col">
+                1 <input style="width:150px" min="1" max="5" value="1" type="range" class="ms-2 me-2 form-range"> 5
+            </div>
+            <div class="col">
+                10.33% <input style="width:150px" min="10.33" max="18.44" value="10.33" type="range" class="ms-2 me-2 form-range"> 18.44%
+            </div>
+        </div>
+        <div class="row mt-4 mb-4">
+            <div class="col text-center mt-3">
+                <button class="btn btn-primary">Calculate</button>
+            </div>
+        </div>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
+
+                                    Alert Component
+.alert
+.alert-{contextual}  success, primary, danger, warning, info...
+.alert-dismissible
+.alert-title
+.alert-link
+.alert-text
+
+data-bs-dissmiss    : jQuery attribute for button to close component.
+
+Syntax:
+<div class="alert alert-dismissible alert-danger">
+  <button class="btn-close" data-bs-dismiss="alert"> </button>
+   ...........
+   ...........
+</div>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+    </style>
+</head>
+<body class="container-fluid bg-dark">
+    <div class="m-4 p-4  rounded-1 alert alert-warning alert-dismissible">
+        <button class="btn-close" data-bs-dismiss="alert"></button>
+        <h3 class="text-center mb-4">Personal Loan EMI Calculator</h3>
+        <div class="row mt-3 mb-4">
+            <div class="col">
+                 Amount you need <input type="text" size="20">
+            </div>
+            <div class="col">
+                for <input type="text" size="2"> years
+            </div>
+            <div class="col">
+                Interest rate <input type="text" size="2"> %
+            </div>
+        </div>
+        <div class="row mt-4 mb-3">
+            <div class="col">
+                &#8377; 50,000 <input style="width:150px" min="50000" max="1000000" value="50000" type="range" class="ms-2 me-2 form-range">  &#8377; 10,50,000
+            </div>
+            <div class="col">
+                1 <input style="width:150px" min="1" max="5" value="1" type="range" class="ms-2 me-2 form-range"> 5
+            </div>
+            <div class="col">
+                10.33% <input style="width:150px" min="10.33" max="18.44" value="10.33" type="range" class="ms-2 me-2 form-range"> 18.44%
+            </div>
+        </div>
+        <div class="row mt-4 mb-4">
+            <div class="col text-center mt-3">
+                <button class="btn btn-primary">Calculate</button>
+                <button data-bs-dismiss="alert" class="btn btn-danger">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="m-4 p-4  rounded-1 alert alert-danger alert-dismissible">
+        <button class="btn-close" data-bs-dismiss="alert"></button>
+        <h3 class="text-center mb-4">Two Wheeler Loan Calculator</h3>
+        <div class="row mt-3 mb-4">
+            <div class="col">
+                 Amount you need <input type="text" size="20">
+            </div>
+            <div class="col">
+                for <input type="text" size="2"> years
+            </div>
+            <div class="col">
+                Interest rate <input type="text" size="2"> %
+            </div>
+        </div>
+        <div class="row mt-4 mb-3">
+            <div class="col">
+                &#8377; 50,000 <input style="width:150px" min="50000" max="1000000" value="50000" type="range" class="ms-2 me-2 form-range">  &#8377; 10,50,000
+            </div>
+            <div class="col">
+                1 <input style="width:150px" min="1" max="5" value="1" type="range" class="ms-2 me-2 form-range"> 5
+            </div>
+            <div class="col">
+                10.33% <input style="width:150px" min="10.33" max="18.44" value="10.33" type="range" class="ms-2 me-2 form-range"> 18.44%
+            </div>
+        </div>
+        <div class="row mt-4 mb-4">
+            <div class="col text-center mt-3">
+                <button class="btn btn-primary">Calculate</button>
+            </div>
+        </div>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

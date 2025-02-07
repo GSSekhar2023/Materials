@@ -1,0 +1,185 @@
+
+10-apr-23 :- 
+---------------
+
+ LEN() :- 
+ ----------
+
+ =>  returns string length i.e. no of chars 
+
+          LEN(string) 
+
+   SELECT LEN('hello')      => 5  
+   SELECT LEN('hello welcome')   =>  13
+
+=> employees    name contains 5 chars ?
+
+     SELECT *
+     FROM EMP
+     WHERE  ENAME LIKE  '_____' 
+
+    SELECT *
+    FROM EMP
+    WHERE LEN(ENAME) = 5 
+
+ => arrange employee list len of ename wise asc order ? 
+
+     SELECT *
+     FROM EMP
+    ORDER BY LEN(ENAME) ASC 
+
+ LEFT() :- 
+ ------------
+
+ => used to extract part of the string.
+
+             LEFT(string,length)
+
+      SELECT LEFT('hello welcome',5)   =>   hello
+
+   =>employees name starts with 's' ?
+
+      SELECT * FROM EMP WHERE  ENAME LIKE 's%'
+
+      SELECT * FROM EMP WHERE LEFT(ENAME,1)='S'
+ 
+ RIGHT() :- 
+ ---------------
+
+  => returns characters starting from right side .
+
+                 RIGHT(string,len) 
+
+     SELECT RIGHT('hello welcome',4)   =>   come
+
+   => employees name ends with 's' ? 
+
+      SELECT * FROM EMP WHERE ENAME LIKE '%s' 
+
+      SELECT * FROM EMP WHERE RIGHT(ENAME,1)='s'
+  
+   => employees name starts and ends with same char ?
+
+         SELECT * FROM EMP WHERE ENAME LIKE  'a%a'
+                                                            OR
+                                                            ENAME LIKE 'b%b'
+                                                            OR
+ 
+        SELECT * FROM EMP WHERE LEFT(ENAME,1) = RIGHT(ENAME,1) 
+
+    
+  scenario :- 
+  --------------
+
+   =>  generate emailids for employees ?
+
+         empno        ename            emailid
+         7369          smith               smi736@tcs.com
+         7499          allen                all749@tcs.com
+
+        concatenation operator  =>  + 
+
+                               'a' + 'b'   =>   ab
+                             
+       SELECT empno,ename,
+                      LEFT(ename,3) +  LEFT(empno,3) + '@tcs.com'  as emailid
+       FROM emp 
+
+      => store emailids in db ?
+
+       step 1 :- add emailid column to emp table 
+
+         ALTER TABLE EMP
+                  ADD    EMAILID  VARCHAR(30) 
+
+      step 2 :-  update the column with emailids 
+
+     UPDATE EMP 
+     SET EMAILID = LEFT(ename,3) + LEFT(empno,3) + '@tcs.com'
+
+   SUBSTRING() :- 
+   ----------------------
+
+   => used to extract part of the string starting from specific position
+
+               SUBSTRING(string,start,len)
+
+ 
+     SELECT SUBSTRING('HELLO WELCOME',7,4)   =>  WELC
+
+     
+   REPLICATE() :- 
+   ----------------------
+
+   => used to repeat char for given no of times 
+
+         REPLICATE(char,len)
+
+   SELECT REPLICATE('*',10)   =>  **********
+
+   => display  ENAME    SAL    ?
+                                      
+                                     1000.00  =>   ********
+
+       SELECT ENAME,REPLICATE('*',LEN(SAL)) AS SAL FROM EMP 
+
+ 
+scenario :- 
+--------------
+
+   ACCOUNTS
+   ACCNO                      BAL
+   123456789623          10000
+
+   your a/c no  XXXX9623  debited  -------  ? 
+
+   
+ CREATE TABLE ACCOUNTS
+ (
+   ACCNO  BIGINT,
+    BAL  MONEY
+  )
+  
+  INSERT INTO ACCOUNTS VALUES(12345678963,10000)
+
+  SELECT REPLICATE('X',4)  + RIGHT(ACCNO,4) FROM ACCOUNTS 
+   
+ REPLACE() :- 
+ ------------------
+
+ => used to replace one string with another string
+
+                  REPLACE(str1,str2,str3) 
+
+      in str1,  str2 replaced with str3 
+
+  
+   SELECT REPLACE('hello','ell','abc')      =>    habco
+   
+  SELECT REPLACE('hello','l','abc')         =>    heabcabco
+
+  SELECT REPLACE('hello','elo','abc')      =>    hello
+
+  SELECT REPLACE('hello','ell','')            =>     ho
+
+=> remove   '@' from '@@he@@ll@@o@@'   ?
+
+      output :- hello
+
+    SELECT  REPLACE('@@he@@ll@@o@@','@','')    =>   hello
+
+TRANSLATE() :- 
+---------------------
+
+ => used to translate one char to another char
+
+                TRANSLATE(str1,str2,str3)
+
+    SELECT TRANSLATE('hello','elo','abc')         =>   habbc 
+
+                        e  => a
+                        l   => b
+                        o  => c 
+
+   SELECT TRANSLATE('hello','elo','')             => ERROR
+

@@ -1,0 +1,286 @@
+FAQ's
+1. How to open link target in a new tab?
+A. By using attribute
+            "target=_blank"
+
+        <a  href="page.html"  target="_blank">  
+
+2. How to open link target in a new window?
+A. By using "javascript"  window.open() method.
+
+ Syntax:
+        <a href="images/asp.jpg">                Normal
+
+        <a href="javascript:window.open('path', 'title', 'features')">
+
+Ex:
+<a href="javascript:window.open('images/asp.jpg','ASP','width=400 height=400')">ASP.NET
+</a>
+
+3. How to open linked document in same window along with other contents?
+A. By using HTML 5  <iframe>. Iframe can embed any external document into the
+    current document.
+
+
+
+        https://www.youtube.com/watch?v=Sxla2Wi54RQ
+        https://www.youtube.com/embed/Sxla2Wi54RQ
+
+        https://www.youtube.com/embed/RNkHkb1tKE8
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile</title>
+    <style>
+        section {
+            display: grid;
+            grid-template-columns: 2fr 10fr;
+        }
+        nav div {
+            border:2px solid blue;
+            margin-bottom: 20px;
+            width: 100px;
+            text-align: center;
+        }
+        iframe {
+            width: 100%;
+            height: 700px;
+            border:none;
+        }
+        .bi-youtube {
+            font-size: 50px;
+        }
+    </style>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <section>
+        <nav>
+            <div>
+                <a href="images/m1.jpg" target="previewFrame"><img src="images/m1.jpg" width="100" height="100"></a>
+            </div>
+            <div>
+                <a href="https://www.youtube.com/embed/Sxla2Wi54RQ&quot; target="previewFrame">
+                    <span class="bi bi-youtube"></span>
+                    <p>Video-1</p>
+                </a>
+            </div>
+            <div>
+                <a href="https://www.youtube.com/embed/RNkHkb1tKE8&quot; target="previewFrame">
+                    <span class="bi bi-youtube"></span>
+                    <p>Video-2</p>
+                </a>
+            </div>
+            <div>
+                <a href="images/m2.jpg" target="previewFrame"><img src="images/m2.jpg" width="100" height="100"></a>
+            </div>
+            <div>
+                <a href="images/m3.jpg" target="previewFrame"><img src="images/m3.jpg" width="100" height="100"></a>
+            </div>
+            <div>
+                <a href="images/m4.jpg" target="previewFrame"><img src="images/m4.jpg" width="100" height="100"></a>
+            </div>
+            <div>
+                <a href="images/m5.jpg" target="previewFrame"><img src="images/m5.jpg" width="100" height="100"></a>
+            </div>
+        </nav>
+        <main>
+            <iframe name="previewFrame" src="images/m1.jpg"></iframe>
+        </main>
+    </section>
+</body>
+</html>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Practice</title>
+    <style>
+        header {
+            font-size: 30px;
+            text-align: center;
+            background-color: black;
+            color:white;
+            font-weight: bold;
+            padding: 5px;
+        }
+        section {
+            display: grid;
+            grid-template-columns: 2fr 10fr;
+            margin-top: 20px;
+        }
+        ul {
+            list-style: none;
+            margin-left: -30px;
+        }
+        li {
+            font-size: 24px;
+            border:1px solid black;
+            padding: 5px;
+            margin-bottom: 20px;
+            width: 150px;
+            text-align: center;
+            background-color: black;
+            color:white;
+        }
+        a{
+            color:white;
+            text-decoration: none;
+        }
+        iframe {
+            width: 100%;
+            height: 700px;
+            border:none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+         My HTML Template Designs
+    </header>
+    <section>
+        <nav>
+          <ul>
+            <li><a href="./amazon-card.html" target="frameBody">Amazon Cards</a></li>
+            <li><a href="./cards.html" target="frameBody">Cards - Sample</a></li>
+            <li><a href="./flipkar-product.html" target="frameBody">Flipkart Product</a></li>
+            <li><a href="./mobiles.html" target="frameBody">Realme Mobile</a></li>
+            <li><a href="./shopper-template.html" target="frameBody">Shopper Template</a></li>
+          </ul>
+        </nav>
+        <main>
+            <iframe name="frameBody"></iframe>
+        </main>
+    </section>
+</body>
+</html>
+
+Ex: YouTube
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        header {
+            display: flex;
+            justify-content: space-between;
+        }
+        .bi-justify {
+            font-size: 30px;
+        }
+        .alerts span {
+            margin-right: 20px;
+            font-size: 20px;
+        }
+        .search {
+            width: 400px;
+            border:1px solid black;
+            display: flex;
+            justify-content: space-between;
+            padding: 5px;
+            border-radius: 20px;
+        }
+        section {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: 1fr 11fr;
+        }
+        nav div {
+            text-align: center;
+            margin-left: -30px;
+        }
+        .row {
+            display: flex;
+            justify-content: space-around;
+        }
+        iframe {
+            width: 220px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <span class="bi bi-justify"></span>
+            <img src="./images/youtube.jpg" width="100" align="right">
+        </div>
+        <div>
+            <div class="search"> <span>Search</span>  <span class="bi bi-search"></span></div>
+        </div>
+        <div class="alerts">
+            <span class="bi bi-camera-video"></span>
+            <span class="bi bi-person"></span>
+            <span class="bi bi-bell"></span>
+        </div>
+    </header>
+    <section>
+        <nav>
+            <div>
+                <span class="bi bi-youtube"></span>
+                <p>Videos</p>
+            </div>
+            <div>
+                <span class="bi bi-person"></span>
+                <p>Profile</p>
+            </div>
+            <div>
+                <span class="bi bi-hdd-network"></span>
+                <p>Network</p>
+            </div>
+            <div>
+                <span class="bi bi-globe"></span>
+                <p>Community</p>
+            </div>
+        </nav>
+        <main>
+            <div class="container">
+               <div class="row">
+                <div>
+                    <iframe src="https://www.youtube.com/embed/Sxla2Wi54RQ"></iframe&gt;
+                </div>
+                <div>
+                    <iframe src="https://www.youtube.com/embed/RNkHkb1tKE8"></iframe&gt;
+                </div>
+                <div>
+                    <iframe src="https://www.youtube.com/embed/Sxla2Wi54RQ"></iframe&gt;
+                </div>
+                <div>
+                    <iframe src="https://www.youtube.com/embed/RNkHkb1tKE8"></iframe&gt;
+                </div>
+               </div>
+               <div class="row">
+                <div>
+                    <iframe src="https://www.youtube.com/embed/Sxla2Wi54RQ"></iframe&gt;
+                </div>
+                <div>
+                    <iframe src="https://www.youtube.com/embed/RNkHkb1tKE8"></iframe&gt;
+                </div>
+                <div>
+                    <iframe src="https://www.youtube.com/embed/Sxla2Wi54RQ"></iframe&gt;
+                </div>
+                <div>
+                    <iframe src="https://www.youtube.com/embed/RNkHkb1tKE8"></iframe&gt;
+                </div>
+               </div>
+            </div>
+
+            </div>
+        </main>
+    </section>
+</body>
+</html>

@@ -1,0 +1,103 @@
+BaseClass classA = new ClassA();
+ 
+classA.GetDetails();
+public class BaseClass
+{
+    public void GetDetails()
+    {
+        Console.WriteLine("BaseClass GetDetails");
+    }
+}
+public class ClassA : BaseClass
+{
+ 
+ 
+    public new void GetDetails()
+    {
+        Console.WriteLine("ClassA GetDetails");
+    }
+}
+
+o/p:BaseClass GetDetails
+==============================
+class ClassA
+{
+  public string name= "Value1";
+  public ClassA()
+ { }
+}
+ 
+public class Validator {
+ 
+   public void CheckObjValue1(ClassA obj)
+ {
+       obj.name = "Value2";
+   }
+public void CheckObjValue2(ClassA obj)
+ {
+    obj= new ClassA();
+       obj.name = "Value3";
+   }
+ 
+}
+ 
+class Program
+{
+  static void Main(string[] args)
+  {
+    ClassA refA = new ClassA();
+    Console.WriteLine(refA.name);------value1
+ 
+    Validator v1 = new Validator();
+
+    v1.CheckObjValue1(refA);
+    Console.WriteLine(refA.name);-----value2
+
+    v1.CheckObjValue2(refA);
+    Console.WriteLine(refA.name);------value2
+ 
+  }
+}
+============================
+parallel programming
+generics class
+static constructor
+How to hide the method?
+IEnumberable
+============================================================================
+https://www.hackerrank.com/codepair/qluhtoczakpqkcqmcfgzweggcgqziuwg/questions/1?b=eyJpbnRlcnZpZXdfaWQiOjM5ODI2MzAsInJvbGUiOiJpbnRlcnZpZXdlciIsInNob3J0X3VybCI6Imh0dHBzOi8vaHIuZ3MvZTk3NTYwMSIsImNhbmRpZGF0ZV91cmwiOiJodHRwczovL2hyLmdzLzFlNWFjYzMifQ
+using System;
+using System.Collections.Generic;
+using System.IO;
+class Solution:AbstractClsA, IA, Ib, Ic {
+
+public Solution()
+{
+    Console.WriteLine("sekhar");
+}
+    
+    
+    public virtual int  addNumbers(int a, int b) { 
+        
+        return a+b;
+    }
+
+    static void Main(String[] args) {
+        Solution s=new Solution();
+        int val1 = Convert.ToInt32(Console.ReadLine());
+        int val2 = Convert.ToInt32(Console.ReadLine());
+        int sum = s.addNumbers(val1,val2);
+        ClassB b=new ClassB();
+        int sum1 = b.addNumbers(val1,val2);
+        Console.WriteLine(sum1);
+    }
+}    
+class ClassB:Solution
+{
+    
+    public override int  addNumbers(int a, int b) { 
+        return a-b;
+    }
+}  
+=======================================================================
+ 

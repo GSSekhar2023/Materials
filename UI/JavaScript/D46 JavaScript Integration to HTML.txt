@@ -1,0 +1,244 @@
+JavaScript Integration
+
+
+Evolution of JavaScript
+
+- ECMA Script is the first client side script used for browser.
+- 1995 Netscape Communications - Started "Netscape" browser
+   
+            Markup        : HTML
+            Script            : ECMA
+
+- Netscape appointed "Brendan Eich" to develop a client side script
+
+            Mocha  => Live Script
+
+- Netscape given the responsibility of Live Script to a company "Sun Micro Systems"
+
+            Live Script => JavaScript
+
+- In early 2000  Netscape stopped its services
+
+            JavaScript => Company ECMA
+
+- JavaScript Versions => ECMA => JavaScript latest version ECMA 2023
+
+                ECMA Script 2015        - ES5
+                ECMA Script 2016        - ES6
+                                            - ES2023
+
+
+Various Techniques of Integrating JavaScript into HTML Page:
+1. Inline
+2. Embedded
+3. External File
+
+
+Inline Script:
+
+- It is defined witin the element start token [tag] by using various JavaScript events.
+
+Syntax:
+            <button onclick="window.print()"> Print </button>
+
+- Inline technique allows to execute the function faster, as it is configured native to element.
+- It not good for reusing the code.
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline</title>
+</head>
+<body>
+    <h2>Click Print Button to Pint Page</h2>
+    <button onclick="window.print()">Print</button>
+</body>
+</html>
+
+Embedded Script:
+- JavaScript function can be defined in HTML by using <script> container.
+- You can reuse the function from any location in page.
+- You can embed in head or body section.
+
+Syntax:
+    <head>
+        <script>
+            function  PrintPage()
+            {
+             window.print();
+            }
+        </script>
+    </head>
+    <button  onclick="PrintPage()"> Print </button>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline</title>
+    <script>
+        function PrintPage(){
+            window.print();
+        }
+    </script>
+</head>
+<body>
+    <h2>Click Print Button to Pint Page</h2>
+    <button onclick="PrintPage()">Print</button>
+</body>
+</html>
+
+- The MIME of  JavaScript is  "text/javascript"  or  "module"  or  "text/babel"  etc..
+
+Syntax:
+        <script type="text/javascript">            Latest
+
+        </script>
+
+        <script language="javascript">        Old Technique
+       
+        </script>
+
+FAQ: What is JavaScript strict mode?
+Ans:  Strict mode allows the language to validate the code standards and report issues.
+        JavaScript is not a strictly typed language.
+        You have to turn strict mode on manually.
+
+        <script>
+            "use strict";
+             x = 10;                            // invalid - x is not defined
+             document.write("x=" + x);        // it is valid if you remove strict mode
+        </script>
+
+        <script>
+            "use strict";
+             var x;                                // valid
+             x = 10;
+             document.write("x=" + x);
+        </script>
+
+FAQ: How to target code for Legacy browsers?
+Ans: By enclosing the code in HTML comments
+
+        <!--
+            ..your code..
+        -->
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline</title>
+    <script type="text/javascript">
+        "use strict";
+        <!--
+            function PrintPage(){
+            window.print();
+            }      
+        -->
+    </script>
+</head>
+<body>
+    <!-- This page invokes printer settings -->
+    <h2>Click Print Button to Pint Page</h2>
+    <button onclick="PrintPage()">Print</button>
+</body>
+</html>
+
+- Issues with embedded technique is, code is not accessible to other pages.
+
+JavaScript in External File:
+- You can write JavaScript functions in a separate external file with extention ".js"
+- So that you can access and use from any page.
+- Scripts are included into page by using <script src="file.js"> </script>
+
+Ex:
+1. Go to  "src/scripts" folder
+2. Add a new file
+
+            print.js
+
+   function PrintPage()
+   {
+    window.print();
+   }
+
+3. Link the script file to your HTML page
+
+  <head>
+     <script src="../src/scripts/print.js"> </script>
+  </head>
+   <button onclick="PrintPage()"> Print </button>
+
+Ex:
+print.js
+
+"use strict";
+<!--
+    function PrintPage(){
+    window.print();
+    }      
+-->
+
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline</title>
+    <script type="text/javascript" src="../src/scripts/print.js">
+     
+    </script>
+</head>
+<body>
+    <!-- This page invokes printer settings -->
+    <h2>Click Print Button to Pint Page</h2>
+    <button onclick="PrintPage()">Print</button>
+</body>
+</html>
+
+Note: You can minify your JavaScript code and use the minfied file for production environment.
+                    https://jsminify.org/
+
+FAQ: What are the issues with JavaScript. [Drawbacks]
+Ans:
+1. It is not strongly typed language.
+   - There is no restriction for data types
+   - A variable can handle any type.
+   - It can transform to another type.
+   
+Syntax:        
+        var x  = 10;            // x  is number
+        x = "A";                // x is string        
+        x = true;                // x is boolean
+
+    - You need lot of validations for restricting the data types.
+
+2. It is not implicitly strictly typed.
+    - You have to turn ON strict mode explicitly.
+
+3. It is not an OOP language.
+    - It supports only few features of OOP
+    - No code level security
+    - No dynamic polymorphism.
+    - No easy extensibility
+
+4. It is blocked by browsers, It is not safe.
+
+
+FAQ: What is alternative for JavaScript?
+Ans : There is no alternative for JavaScript in browser, however developers a use a language "TypeScript" to address the issues with Javascript.
+        TypeScript is not understandable to browser, it is again translated into JavaScript.

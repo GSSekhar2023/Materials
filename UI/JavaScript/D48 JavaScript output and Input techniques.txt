@@ -1,0 +1,251 @@
+JavaScript Output
+- alert()
+- confirm()
+- document.write()
+
+
+                                        innerText
+- It can display message into any container element.
+    <div> <span> <p> <dd> <dt> <td> <h2> ...
+- It will not support any markup or formatted content.
+
+Syntax:
+        element.innerText = "message"
+
+                                        innerHTML
+- It is similar to innerText but allows formats and markup.
+
+Syntax:
+        element.innerHTML = "message | markup";
+
+                                        outerHTML
+- It is used to remove the reffered element and add the specified element.
+- InnerHTML will add specified element as child of reffered element.
+
+Syntax:
+        element.outerHTML = "<newElement> </newElement>";
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function DeleteClick(){
+            flag = confirm("Delete Record\nAre you sure want to delete?");
+            if(flag==true){
+                document.querySelector("p").outerHTML = "<h2>Record Deleted Successfully..</h2>";      
+            } else {
+                alert("You canceled..");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="DeleteClick()">Delete</button>
+    <p></p>
+</body>
+</html>
+
+                                        textContent
+- It is similar to innerText but mostly used while adding content dynamically into element.
+- If you are creating an element dynamically, then the content can be added as "textContent".
+
+Syntax:
+        element.textContent = "message";
+
+
+                                         console methods
+
+- Console is a command line tool provided by browser.
+- Developers can test their commands using console.
+- Console methods are contextual
+        error()
+        info()
+        warn()
+        log()
+        debug()
+
+Note: console methods must be removed from page while publishing the page.
+          It is only for development not for production.
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function DeleteClick(){
+            console.warn("Delete Clicked");
+            flag = confirm("Delete Record\nAre you sure want to delete?");
+            if(flag==true){
+                console.error("OK Clicked and Record will be deleted");
+                document.querySelector("p").innerText = "Record Deleted Successfully..";      
+            } else {
+                alert("You canceled..");
+                console.info("Cancel Clicked");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="DeleteClick()">Delete</button>
+    <p></p>
+</body>
+</html>
+
+                            JavaScript Input Techniques
+- Input is the process of reading value from user.
+- User can input a value into your application.
+- JavaScript input techniques
+        a) prompt()
+        b) form input elements
+        c) query string
+
+                                    prompt()
+
+- It provides an input box, which pops up in browser window.
+- You can input a value, but it is just plain text content.
+
+Syntax:
+            prompt("message", "default_value");
+            prompt("message");
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+    <script type="text/javascript">
+        function AddClick(){
+           folderName =  prompt("Enter Folder Name","New_Folder");
+           if(folderName=="") {
+            alert("Folder Name Can't be Empty");
+           } else if(folderName==null) {
+             alert("Please provide folder name");
+           } else {
+              document.querySelector("p").innerHTML += "Folder Created  :" + folderName + "<br>";
+           }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="AddClick()">Add new folder</button>
+    <p></p>
+</body>
+</html>
+
+                                    Form Input Elements
+- HTML Form provides an UI for handling interaction with data.
+- Form have various input element, from where you can input a value.
+- The form input elements are        
+        textbox, checkbox, radio, dropdown, listbox, textarea, password... etc..
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Input</title>
+    <style>
+        dt,dd {
+            margin-bottom: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript">
+        function RegisterClick(){
+            document.getElementById("registerContainer").style.display = "none";
+            document.getElementById("detailsContainer").style.display = "block";
+
+            document.getElementById("lblName").innerHTML = document.getElementById("txtName").value;
+            document.getElementById("lblPrice").innerHTML = document.getElementById("txtPrice").value;
+            document.getElementById("lblCity").innerHTML = document.getElementById("lstCities").value;
+
+            stockStatus = "";
+            stockCheckbox = document.getElementById("optStock");
+
+            if(stockCheckbox.checked){
+                stockStatus = "Available";
+            } else {
+                stockStatus = "Out of Stock";
+            }
+
+            document.getElementById("lblStock").innerHTML = stockStatus;
+
+        }
+        function EditClick(){
+            document.getElementById("btnRegister").innerHTML = "Save";
+            document.getElementById("btnRegister").className = "btn btn-success";
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <div id="registerContainer" class="mt-3">
+        <button data-bs-target="#registerProduct" data-bs-toggle="modal" class="btn btn-primary">Register Product</button>
+    </div>
+    <div class="modal fade" id="registerProduct">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Register Product</h2>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <dl>
+                        <dt>Name</dt>
+                        <dd><input type="text" id="txtName" class="form-control"></dd>
+                        <dt>Price</dt>
+                        <dd><input type="number" id="txtPrice" class="form-control"></dd>
+                        <dt>Shipped To</dt>
+                        <dd>
+                            <select class="form-select" id="lstCities">
+                                <option>Delhi</option>
+                                <option>Hyd</option>
+                            </select>
+                        </dd>
+                        <dt>Stock</dt>
+                        <dd class="form-switch">
+                            <input class="form-check-input" type="checkbox" id="optStock"> <label>Available</label>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="modal-footer">
+                    <button data-bs-dismiss="modal" id="btnRegister" onclick="RegisterClick()" class="btn btn-primary">Register</button>
+                    <button data-bs-dismiss="modal" class="btn btn-danger">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="detailsContainer" style="display: none;">
+        <h2>Product Details</h2>
+        <dl class="row">
+            <dt class="col-3">Name</dt>
+            <dd class="col-9" id="lblName"></dd>
+            <dt class="col-3">Price</dt>
+            <dd class="col-9" id="lblPrice"></dd>
+            <dt class="col-3">Shipped To</dt>
+            <dd class="col-9" id="lblCity"></dd>
+            <dt class="col-3">Stock</dt>
+            <dd class="col-9" id="lblStock"></dd>
+        </dl>
+        <button onclick="EditClick()" data-bs-target="#registerProduct" data-bs-toggle="modal" class="btn btn-info">
+            <span class="bi bi-pen-fill"></span> Edit
+        </button>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

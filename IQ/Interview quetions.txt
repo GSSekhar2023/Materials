@@ -1,0 +1,10 @@
+13-05-2023
+
+how to remove duplicate records from the table
+how to write group by clause
+Middleware
+how to achieve dependency injuction
+configuration services and configuration
+difference bw asp.net and .net core
+diff bw sp and fun
+primary key have varchar datatype

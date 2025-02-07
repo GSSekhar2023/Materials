@@ -1,0 +1,201 @@
+11-apr-23
+
+  NOTE :-   translate function can be used to encrypt data i.e. converting plain text to 
+  cipher text i.e. the text one cannot understand
+
+ example :- 
+
+ => display ENAME  SAL  ?   encrypt salaries ?
+ 
+
+   SELECT  ENAME,
+                   TRANSLATE(SAL,'0123456789.' , '$kT*g@U%^#&')  AS SAL
+   FROM EMP 
+
+ 
+        JONES     2975.00   =>  T#%@&$$
+
+
+=>   remove all special chars from  '@#he*&ll$%o^#'  ?
+
+           output :-  hello 
+ 
+
+ step 1 :-   translate all the special chars to one special char
+
+  SELECT  TRANSLATE('@#he*&ll$%o^#' ,'@#*&$%^#','@@@@@@@@')
+   
+  output :- @@he@@ll@@o@@
+
+ step 2 :-  replace '@' with null
+
+ SELECT
+     REPLACE(TRANSLATE('@#he*&ll$%o^#' ,'@#*&$%^#','@@@@@@@@'),'@','')
+
+ 
+CHARINDEX() :- 
+---------------------
+
+ => returns position of a character in a string.
+
+    CHARINDEX(char,string,[start]) 
+
+  SELECT CHARINDEX('O','HELLO WELCOME')   =>   5
+  SELECT CHARINDEX(' ','HELLO WELCOME')     =>   6
+  SELECT CHARINDEX('X','HELLO WELCOME')   =>   0
+  SELECT CHARINDEX('O','HELLO WELCOME',6)  => 11
+  SELECT CHARINDEX('L','HELLO WELCOME',5)   => 9
+  
+ Assignment :- 
+ -----------------
+
+ CUST
+ CID	NAME
+ 10	SACHIN TENDULKAR
+ 11	VIRAT KOHLI
+ 
+ output :- 
+
+  CID	FNAME	LNAME
+  10	SACHIN	TENDULKAR
+
+Numeric Functions :- 
+---------------------------
+
+ABS() :- returns absolute value
+
+  SELECT ABS(-10)   =>    10 
+  SELECT ABS(10)    =>    10
+
+POWER() :-  used to calculate power
+
+   SELECT POWER(3,2)  => 9
+
+SQRT() :- returns square root of a number
+
+  SELECT SQRT(16) => 4 
+
+SIGN() :-  used to find whether given number is positive or negative
+
+  SELECT SIGN(100)  => 1
+  SELECT SIGN(-100) => -1
+  SELECT SIGN(100-100) => 0
+
+Rounding numbers :- 
+---------------------------- 
+ 
+ROUND
+CEILING
+FLOOR
+
+      38.456789   => 38
+                               38.46
+                               38.4568
+
+ROUND :- 
+--------------
+
+ => rounds number to integer or to decimal places 
+
+     ROUND(number,decimal places)
+
+  SELECT ROUND(38.456789,0)   => 38
+
+   38----------------------------38.5--------------------------------39
+
+   number >= avg  => rounded to highest
+   number < avg    =>  rounded to lowest 
+
+    SELECT ROUND(38.556789,0)   => 39
+
+   SELECT ROUND(38.456789,2)   =>  38.46
+
+   SELECT ROUND(38.453789,2)   =>  38.45
+
+   SELECT ROUND(386,-2)            =>  400
+  
+    
+      300------------------350-----------------------400
+
+     SELECT ROUND(386,-1)          =>   390
+
+     380-------------------385---------------------390
+
+      SELECT ROUND(586,-3)         =>   1000
+ 
+     0------------------500---------------------1000
+
+    
+  display  ename  sal ? round sal to hundreds ?
+
+  SELECT ENAME,ROUND(SAL,-2) AS SAL FROM EMP   
+
+      
+ SELECT ROUND(4567,-1),ROUND(4567,-2),ROUND(4567,-3) 
+
+  O/P :-  4570            4600                5000
+
+ CEILING() :- 
+ --------------
+
+  => rounds number always to highest
+
+            CEILING(number)
+
+    SELECT CEILING(3.1)    =>    4  
+ 
+ FLOOR() :- 
+ ---------------
+
+ => rounds number always to lowest
+
+         FLOOR(number) 
+
+  SELECT FLOOR(3.9)    =>    3 
+
+conversion functions :- 
+-----------------------------
+
+=> these functions are used to convert one datatype to another datatype
+
+  1 CAST
+  2 CONVERT 
+
+ 
+ CAST :- 
+ -----------
+                     CAST(expr AS  target-type)
+
+   SELECT  CAST(10.5  AS INT)  =>   10 
+  
+ => display  smith  earns  1000
+                   allen   earns  1600  ? 
+ 
+      SELECT ename  + ' earns ' +  sal  FROM emp    => ERROR
+
+     SELECT ename  + ' earns ' +  CAST(sal AS VARCHAR)
+     FROM emp 
+
+  => display  smith joined on 1980-12-17 as clerk ? 
+                    
+       SELECT ename + ' joined on ' + 
+	              CAST(hiredate AS VARCHAR) + ' as ' + job
+       FROM emp 
+
+ CONVERT() :- 
+ -------------------
+
+               CONVERT(TARGET-TYPE,SOURCE-VALUE)
+
+    SELECT CONVERT(INT,10.5) 
+
+
+ => diff b/w cast & convert ? 
+
+    1   using convert function we can display dates in different formats but not possible using
+         cast function
+
+    2 using convert function we can display money in different formats but not possible using
+      cast function 
+
+    

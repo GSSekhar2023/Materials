@@ -1,0 +1,316 @@
+Database :-
+--------------
+
+=> a  database is a organized collection of interrelated data , for example a univ db 
+     stores data related to students,courses,faculty etc.
+
+ Types of DB :- 
+ -----------------
+
+   1  OLTP  DB   (online transaction processing) 
+   2  OLAP DB   (online analytical processing)
+
+ => OLTP db is for storing day-to-day transactions and OLAP for data analysis.
+ => OLTP is for running business and OLAP is for analyzing business.
+ => day-to-day operations on db includes
+
+    C   create
+    R   read
+    U   update
+    D   delete
+
+ DBMS :- 
+ ------------
+
+ => DBMS stands for Database Management System  , It is a software used to 
+      create and to manage database.
+
+   Evolution of DBMS :- 
+   ----------------------------
+
+   1960		 FMS   (File Mgmt System)
+
+   1970		HDBMS (Hierarchical DBMS)
+		NDBMS (Network DBMS)
+ 
+   1980		RDBMS (Relational DBMS)
+
+   1990		ORDBMS (Object Relational DBMS)
+
+  
+ RDBMS :- 
+ --------------
+
+ => RDBMS concepts are introduced by E.F.CODD
+ => according to E.F.CODD in rdbms data must be organized in tables i.e. rows and columns
+ 
+   CUST
+   CID	NAME	ADDR  => column/field/attribute
+   1	SACHIN  MUM
+   2	RAHUL	DEL
+   3	VIJAY	HYD  => row/record/tuple
+   
+     DB     		 =    collection of tables 
+     TABLE		 =    collection of rows & columns
+     ROW                   =    collection of field values
+     COLUMN            =    collection of values assigned to one field
+
+   => every table must contain primary key to uniquely identify the records.
+
+             ex :-  accno,empid,aadharno,panno,voterid
+ 
+  RDBMS features :-  
+  -------------------------
+
+   1   easy to access & manipulate data
+   2   less  redundency (duplication of data) 
+   3   more security 
+   4   guranteess data quality or data consistency
+   5   supports data sharing
+   6   supports transactions 
+
+ RDBMS softwares :-   (SQL databases)
+ ----------------------------
+ 
+ SQL SERVER         from microsoft
+ ORACLE                 from oracle corp
+ DB2                         from ibm
+ MYSQL                   from oracle corp
+ POSTGRESQL       from postgresql forum
+
+ 25-MAR-23
+
+ ORDBMS :-  
+ -----------------
+
+ =>  object relational database management system
+ =>  it is the combination of rdbms & oops 
+
+            ORDBMS =   RDBMS + OOPS (reusability)
+
+ =>  RDBMS doesn't support reusability but ORDBMS supports reusability.
+
+  RDBMS :- 
+  ---------------
+
+  CUST
+  CID    NAME    HNO   STREET   CITY   STATE    PIN
+
+  EMP
+  EMPID  ENAME  HNO  STREET  CITY   STATE   PIN
+
+  STUDENT
+  SID      SNAME    HNO  STREET   CITY   STATE   PIN
+
+ => in the above example  in all the three tables address is repeated and when 
+      addr repeated  we need to repeat 5 fields 
+
+  ORDBMS :- 
+  ----------------
+
+ TABLE :-
+
+        ADDR   
+        HNO      STREET    CITY    STATE    PIN
+
+
+ CUST
+ CID     NAME      ADDR
+
+EMP
+ EMPID  ENAME   ADDR
+
+STUDENT
+SID    NAME         ADDR 
+
+=> in above example when address repeated then we need to repeat only one field
+
+ ORDBMS softwares :- 
+ ------------------------------
+
+  SQL SERVER 
+  ORACLE
+  POSTGRESQL
+
+ what is SQL SERVER ?
+
+  => SQL SERVER is basically a rdbms product  from microsoft and also 
+        supports ordbms features and used to maintain database.
+
+ DB DEVELOPMENT LIFE CYCLE :- 
+ -----------------------------------------------
+
+ 1  ANALYSIS
+ 2  DESIGN
+ 3  DEVELOPMENT 
+ 4  TESTING
+ 5  IMPLEMENTATION
+ 6  MAINTENANCE
+
+ DB DESIGN :- 
+ --------------------
+
+  => designing db means designing tables.
+  => db is designed by DB Designer/Architect.
+  => db designer designs db by using
+
+       1  ER MODEL (Entity Relationship Model)
+       2  NORMALIZATION 
+  
+DEVELOPMENT :- 
+-------------------------
+
+ => Development means creating tables in sql server.
+ => DB is developed by Developers & DBAs by using SQL SERVER,ORACLE,MYSQL etc
+ 
+       	    Developer                                              DBA  (Database Admin)
+
+      1            creating tables			 installation of sql server
+      2            creating views			 creating database
+      3            creating synonyms                                creating logins 
+      4            creating sequences                               db backup & restore
+      5            creating indexes                                    db export & import
+      6            creating procedures                              db upgradation & migration
+      7            creating functions                                 performance tuning               
+      8            creting triggers 
+      9            writing queries
+
+
+     sql server 2014  ========> sql server 2019     =>   db upgradation
+
+     mysql ==================> sql server       =>    db migration
+
+ 
+  =>  db is tested by QA teams (Quality Assurance) by using some tools called
+        testing tools 
+
+ =>  implementation means moving db from DEV server to PROD server.
+
+=====================================================================
+
+ 			SQL SERVER
+                                                ===========
+
+  => SQL SERVER is a rdbms product from microsoft  and also supports ordbms features
+       and used to create and to manage database.
+
+ =>  SQL SERVER is used for DB Development & Administration.
+
+ versions of sql server :- 
+ ------------------------------
+
+ version                                 year
+
+  SQL SERVER 1.1               1991
+  SQL SERVER 4.2               1993
+  SQL SERVER 6.0               1995
+  SQL SERVER 6.5               1996
+  SQL SERVER 7.0               1998
+  SQL SERVER 2000             2000
+  SQL SERVER 2005             2005
+  SQL SERVER 2008             2008
+  SQL SERVER 2012             2012
+  SQL SERVER 2014             2014
+  SQL SERVER 2016             2016   
+  SQL SERVER 2017             2017
+  SQL SERVER 2019             2019
+
+ sql server 2016 :- 
+
+  1 polybase
+  2 json (javascript object notation)
+  3 temporal table to save data changes.
+  4 dynamic data masking and row level security
+  
+ sql server 2017 :- 
+
+  1 identity cache
+  2 New String functions
+  3 Automatic Tuning
+
+ sql server 2019 :- 
+
+1  Read, write, and process big data from Transact-SQL
+2  Easily combine and analyze high-value relational data with high-volume big data.
+3  Query external data sources.
+4  Store big data in HDFS managed by SQL Server.
+5  Query data from multiple external data 
+
+ CLIENT/SERVER  Architecture :- 
+ -------------------------------------------
+
+ 1    SERVER
+ 2    CLIENT
+
+ SERVER :- 
+ ---------------
+
+ => server is a system where sql server software is installed and running.
+ => server manages the following two components 
+  
+     1   DB
+     2   INSTANCE
+
+  => DB is created in hard disk and acts as permanent storage.
+ => INSTANCE is created in ram and acts as temporary storage.
+ 
+ CLIENT :- 
+ -------------
+
+  => client is also a system where users can 
+
+  1  connects to server
+  2  submit the requests 
+  3  receives response
+
+client tool :- 
+---------------
+
+  SSMS   (SQL SERVER MANAGEMENT STUDIO)
+
+
+ USER----SSMS--------------------------------SQL SERVER----------DB
+
+ USER---SQLPLUS----------------------------ORACLE------------------DB
+
+USER--MYSQLWORKBENCH--------------MYSQL-------------------DB
+
+
+SQL :- 
+---------
+
+ => SQL stands for structured query language.
+ => it is a language used to communicate with sql server. 
+ => user communicates with sql server by sending commands called queries.
+ => a query is a command/instruction/question given to sql server to perform some 
+      operation on db.
+ => SQL is originally introduced by IBM and initial name of this language was "SEQUEL"
+      and later it is renamed to SQL.
+ 
+  => SQL is common to all  rdbms                
+
+       SQL SERVER       ORACLE           MYSQL         DB2
+             SQL                     SQL                 SQL              SQL  
+
+
+     USER-----SSMS-------------SQL------------------SQL SERVER----------DB
+                     tool                    lang                       software                     storage
+
+  => based on operations over db  SQL is categorized into following sublanguages.
+
+      DDL  (DATA DEFINITION LANG)
+      DML (DATA MANIPULATION LANG)
+      DQL (DATA QUERY LANG)  
+      TCL  (TRANSACTION CONTROL LANG)
+      DCL (DATA CONTROL LANG)
+
+ 				SQL
+
+
+ 	DDL		DML	DQL	TCL		DCL
+	
+	create		insert	select	commit		grant
+	alter		update		rollback		revoke
+	drop		delete		save transaction
+	truncate		merge
+

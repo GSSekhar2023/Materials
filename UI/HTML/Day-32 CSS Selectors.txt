@@ -1,0 +1,323 @@
+26-04-2023
+
+Primary Selectors
+                                        ------------------------
+1. Type Selector
+ - It uses element name.
+ - Every occurance of element in page will use the effect.
+ - You can't disable for any specific occurance.
+
+Syntax:
+        p     {   }
+        div {  }
+        table {  }
+        form {  }
+
+2. ID Selector
+- It is defined by using "#" reference name.
+- You can set effect for any specific element.
+- Every element can have only one ID.
+- You can't apply multiple sets of effects to one element.
+
+Syntax:
+    #refName {
+
+     }
+    <div  id="refName">
+
+
+3. Class Selector
+- Class is defined by using "." and reference name.
+- Every element can implement multiple classes.
+
+Syntax:
+    .className {
+
+    }
+    <div  class="className1  className2">
+
+FAQ: If styles are defined for element by using all 3 selectors, which set of effects will apply?
+Ans:
+    1. If same style attribute is defined then it will apply based on priority
+                1st            ID Selector
+                2nd        Class Selector
+                3rd            Type Selector
+    2. If different attributes are defined then all will apply.
+
+FAQ: How to group selector?
+Ans:  You can group selectors using "," to apply same set of effects.
+
+        h1, h5 {
+
+        }
+
+        p, table {
+
+        }
+
+        p,  .text-style {
+
+        }
+
+        p, .text-style,  #ref {
+
+        }
+
+                                     Rational Selectors
+                                     ------------------------
+- You can choose elements by using parent and child hierarchy.
+- You can choose elements by using siblings.
+
+Syntax: Parent-Child
+
+      parentElement   childElement {            => all child elements at any level
+
+      }
+
+     parentElement > childElement {            => only direct child elements
+
+     }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .container>p {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+     <p>Para-1</p>
+     <p>Para-2</p>
+     <span><p>Para-3</p></span>
+     <p>Para-4</p>
+   </div>
+   <p>Para-5</p>
+</body>
+</html>
+
+Syntax : Siblings
+
+    MainElement+Occurance            => Adjacent occurance [only one after main]
+    {
+    }
+
+    MainElement~Occurance            => All occurance after the main
+    {
+    }
+
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       h2~p {
+        color:red;
+       }
+    </style>
+</head>
+<body>
+    <h2>Welcome</h2>
+    <p>Para-1</p>
+    <p>Para-2</p>
+    <p>Para-3</p>
+    <p>Para-4</p>
+    <p>Para-5</p>
+</body>
+</html>
+
+Summary
+        Character                    Purpose
+        ------------------------------------------------------
+        space                        all child elements at any hierarchy
+        >                            direct child elements
+        +                            Adjacent
+        ~                            All occurances
+
+                                    Attribute Selectors
+                                    -------------------------
+- You can select HTML elements by refering to their attribute and value.
+
+Syntax: Only Attribute
+
+  element [ attribute ]
+   {
+
+   }
+   p[id] {
+
+   }
+
+Syntax: Attribute with Value
+
+  element [attribute = value ]
+  {
+
+  }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p[id]{
+            color:red;
+        }
+        input[type="button"] {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <p>Para-1</p>
+    <p id="p2">Para-2</p>
+    <p>Para-3</p>
+    <p id="p4">Para-4</p>
+    <dl>
+        <dt>User Name</dt>
+        <dd><input type="text"></dd>
+        <dt>Age</dt>
+        <dd><input type="number"></dd>
+    </dl>
+    <input type="button" value="Login">
+    <input type="button" value="Cancel">
+</body>
+</html>
+
+                                Conditions for Attributes
+
+  [attribute=value]                Equal to - Exact match
+  [attribute^=value]                Starts with
+  [attribute$=value]                Ends with
+  [attribute|=value]                Exact match, start with and separated with "-"
+  [attribute~=value]                Exact match and inidividual
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p[class~="Effect"] {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <p class="Effect">Para-1</p>
+    <p class="ParaEffect">Para-2</p>
+    <p class="Effect Para">Para-3</p>
+    <p class="Para Effect">Para-4</p>
+    <p class="Para Effect Text">Para-5</p>
+    <p class="Effect-Para">Para-6</p>
+    <p class="Para-Effect">Para-7</p>
+</body>
+</html>
+
+
+                                Dynamic Pseudo Classes
+                                ----------------------------------
+- Dynamic allows to change effects according to state and situation.
+- Pseudo is a flase representation fo elements.
+- Class is a program template with set of data and logic.
+
+       
+    Class Name            Description
+    -------------------------------------------------------------------------------------
+     :hover                Actions on mouse over            
+     :active                Actions on mouse down
+     :link                    All hyperlinks in normal state
+     :visited                Visited hyperlinks
+     :focus                    Actions on element focus
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+       img:active {
+          width: 300px;
+          height: 300px;
+          transition: 2s;
+       }
+       img {
+          transition: 2s;
+       }
+       a:link {
+         color:green;
+         text-decoration: none;
+       }
+       a:visited {
+          color:gray;
+       }
+    </style>
+</head>
+<body>
+    <p>
+        <a href="demo.html">Home</a>
+    </p>
+    <img src="../public/images/asp.jpg" width="100" height="100">
+</body>
+</html>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #Password+div {
+            display: none;
+        }
+        #Password:focus+div {
+            display: block;			//block-below;inline-beside
+            color:red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <dl>
+        <dt>User Name</dt>
+        <dd><input type="text"></dd>
+        <dt>Password</dt>
+        <dd>
+            <input type="password" id="Password">
+            <div>Password 4 to 15 chars with atleast one uppercase letter.</div>
+        </dd>
+    </dl>
+    <button>Login</button>
+</body>
+</html>

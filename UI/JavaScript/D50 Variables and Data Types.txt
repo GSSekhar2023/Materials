@@ -1,0 +1,230 @@
+JavaScript Variables
+- Declaration
+- Initialization
+- Assignment
+- var
+- let
+- const
+
+                                        let
+- It is block scoped variable.
+- It is accessible to the block where it is defined and its inner block.
+
+Ex:
+<script>
+    function f1() {
+        let x;
+        x = 10;
+        if(x==10)
+        {
+            let y = 20;
+            document.write("X=" + x + "<br>" + "Y=" + y);
+        }
+       
+    }
+    f1();
+</script>
+- Let support declaring, assigning and initialization.
+
+Ex:
+<script>
+    function f1() {
+        let x;          // declaring
+        x = 10;         // assigning
+        if(x==10)
+        {
+            let y = 20;     // initialization
+            document.write("X=" + x + "<br>" + "Y=" + y);
+        }
+       
+    }
+    f1();
+</script>
+
+- let will not allow shadowing.
+- It will not allow hoisting.
+
+Ex:
+<script>
+    "use strict";
+    function f1() {
+        x = 10;
+        document.write("x=" + x);
+        let x;                // invalid
+    }
+    f1();
+</script>
+
+const:
+- It is block scoped variable.
+- It will not allow declaring and assigning.
+- It will allow only initialization.
+
+Syntax:
+        const  x;            // invalid  => initializer missing
+        x = 10;            // invalid  => can't assign to constant
+
+- It will not allow shadowing and hoisting.
+
+Ex:
+<script>
+    "use strict";
+    function f1() {
+       document.write("x=" + x);
+       const x = 5;            // invalid
+    }
+    f1();
+</script>
+
+- Global scope for variable is defined by declaring variable at module level.
+- You can use var, let and const for declaring or initialization.
+
+Ex:
+<script>
+    var x = 10;
+    let y = 20;
+    const z = 30;
+    function f1(){
+        document.write("Function-1 <br> x=" + x + "y=" + y + "z=" + z + "<br>");
+    }
+    function f2(){
+        document.write("Function-2 <br> x=" + x + "y=" + y + "z=" + z + "<br>");
+    }
+    f1();
+    f2();
+</script>
+
+FAQ: How to define a global variable inside function?
+Ans:  By using "window" object of JavaScript.
+
+Syntax:
+            window.variableName = value;
+
+Ex:
+<script>
+    "use strict";
+    var x = 10;
+    let y = 20;
+    const z = 30;
+    function f1(){
+        window.a = 50;        // global variable in function.
+
+        document.write("Function-1 <br> x=" + x + "y=" + y + "z=" + z + "a=" + a +"<br>");
+    }
+    function f2(){
+        document.write("Function-2 <br> x=" + x + "y=" + y + "z=" + z + "a=" + a + "<br>");
+    }
+    f1();
+    f2();
+</script>
+
+Variable Naming Conventions:
+- Name must start with an alphabet.
+- You can start variable name with "_" but not recommended in regular environment.
+
+        var 2023;                // invalid
+        var year2023;        // valid
+        var _2023;            // valid
+
+- "_" is a special char used to defined variable that requires further implementation.
+
+        var  _productName;
+
+- It can't contain any blank space or special chars.
+- It's maximum length can be upto 255 chars.
+- It must speak what it is.
+- It must be in camel case.
+
+         style.backgroundColor
+
+- It can't be a keyword.
+
+         var foreach;            // invalid
+         var while;            // invalid
+
+Ex:
+<script>
+     var x, y, z;
+     x = 10;
+     y = 20;
+     z = 30;
+     document.write("x=" + x  + "y=" + y  + "z=" + z);
+</script>
+
+Ex:
+<script>
+     var x, y=20, z=30;
+     x = 10;
+     document.write("x=" + x  +"<br>" + "y=" + y + "<br>"  + "z=" + z);
+</script>
+
+Ex:
+<script>
+     var x = y = z = 10;
+     document.write("x=" + x  +"<br>" + "y=" + y + "<br>"  + "z=" + z);
+</script>
+
+Ex:
+<script>
+     var [x, y, z] = "Welcome";
+     document.write("x=" + x + "<br>y=" + y + "<br>z=" + z);
+</script>
+
+    x = W
+    y = e
+    z = l
+
+Ex:
+<script>
+     var [x, y, z] = ["Welcome","to", "JavaScript"];
+     document.write("x=" + x + "<br>y=" + y + "<br>z=" + z);
+</script>
+
+Ex:
+<script>
+     var x = y = 10;
+     z=30;
+     y=z;
+     document.write("x=" + x + "<br>y=" + y + "<br>z=" + z);
+</script>
+
+                                JavaScript Data Types
+- JavaScript is not a strongly typed language.
+- It is implicitly typed. There no specific data type defined for variable.
+- Data type is determined according to value assigned.
+
+                var x = 10;        x is number
+                x = "John";        x is string
+
+- Data Type refers to the data structure, which specifies the type, range and behaviour.
+- JavaScript data types are categorized into 2 groups
+   
+    1. Primitive Types
+    2. Non-Primitive Types
+
+Primitive Types:
+- They are immutable types.
+- Structure can't change dynamically.
+- There is a fixed range for value.                        
+- Value range can't change.
+- They use stack memory. [ LIFO ]
+- JS primitive types are
+        1. number
+        2. string
+        3. boolean
+        4. null
+        5. undefined
+        6. symbol
+
+                                        Number
+- A number type refers to
+        singned integer            - 10
+        unsigned integer            10
+        floating point                10.30
+        double                    120.30
+        decimal                33000.40           [29 decimal places]
+        exponent                    2e3            [2x10(3)] = 2000
+        binary                        0b1010        10
+        hexa                        0fa100
+        octa                        0o756
+        bigint                        2n

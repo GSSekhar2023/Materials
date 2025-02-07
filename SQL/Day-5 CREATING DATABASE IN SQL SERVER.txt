@@ -1,0 +1,73 @@
+
+28-MAR-23
+ 
+   DATA  & DATA DEFINITION :-
+  ---------------------------------------
+
+
+EMPID	ENAME		SALARY	=> DATA DEFINITION
+   1	SACHIN		8000    	=> DATA 
+
+ How to connect to sql server :- 
+ ----------------------------------------
+
+  => to connect to sql server open SSMS and enter following details 
+
+ 	 SERVER  TYPE   		 :-   DB ENGINE
+                 SERVER NAME   		 :-   DESKTOP-G2DM7GI
+                 AUTHENTICATION		 :-   SQL SERVER / WINDOWS
+                 LOGIN			 :-   SA (system admin)
+                 PASSWORD		:-    123
+
+  => click  connect.
+
+  CREATING DATABASE IN SQL SERVER :- 
+  --------------------------------------------------------
+ 
+   =>  to create new database  , select  databases => New Database
+ 
+	 enter database name :-  DB4PM
+
+     =>  click  OK
+
+     => a  DB is created with following two files 
+
+
+              1  DATA FILE (.MDF)       (MASTER DATA FILE)
+              2  LOG FILE  (.LDF)        (LOG DATA FILE)
+
+    => DATA FILE stores data  and LOG file stores operations.
+
+      NAME	TYPE	  INITIAL SIZE                 AUTOGROWTH
+      DB4PM	DATA	  8MB		        64MB
+      DB4PM_LOG	LOG	  8MB		        64MB
+
+       PATH :- 
+       ------------
+
+       C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\
+ 
+    INSTALLATION :- 
+    ---------------------
+
+
+ => following softwares needs to be installed  to work with sql server db
+
+    1  SQL SERVER
+    2  SSMS 
+
+    downloading sql server :- 
+     ---------------------------------
+
+    https://www.microsoft.com/en-in/sql-server/sql-server-downloads
+            
+    step by step installation of sql server :- 
+    ----------------------------------------------------
+
+  https://www.c-sharpcorner.com/article/step-by-step-installation-of-microsoft-sql-server-on-windows-system/
+
+  
+ downloading ssms :- 
+ --------------------------
+
+https://learn.microsoft.com

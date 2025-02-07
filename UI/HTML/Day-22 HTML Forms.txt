@@ -1,0 +1,121 @@
+Forms in HTML
+
+- Form provides an UI so that user can interact with our application.
+- User Interactions are classified into "CRUD" operations.
+
+            C        Create
+            R        Read
+            U        Update
+            D        Delete
+
+- Technically "Form" is a container with collection of various elements like
+   button, textbox, checkbox, radio, listbox, dropdown, label etc..
+
+
+                              The "Form" Container
+
+- It encapsualtes a set of controls so that you can submit their data to server.
+- If elements are not in "form" container, then they can't be submitted to server.
+- Form is a container with a set of elements.
+
+Syntax:
+        <form>
+
+        </form>
+
+Attributes:
+
+1. id                : It is used as unique reference name for form in page.
+2. name            : It is also used as reference name. It can be common for multiple
+                      forms.
+
+3. class            : It is used to define multiple classes to configure styles.
+
+4. method            : It defines the actions performed by "form" element.
+                      Form element can perform only 2 actions
+                        a) GET
+                        b) POST
+
+FAQ: What is the purpose of GET and POST?
+Ans : GET is used to fetch data from server.  
+          POST is used to submit data to server.
+
+
+Note: If method is not defined for a "Form" then the default method is "GET".
+
+FAQ: Can we submit data to server on GET request?
+Ans: Yes. But it is not recommended.
+
+FAQ: Why it is not recommended to submit data to server on GET request?
+Ans:
+        - If you submit data on GET request then data is appended into URL
+          as Query string.
+        - Every user can view your data.
+        - It is not safe.
+        - It is easy to hack your data.
+        - You can't submit complex data. [Binary]
+        - There is limit for submitting data, you can submit max 2048 chars.
+        - Data is stored in browser logs. [History]
+        - Data can be bookmarked.
+        - You can cache the data submitted on GET. [Good]
+        - It saves round trips.
+
+FAQ: What are the features of POST?
+Ans:
+        - If you submit data to server on POST request, then it is stored in "Form Body".
+        - It is not visible to users.
+        - It is safe.
+        - It is hard to hack.
+        - It is not stored in browser logs.
+        - It can't be bookmarked
+        - There is no limit for submitting data.
+        - You can submit complex binary data.
+        - You can't cache the data.
+
+5. Action            : It specifies where to submit the data. It is usually any server
+                      side technologies.    [JSP, PHP, ASP...]
+
+                    <form  method="post"  action="page.jsp | asp | php">
+
+
+6. NoValidate    : It is used to by-pass the default HTML validations.
+
+
+                    <form  method="get"   novalidate>
+
+                    </form>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form method="get" novalidate>
+        Email :
+        <input type="email" name="Email"> <button>Submit</button>
+   </form>
+</body>
+</html>
+
+FAQ: Can we have multiple forms in a page?
+Ans:  Yes
+
+FAQ: Can we have nested forms?
+Ans: No. We use alternative technique called "Ajax"
+
+        <form>
+                <form>
+
+                </form>
+        </form>
+
+        <form>
+            <div>
+
+            </div>
+        </form>

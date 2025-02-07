@@ -1,0 +1,102 @@
+What is HTML ?
+    - Markup Language
+    - Presentations
+Evolution of HTML
+    - Tim Berners Lee HTML
+    - IETF 3.1
+    - WHATWG  4.0 and HTML 5
+Browser Architecture
+    - UI
+    - UI Back End
+    - Rendering Engine
+    - Browser Engine
+    - JS Interpreter
+    - Networking
+    - Data Persistance
+
+                                  HTML Parsing in Browser
+1. Developer writes Markup
+        <b> Hello </b>
+2. It is translated into Bytes
+        010101010101
+3. Bytes are parsed int Characters
+
+4. Charecters undergo a process called "Tokenization" and creates "Tokens", which are also known as "Tags".
+        <b>        Bold Tag
+
+5. Tokens are converted into Elements, which are known as "Nodes".
+        <b>        bold element
+        <a>        anchor element
+        <p>        paragraph element
+
+6. Elements are arranged in a hierarchial order called "DOM" - Document Object Model
+
+7. DOM is processed into Layout using Rendering engine
+
+8. DOM is painted in borwser.
+
+Summary:  HTML presents DOM, which is a hierarchy of Elements.
+              HTML is a collection of elements.
+
+
+                                    HTML Elements
+
+- HTML elements are classified into 5 groups
+
+        1. Normal Elements
+        2. Void Elements
+        3. RC Data Elements
+        4. Raw Text Elements
+        5. Foreign Elements
+
+- Normal Elements returns a presentation directly on callback.
+  They doesn't require additional attributes.
+  They start presenting but will not stop presenting.
+  Hence you have to manually stop by using End Token [tag].
+  These element requires 2 tokens
+        a) Start Token    <b>
+        b) End Token    </b>
+
+- Void Elements
+   Void refers to no return value.
+   Void element will not return any presentation directly on callback.
+   It requires attributes that define what to return.
+   It returns the specific content and stops implicitly.
+   Hence these elements doesn't require End Token.
+
+ Ex:   <img>
+        <img src="public/images/kids.jpg">
+
+- RC Data elements are Rich Text Content Elements
+  They are used only for rich text and will not allow any another element with in context.
+ 
+Ex:
+        <textarea> </textarea>
+
+- Raw Text elements are presented using raw text chars without any token.
+
+Ex:
+        &copy;
+        &#8377;
+        &laquo;
+       
+- Foreign Elements are presented by using an additional library, they are part of HTML but will not work directly in HTML.
+
+Ex: Canvas, SVG, MathML etc..
+
+FAQ: What are semantic Elements in HTML?
+Ans : The term semantic refers to a specific purpose. HTML have lot of semantics
+                <b> <h1> <p> <head> <body> ...
+           
+                   
+                            HTML Page Structure
+1. Every static page can have extention
+            .html
+            .htm
+
+2. Every page starts with document declaration from HTML 5 version.
+
+            <!DOCTYPE html>
+
+            <>            Token
+            <!>            Not token

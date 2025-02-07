@@ -1,0 +1,37 @@
+.Net Runtime and SDK difference
+single and First
+minification and bundling
+lazy loading
+OOPS principles
+Method overriding
+Abstract class-can we create instance of abstract class?
+why Multiple inheritance not supported?
+Delegate
+Array and ArrayList
+Middleware
+Singleton
+EF database first approach
+CI/CD Pipeline
+javascript and Jquery difference
+Ajax
+Sealed 
+static and ReadOnly
+Routing and types
+startup.cs
+Sessions
+how to pass data from controller to controller
+Helper methods
+Cluser
+Trigger
+Joines types and self join 
+Normalization
+select the records from table in the row of 5 to 8 only.
+=============================
+09-09-2023 3.45pm Amit
+var,dynamic,ReadOnly
+Ajax call how to write 
+Jquery methods
+Dependency injection
+Delegate
+Authentication filter how to call
+

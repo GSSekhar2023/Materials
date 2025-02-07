@@ -1,0 +1,84 @@
+sql
+Having vs Where
+union vs union all
+sp vs function
+why we use transactions
+view
+2nd highest salary
+DinsRank
+
+C#
+Oops principles
+why and when and we use abstract class and Interface
+difference of  abstract class and Interface
+==============
+
+string str="Somasekhar";
+Char[] ch=str.ToCharArray();
+string rev=""; 
+
+for(int i=str.Length;i<=str.Length;i--)
+{
+  rev=rev+ch[i];
+  
+}
+Console.WriteLine("Reverse the given String",rev);
+Console.ReadLine();
+
+
+second highest salary
+
+select Max(salary) from employee where salary<(select Max(salary) from employee)
+
+select top 1 salary from
+ (select distinct top 2 salary from employee order by salary desc) Result order by salary
+================
+select top 1 salery from (select top 2 distinct salary from employee order by salary desc ) result order by salary
+
+*** HTTP Context 
+Data is stored into Application in the form of name/value pairs only like we store in Session, 
+ViewData or TempData. 
+We store data into Application by using “Application” property of “HttpContext” class 
+that is defined in “System.Web”.
+It holds the current information about the Http request.
+
+
+***Which compiler is used in ASP.NET
+C# is the programming language used to develop ASP.NET and Roslyn is the name of compiler used by . NET Framework.
+NET uses two compilers, Roslyn, to compile C# or VB code into CIL (common intermediate language), 
+and RyuJIT, to run just-in-time compilation of CIL into native code.
+
+***
+Web server controls can be divided into four categories:
+
+Basic Web Controls
+Validation Controls
+List Controls
+Rich Controls
+
+Button,CheckBox,HyperLink,Image ,ImageButton Label ,LinkButton 
+RequiredFieldValidator Control
+
+RangeValidator Control
+
+CompareValidator Control
+
+RegularExpressionValidator Control
+
+CustomValidator Control
+
+ValidationSummary Control
+=================================
+ListBox Web Server Control
+
+CheckBoxList Web Server Control
+
+RadioButtonList Web Server Control
+
+Repeater Web Server Control
+
+DataList Web Server Control
+
+DataGrid Web Server Control
+
+DropDownList Web Server Control

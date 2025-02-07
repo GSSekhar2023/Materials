@@ -1,0 +1,162 @@
+
+
+06-apr-23
+
+PRODUCTS
+prodid   pname    price    category     brand
+
+=> increase  all  samsung,redmi,realme   mobile phones , tvs and smart watches price by 10%
+
+ UPDATE PRODUCTS
+ SET PRICE = PRICE + (PRICE *0.1)
+ WHERE BRAND IN ('SAMSUNG','REDMI','REALME')
+               AND
+               CATEGORY IN ('MOBILE PHONES','TV','SMART WATCH')
+
+DELETE command :- 
+---------------------------
+
+ =>  command used to delete row/rows from table
+ =>  we can delete all rows or specific rows
+ 
+   syn :-    DELETE  FROM   TABNAME  [WHERE COND] 
+
+Ex :- 
+------
+
+  =>   delete employees joined in 1981 year ?
+ 
+        DELETE FROM EMP WHERE HIREDATE  LIKE '1981%' 
+
+  =>  delete employees working for 30th dept and working as salesman ?
+
+        DELETE FROM EMP WHERE DEPTNO = 30  AND JOB = 'SALESMAN' 
+
+   
+DDL commands :-  (DATA DEFINITION LANG)
+----------------------
+
+  => all DDL commands acts on table structure (columns,datatype and size)
+
+   CREATE
+   ALTER
+   DROP
+   TRUNCATE
+
+  ALTER command :- 
+  --------------------------
+
+  => command used to modify the table structure
+  => using ALTER command we can
+
+   1   add columns
+   2   drop columns
+   3   modify a column
+               changing datatype
+               changing size
+
+  Adding columns :- 
+ ------------------------
+
+  syn :- 
+
+    ALTER TABLE <TABNAME>
+          ADD   COLNAME  DATATYPE(SIZE)  , ---------
+
+  Ex :- 
+
+  => add column gender to emp table ?
+
+      ALTER TABLE EMP
+              ADD  GENDER  CHAR(1)
+
+     after adding by default the new column is filled with nulls , to insert
+     data into the new column use update command.
+
+     UPDATE EMP SET GENDER='M' WHERE EMPNO = 7369 
+
+ Droping column :- 
+ -----------------------
+
+    ALTER TABLE <TABNAME>
+         DROP COLUMN  COL1,COL2,----
+
+ => drop column gender from emp table ?
+
+    ALTER TABLE EMP
+            DROP COLUMN GENDER 
+
+Modifying a column :- 
+-----------------------------
+
+   ALTER TABLE <TABNAME>
+       ALTER  COLUMN  <COLNAME>  DATATYPE(SIZE)
+ 
+Ex :- 
+
+ => change the datatype of sal to money ?
+ 
+     ALTER TABLE EMP
+            ALTER COLUMN  SAL  MONEY
+
+ => increase the size of ename to 20 ?
+
+  ALTER TABLE EMP
+       ALTER COLUMN ENAME  VARCHAR(20) 
+
+
+  ALTER TABLE EMP
+       ALTER COLUMN ENAME  VARCHAR(5) 
+
+                               => ERROR => because some names contains
+                                                      more than 5 chars 
+
+  DROP command :- 
+  ---------------------------
+
+  => command used to drop table from database.
+  => drops table structure along with data.
+
+  syn :-  DROP TABLE  <TABNAME>
+
+  ex  :-   DROP TABLE EMP 
+
+ TRUNCATE command :- 
+ ---------------------------------
+
+  => deletes all the data from table but keeps structure.
+  => will empty the table.
+  => releases memory allocated for table 
+
+   syn :-   TRUNCATE TABLE  <TABNAME>
+
+   ex  :-    TRUNCATE TABLE STUDENT 
+
+ DROP VS  DELETE VS TRUNCATE  :- 
+ -----------------------------------------------------
+
+      DROP                                  DELETE/TRUNCATE
+
+    drops structure                      deletes only data but not structure
+     with data 
+
+ DELETE VS TRUNCATE :- 
+ ------------------------------------
+
+                  DELETE                                          TRUNCATE
+
+ 1               DML command                                DDL  command
+
+ 2               can delete all rows                           can delete only all rows
+                  and specific rows                             but cannot delete specific rows
+
+ 3               where cond can be                           where cond cannot be
+                  used with delete                               used with truncate
+
+ 4              deletes row-by-row                            deletes all rows at a time
+
+ 5              slower                                               faster
+
+ 6              will not release memory                    releases memory 
+
+ 7              will not reset identity                         will reset identitty    

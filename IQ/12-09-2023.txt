@@ -1,0 +1,20 @@
+abstract class and interface class
+method overloading adn method overriding
+boxing and unboxing
+serialization
+assemblies
+different return type action methdos in controller.
+what are the filters and types in MVC.
+diff viewData and viewBag
+jquery plugins
+how to debug javascript
+how to implement security in web application MVC.
+DIFF ADO.NET AND EF
+have u use LINQ
+Which one is prefer SP OR LINQ.
+SP and Function.
+What is Modal binding
+what do u understand about JS
+What are imports and exports in JS
+Diff Web config and app config 
+Routing

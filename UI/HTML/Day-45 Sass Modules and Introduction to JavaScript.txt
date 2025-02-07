@@ -1,0 +1,223 @@
+Sass Function
+- It is defined by using "@function"
+- Function returns a value by handling any expression.
+- @mixin is void type
+- @function returns a value.
+
+Syntax:
+        @function  calculate($params)
+        {
+            @return   value | using expression;
+        }
+
+- Function is accesible directly by using the reference name.
+
+Ex:
+effects.scss
+
+$padding: 1.5px;
+
+@function setPadding()
+{
+   @return  $padding * 10;    
+}
+
+td {
+   padding: setPadding() - 10;
+}
+
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../scss/effects.css">
+</head>
+<body>
+    <table width="400" border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
+                                        Sass Modules
+- A module is a set of variables, function and mixins.
+- You can build your custom library using module system and import into any application.
+- It enables reusability and easy extensibility.
+- Every sass file starting with  "_" in name, is considered as a module.
+
+                _moduleName.scss
+
+- You can import the module logic into another file by using "@import" statement.
+- It will reduce the number of requests for page and improves the page load time.
+
+Ex:
+1. Add new folder "library"  into   src/sass  folder
+
+2. Add following files
+
+        _headings.scss
+
+h2 {
+    background-color: yellow;
+    color:red;
+    text-align: center;
+    padding: 4px;
+}
+
+        _table.scss
+
+table {
+    font-family: Arial;
+}
+tr:nth-child(odd) {
+    background-color: aquamarine;
+}
+tr:nth-child(even){
+    background-color: antiquewhite;
+}
+
+         effects.scss
+@import "library/headings";
+@import "library/table";
+
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../scss/effects.css">
+</head>
+<body>
+    <h2>Products Table</h2>
+    <table width="400" border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
+Summary
+- CSS Pre-Processors
+- Features
+- Variables
+- Statements
+- Mixins
+- Functions
+- Modules
+
+                                        JavaScript
+- It is a light weight  Interpreted and JIT [Just-in-Time] compiled programming language.
+
+What is Interpreted?
+- A computer can understand only binary code.
+- The clients or users native language need to converted into binary.
+- Programming languages are translated by using 2 techniques
+        a) Interpreted
+        b) Compiled
+- Interpreted is line by line translation.
+- Compiled translates all line simultaneously at the same time.
+- Compiled program approach will be in 2 ways
+        a) JIT        [Just-in-Time]
+        b) AOT    [Ahead-of-Time]
+- JIT refers to translating technique where the code is translated in browser.
+- AOT refers to translating technique where the code is translated at application level.
+  It is mostly used by libraries and frameworks that are using JavaScript.
+        [React, Angular, Vue, Backbone, Ember...]
+- JavaScript Interpreter in inside browser engine.
+- JavaScript compilers are explicitly available : V8, Babel
+- JavaScript supports various programming approaches
+        a) Functional
+        b) Structural
+        c) Imperative
+        d) Object Oriented  etc...
+- JavaScript is not an OOP language, it supports only few features of OOP.
+- JavaScript is used
+
+        1. Client Side                : HTML
+        2. Server Side            : Node JS
+        3. Database                : MongoDB
+        4. Animations            : 3DS Max, CAD, Flash
+
+What is the role of JavaScript Client Side?
+- JavaScript is used Client Side for handling
+
+    a) DOM Manipulations
+            Adding Element into DOM
+            Removing Element from DOM
+            Updating Data into Element
+            Creating custom Elements etc..
+    b) Browser Interactions        
+            Location Access
+            History Access
+            Navigator Access
+     c) Client Side Validations

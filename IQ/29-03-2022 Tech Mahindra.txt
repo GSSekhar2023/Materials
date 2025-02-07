@@ -1,0 +1,20 @@
+Framework components   CTS,CLS
+Encapsulation and Abstraction
+Abstract class why u r using,purpose,need of this
+Multiple inhertance why not supported
+constant and readonly
+Delegates,
+Extention methods
+Design patterns
+SOLID Principles
+Handling errors
+Ienumerable and 
+Collections
+var and dynamic
+
+
+differene b/w ASP.NET AND .NET CORE
+Dependency Injection
+Default folders in .Net core
+
+SP AND Functions difference

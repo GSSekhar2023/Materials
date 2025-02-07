@@ -1,0 +1,116 @@
+04-0-2023
+
+ORDER BY clause :- 
+----------------------------  
+
+=> used to sort data based on one or more columns either in ascending or in descending order
+
+     SELECT columns
+     FROM tabname
+     [WHERE cond]
+     ORDER BY  colname ASC/DESC ,----------
+
+ => default order is ascending 
+ => use DESC for descending order
+
+ => arrange employee list name wise ascending order ?
+
+     SELECT *
+     FROM EMP
+     ORDER BY ENAME  ASC 
+
+ => arrange employee list sal wise desc order ? 
+
+     SELECT *
+     FROM EMP
+     ORDER BY SAL DESC 
+
+     NOTE :-  
+
+    =>  in order by  nulls treated low , so in ascending order nulls are displayed
+          first and in descending order nulls displayed last.
+
+  => arrange employee list dept wise asc and with in dept hiredate wise asc ?
+
+       SELECT *
+       FROM EMP
+       ORDER BY  DNO ASC , HIREDATE ASC 
+
+     100	SACHIN	CLERK		5000.00	2023-03-30	10
+     101	RAVI	ANALYST		8000.00	2023-03-30	10  
+    104	KUMAR	NULL		NULL	2018-04-20	20
+    102	AJAY	CLERK		4000.00	2019-10-05	20
+    103	VIJAY	MANAGER	9000.00	2020-05-10	30
+    105	SATISH	NULL		NULL	2023-03-30	30
+
+ => arrange employee list dept wise asc and with in dept sal wise desc ?
+
+     SELECT *
+     FROM EMP 
+     ORDER BY  DNO ASC , SAL DESC 
+
+     1   A   3000  20			 5   E   4000 10
+     2   B   5000 30			 3   C   2000 10
+     3   C   2000 10 =============>	 4   D   6000 20
+     4   D   6000 20			 1   A   3000  20
+     5   E   4000 10			 2   B   5000 30
+     
+ => 
+
+  STUDENT
+  SNO   SNAME    M     P    C
+  1         A             80    70    90
+  2         B             60    50    70
+  3         C            90     80    70
+  4         D            90     70    80
+
+ => arrange student list  avg wise desc , m desc, p  desc  ?
+
+ SELECT *
+ FROM STUDENT
+ ORDER BY (M+P+C)/3  DESC ,M DESC,P DESC 
+
+3         C            90     80    70
+4         D            90     70    80
+1         A             80    70    90
+2         B             60    50    70
+
+ => to display avg in the output 
+
+ SELECT  * , (M+P+C)/3  AS AVG
+ FROM STUDENT
+ ORDER BY (M+P+C)/3 DESC,M DESC,P DESC
+
+ 
+3         C            90     80    70	80
+4         D            90     70    80	80
+1         A             80    70    90	80
+2         B             60    50    70	60
+
+ALIAS :- 
+------------
+
+=>  alias means another name 
+=>  used to change column heading
+
+        colname/expr   AS   ALIAS 
+
+ => display  employee names and annual salaries ? 
+ 
+    SELECT  ENAME,SAL*12  AS "ANNUAL SAL"  FROM EMP 
+
+    SELECT ENAME,SAL*12 AS [ANNUAL SAL] FROM EMP 
+
+ => display   ENAME  SAL    HRA    DA    TAX    TOTSAL   ?
+
+                   HRA = house rent allowance = 20% on sal
+                   DA   =  dearness allowance = 30% on sal
+                   TAX =  10% on sal
+                   TOTSAL = SAL + HRA + DA - TAX 
+
+     SELECT  ENAME,SAL,
+                    SAL*0.2 AS HRA,
+                    SAL*0.3 AS DA,
+                    SAL*0.1 AS TAX,
+                    SAL+(SAL*0.2)+(SAL*0.3)-(SAL*0.1) AS TOTSAL
+     FROM EMP 

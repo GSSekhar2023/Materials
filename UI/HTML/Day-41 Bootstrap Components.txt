@@ -1,0 +1,417 @@
+Bootstrap Components
+1. alert
+2. badge
+
+                                        badge
+
+- It is a container used to separate element from inline content.
+                   
+class:
+.badge
+.bg-{contextual}        background
+.text-{contextual}        foreground
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body class="container-fluid">
+    <h2>Table of Contents</h2>
+    <ul class="list-unstyled">
+        <li class="bg-dark text-white p-2 mb-2 d-flex justify-content-between"><span>HTML</span><span class="badge bg-light text-dark rounded rounded-circle">1</span></li>
+        <li class="bg-dark text-white p-2 mb-2 d-flex justify-content-between"><span>CSS</span><span class="badge bg-light text-dark rounded rounded-circle">4</span></li>
+        <li class="bg-dark text-white p-2 mb-2 d-flex justify-content-between"><span>Bootstrap</span><span class="badge bg-light text-dark rounded rounded-circle">10</span></li>
+        <li class="bg-dark text-white p-2 mb-2 d-flex justify-content-between"><span>JavaScript</span><span class="badge bg-light text-dark rounded rounded-circle">21</span></li>
+    </ul>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
+
+                                        Button
+Classes
+.btn
+.btn-{contextual}
+.btn-outline-{contextual}
+.btn-group
+.btn-group-vertical
+.btn-toolbar
+.btn-sm
+.btn-lg
+.btn-link
+.btn-close
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body class="container-fluid">
+    <h2>Toolbar</h2>
+    <div class="btn-toolbar bg-danger d-flex justify-content-between">
+        <div class="btn-group">
+            <button class="btn btn-danger">Home</button>
+            <button class="btn btn-danger">About</button>
+            <button class="btn btn-danger">Contact</button>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-danger"><span class="bi bi-search"></span></button>
+            <button class="btn btn-danger"><span class="bi bi-person"></span></button>
+            <button class="btn btn-danger"><span class="bi bi-cart4"></span></button>
+        </div>
+    </div>
+    <h2>Contextual</h2>
+    <button class="btn btn-primary">Insert</button>
+    <button class="btn btn-info">Update</button>
+    <button class="btn btn-danger">Delete</button>
+    <h2>Outline Contextual</h2>
+    <button class="btn btn-outline-primary">Insert</button>
+    <button class="btn btn-outline-info">Update</button>
+    <button class="btn btn-outline-danger">Delete</button>
+    <h2>Group</h2>
+    <div class="btn-group-vertical">
+        <button class="btn btn-primary">Insert</button>
+        <button class="btn btn-info">Update</button>
+        <button class="btn btn-danger">Delete</button>
+    </div>
+    <h2>Special Buttons</h2>
+    <button class="btn btn-link">Signout</button>
+    <button class="btn-close"></button>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
+
+                                        Collapse
+
+- It is used to show and hide content in page.
+
+Classes:
+.collapse
+.show
+.fade
+
+Attributes:
+data-bs-target            : It is a jquery attribute used to identify the target element.
+data-bs-toggle            : It handle click event for button, It refers to component
+                              that must toggle.
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body class="container-fluid">
+    <h2>Frequently Asked Questions</h2>
+    <button data-bs-target="#q1" data-bs-toggle="collapse" class="btn btn-dark w-100">What is Netflix?</button>
+    <div class="bg-dark text-white mt-2 p-2 collapse show" id="q1">
+        <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices.</p>
+        <p>You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!</p>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
+
+                                         Accordion
+- It is a combination of items that collapse and exand using "Mutex" mechanism.
+- Mutual Exclusion , only one collapse is visible others are hidden.
+
+Classes:
+.accordion
+.accordion-header
+.accordion-body
+.accordion-footer
+.accordion-item
+.accordion-collapse
+.accordion-button
+
+Attributes:
+data-bs-target
+data-bs-toggle
+data-bs-parent
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body class="container-fluid">
+    <h2>Frequently Asked Questions</h2>
+    <div class="accordion" id="faqs">
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button data-bs-target="#q1" data-bs-toggle="collapse" class="accordion-button">What is Netflix?</button>
+            </div>
+            <div class="collapse accordion-collapse show" id="q1" data-bs-parent="#faqs">
+                <div class="accordion-body">
+                  <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices.</p>
+                  <p>You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button" data-bs-target="#q2" data-bs-toggle="collapse">How mush does Netflix Cost?</button>
+            </div>
+            <div class="collapse accordion-collapse" id="q2" data-bs-parent="#faqs">
+                <p>Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from ₹ 149 to ₹ 649 a month. No extra costs, no contracts.</p>
+            </div>
+        </div>
+
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body class="container-fluid">
+    <h2>Frequently Asked Questions</h2>
+    <div class="accordion" id="faqs">
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button data-bs-target="#q1" data-bs-toggle="collapse" class="btn btn-dark w-100">What is Netflix?</button>
+            </div>
+            <div class="collapse accordion-collapse show" id="q1" data-bs-parent="#faqs">
+                <div class="accordion-body">
+                  <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices.</p>
+                  <p>You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="btn btn-dark w-100" data-bs-target="#q2" data-bs-toggle="collapse">How mush does Netflix Cost?</button>
+            </div>
+            <div class="collapse accordion-collapse" id="q2" data-bs-parent="#faqs">
+                <p>Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from ₹ 149 to ₹ 649 a month. No extra costs, no contracts.</p>
+            </div>
+        </div>
+
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
+
+                                        Card
+Classes
+.card
+.card-header
+.card-body
+.card-footer
+.card-img-top
+.card-img-bottom
+.card-img-overlay
+.card-title
+.card-subtitle
+
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        .card {
+            width: 250px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body class="container-fluid">
+    <div class="d-flex flex-wrap">
+        <div class="card">
+            <img src="../public/images/asp.jpg" class="card-img-top">
+            <div class="card-header">
+                <h3 class="card-title">ASP.NET</h3>
+                <p class="card-subtitle">Server Side Framework</p>
+            </div>
+            <div class="card-body">
+                <h3>Course Content</h3>
+                <ul>
+                    <li>Server Objects</li>
+                    <li>Server Controls</li>
+                    <li>State Management</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-info w-100">Join Course</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="../public/images/aws.jpg" class="card-img-top">
+            <div class="card-header">
+                <h3 class="card-title">AWS</h3>
+                <p class="card-subtitle">Server Side Framework</p>
+            </div>
+            <div class="card-body">
+                <h3>Course Content</h3>
+                <ul>
+                    <li>Server Objects</li>
+                    <li>Server Controls</li>
+                    <li>State Management</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-info w-100">Join Course</button>
+            </div>
+        </div>
+
+        <div class="card">
+           
+            <div class="card-header bg-info">
+                <h3 class="card-title">Digital Market</h3>
+                <p class="card-subtitle">Server Side Framework</p>
+            </div>
+            <div class="card-body">
+                <h3>Course Content</h3>
+                <ul>
+                    <li>Server Objects</li>
+                    <li>Server Controls</li>
+                    <li>State Management</li>
+                </ul>
+                <button class="btn btn-info w-100">Join Course</button>
+            </div>
+            <div class="card-footer">
+               
+                <img src="../public/images/dm.jpg" class="card-img-bottom">
+            </div>
+           
+        </div>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
+
+                                        Modal
+
+- It is a dialog that pops up in browser window.
+- It closes in backdrop.
+
+Classes:
+.modal
+.modal-dialog
+.modal-content
+.modal-header
+.modal-body
+.modal-footer
+.modal-fullscreen
+.modal-dialog-scrollable
+.modal-dialog-centered
+
+EX:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+   
+</head>
+<body class="container-fluid">
+    <button data-bs-target="#login" data-bs-toggle="modal" class="btn btn-primary mt-2">Login</button>
+    <button data-bs-target="#details" data-bs-toggle="modal" class="btn btn-danger">Details</button>
+    <div class="modal fade" id="details">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>ASP.NET</h2>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="../public/images/asp.jpg" width="100%" height="200">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="login">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2> <span class="bi bi-person-fill"></span> User Login</h2>
+                    <button data-bs-dismiss="modal" class="btn-close"></button>
+                </div>
+                <div class="modal-body">
+                    <dl>
+                       <dt>User Name</dt>
+                       <dd><input type="text" class="form-control"></dd>
+                       <dt>Password</dt>
+                       <dd><input type="password" class="form-control"></dd>
+                       <dt>User Name</dt>
+                       <dd><input type="text" class="form-control"></dd>
+                       <dt>Password</dt>
+                       <dd><input type="password" class="form-control"></dd>
+                       <dt>User Name</dt>
+                       <dd><input type="text" class="form-control"></dd>
+                       <dt>Password</dt>
+                       <dd><input type="password" class="form-control"></dd>
+                       <dt>User Name</dt>
+                       <dd><input type="text" class="form-control"></dd>
+                       <dt>Password</dt>
+                       <dd><input type="password" class="form-control"></dd>
+                       <dt>User Name</dt>
+                       <dd><input type="text" class="form-control"></dd>
+                       <dt>Password</dt>
+                       <dd><input type="password" class="form-control"></dd>
+                    </dl>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary">Login</button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

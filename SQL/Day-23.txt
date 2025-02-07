@@ -1,0 +1,219 @@
+ 19-apr-23
+
+   DEFAULT :- 
+   ---------------
+
+   => a  column can be declared with default value  as follows
+
+     ex :-     hiredate   date   default  getdate()
+
+  => while inserting if we skip hiredate then sql server inserts default value.
+
+  ex :-  
+
+    CREATE TABLE emp22
+    (
+        empno  INT ,
+        ename  VARCHAR(10),
+        hiredate DATE  DEFAULT GETDATE())
+    )
+
+   INSERT INTO emp22(empno,ename)  VALUES(100,'A') 
+   INSERT INTO emp22  VALUES(101,'B','2023-01-01') 
+   INSERT INTO emp22  VALUES(102,'C',NULL) 
+
+   SELECT * FROM emp22
+
+   empno	ename	hiredate
+   100	A	2023-04-19
+   101	B	2023-01-01
+   102	C	NULL
+
+ TABLE LEVEL :- 
+ ----------------------
+
+ =>  if constraints is declared after declaring all columns then it is called table level.
+ =>  use table level to declare constraint multiple columns or combination of columns.
+
+      CREATE TABLE <tabname>
+      (
+         colname  datatype(size)  ,
+         colname  datatype(size),
+          ------------------------,
+                    CONSTRAINT(col1,col2,---)
+       )
+
+   Declaring check constraint at table level :-
+   -------------------------------------------------------
+
+   PRODUCTS
+   prodid    pname     price     mfd_dt    	 exp_dt  
+   1           A              100      2023-04-01  2023-01-01      invalid
+   
+            rule :-  exp_dt > mfd_dt 
+
+   => above example rule based on multiple columns so cannot be declared at column level
+        and must be declared at table level.
+
+       CREATE TABLE products
+       (
+         prodid  INT  PRIMARY KEY,
+         pname  VARCHAR(10) NOT NULL,
+         price     MONEY,
+         mfd_dt   DATE,
+         exp_dt    DATE,
+                 CHECK(exp_dt > mfd_dt)
+        )
+
+   INSERT INTO products VALUES(100,'A',1000,GETDATE(),'2023-01-01') => ERROR
+   INSERT INTO products VALUES(100,'A',1000,'2023-01-01',GETDATE()) => 1 row created
+
+  Composite primary key :- 
+  ---------------------------------
+
+  => if primary key is declared for combination of columns then it is called composite primary key
+
+  => sometimes in tables we may not uniquely identify the records by using single column
+       and we need combination of columns to uniquely identify , so that combination
+       shoule be declared primary key at table level.
+
+ => in composite primary key combination should not be duplicate
+
+     example  1  :-
+
+     STUDENT		 COURSE
+     SID	SNAME		 CID	NAME
+     1	A		 10	.NET
+     2	B		 11	 SQL SERVER
+
+    REGISTRATIONS
+    SID	CID	DOR	FEE
+    1	10	?	?
+    1	11	?	?
+    2	10	?	?
+
+  => in the above example sid,cid combination uniquely identifies the records , so 
+       declare this combination as primary key at table level.
+
+  CREATE TABLE student
+  (
+     sid  INT  PRIMARY KEY,
+     sname VARCHAR(10) NOT NULL
+  )
+
+  INSERT INTO student VALUES(1,'A'),(2,'B')
+
+  CREATE TABLE course
+  (
+    cid  INT  PRIMARY KEY,
+    cname VARCHAR(10) NOT NULL
+   )
+
+  INSERT INTO course VALUES(10,'.NET'),(11,'SQL SERVER')
+
+  CREATE TABLE registrations
+  (
+      sid  INT  REFERENCES student(sid),
+      cid  INT  REFERENCES course(cid),
+      dor DATE,
+      fee MONEY ,
+               PRIMARY KEY(sid,cid)
+   )
+
+ 
+   INSERT INTO registrations VALUES(1,10,GETDATE(),2000)
+   INSERT INTO registrations VALUES(1,11,GETDATE(),2000)
+   INSERT INTO registrations VALUES(2,10,GETDATE(),2000)
+   INSERT INTO registrations VALUES(1,10,GETDATE(),2000)  => ERROR
+
+  Example 2 :- 
+
+  SALES
+  DATEID	 	PRODID	   CUSTID    QTY     AMT 
+  2023-04-18	100	   10	     1	2000
+  2023-04-18            101               10                1        1000
+  2023-04-18            100	  11	     1         2000
+  2023-04-19            100              10                 1        2000
+
+  => identify primary key and write create table script ?
+
+composite foreign key :- 
+------------------------------
+
+=> if foreign key declared for combination then it is called composite foreign key.
+=> a composite foreign key refers composite primary key.
+
+  
+Example :-
+
+    REGISTRATIONS
+    SID	CID	DOR	FEE
+    1	10	?	?
+    1	11	?	?
+    2	10	?	?
+
+    CERTIFICATES
+    CERTNO     DOI  	SID	CID
+    1000            ???	1	10
+    1001	        ???   1               11
+    1002            ???    2               11   => INVALID
+
+
+ => in the above example SID,CID combination should match with registrations table
+      SID,CID combination ,so declare this combination as foreign key at table level
+
+   CREATE TABLE CERTIFICATES
+   (
+      CERTNO   INT   PRIMARY KEY,
+      DOI           DATE,
+      SID           INT,
+      CID          INT,
+               FOREIGN KEY(SID,CID)   
+                              REFERENCES REGISTRATIONS(SID,CID)
+      )
+
+ 
+1  which of the following constraint cannot be declared at table level ?
+
+  A    UNIQUE
+  B   CHECK
+  C   NOT NULL
+  D   PRIMARY KEY
+  E   FOREIGN KEY 
+
+   ANS :- C
+  
+
+2   Which statements are true regarding constraints ?
+
+A  a foreign key cannot contain NULL value      F
+B  a column with UNIQUE constraint can contain NULL value   T
+C  a constraint is enforced only for the INSERT operation on a table  F
+D  all constraints can be defined at column level and table level.    F
+
+3 
+
+ Which CREATE TABLE statement is valid?
+
+A. CREATE TABLE ord_details
+(ord_no NUMERIC(2) PRIMARY KEY,
+item_no NUMERIC(3) PRIMARY KEY,
+ord_date DATE NOT NULL);
+
+B. CREATE TABLE ord_details
+(ord_no NUMERIC(2) UNIQUE, NOT NULL,
+item_no NUMERIC(3),
+ord_date DATE DEFAULT GETDATE() NOT NULL);
+
+C. CREATE TABLE ord_details
+(ord_no NUMERIC(2) ,
+item_no NUMERIC(3),
+ord_date DATE DEFAULT NOT NULL,
+   UNIQUE (ord_no),
+  PRIMARY KEY (ord_no));
+
+D. CREATE TABLE ord_details
+(ord_no NUMERIC(2),
+item_no NUMERIC(3),
+ord_date DATE DEFAULT GETDATE() NOT NULL,
+           PRIMARY KEY (ord_no, item_no));

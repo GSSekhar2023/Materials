@@ -1,0 +1,60 @@
+Encapsulation:
+Class
+
+internal class Test
+{
+ int i=78;
+ public void Method()
+ {
+  
+ }
+
+}
+internal class Test1:Test
+{
+ 
+
+}
+
+=====================================
+Reverse the string:
+Array[] arr=new arr{"Hello","world"};
+Array[] arr1=new arr{arr.Length};
+string result=String.Empty;
+string rev=String.Empty;
+for(int j=0;j<=arr1.Length;j++)
+{
+ result=arr[j];
+  CharArray ch=result.ToCharArray();
+  for(int i=result.Length-1;i>=-1;i--)
+   {
+     rev+=ch[i];  //OLLEH
+   }
+  
+}
+arr1[j]=rev;
+}
+Console.WriteLine(arr1);
+Console.ReadLine();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

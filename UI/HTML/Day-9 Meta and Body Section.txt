@@ -1,0 +1,103 @@
+
+HTML Page Structure
+1. Document Declaration    <!DOCTYPE html>
+2. Document Scope            <html> </html>
+3. Head Section                <head> </head>
+4. Elements in Head        <title> <link> <meta> <script> <style>
+
+                                        Meta
+- Meta refers to "Meta Data".
+- It comprises of information related to your page.
+- It is required to make the page more responsive and SEO friendly.
+
+Meta Responsive:
+<meta  name="viewport"  content="width=device-width, initial-scale=1">
+<meta  http-equiv="refresh"  content="5">
+
+Meta SEO Friendly:
+ <meta  name="keywords"  content="some keywords used for searching your website">
+ <meta  name="description"  content="some description about your website">
+ <meta  charset="utf-8">
+
+            UTF    = Unicode Transformation Format
+             8        = 8bit [memory]     English -US, UK, IN etc..
+            16        = 16bit             Korea, China, German etc..
+            32        = 32bit            Arabic
+           
+                                     Script
+- It is used to embed JavaScript into Page.
+
+        <script>
+            .... your logic....
+        </script>
+
+                                    Style
+- It is used to embed CSS into page
+
+        <style>
+            ...your styles...
+        </style>
+
+
+Summary
+-------------
+1. title
+2. link
+3. meta
+4. style
+5. script
+                                    HTML Body Section
+
+- The contents in body section are displayed in browser workspace.
+- The body section is defined by using <body> element.
+- Body element have following attributes
+
+        Attribute                Description
+        ----------------------------------------------------------------
+        bgcolor                It sets a background color for body
+        text                    It sets a color for text in body
+
+Note: HTML colors are defined in 2 ways
+            a) Color Name | Color Shade Name
+            b) Hexa Decimal code
+
+            <body  bgcolor="red">                color name
+            <body  bgcolor="tomato">            color shade name
+
+            Hexa Decimal Color
+            - 3 chars code with "#"
+            - 6 chars code with "#"
+            - Color combination will be "RGB"  [Red, Green, Blue]
+                    #RGB
+                    #RRGGBB
+            - Every color range will be from "0 to f"  [0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f]
+                     R = 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b ,  c, d, e ,f
+                          dark                                          bright
+
+                    #0f0                Green
+                    #f00                Red
+       
+Syntax:
+            <body  bgcolor="#f00"  text="#ffffff">
+            <body  bgcolor="red">
+
+        background            It sets a background picture of body.
+
+Note: Never use physical path of any resource in web designing. Always use virtual                    path.
+
+                    <body  background="images/name.jpg">
+
+
+        align                    It aligns the body content left, center, right, and justify.
+
+
+                                <body align="justify">
+       
+        leftmargin            ]
+        rightmargin        ]    It sets space between the browser window and content in
+        topmargin            ]    page.
+        bottommargin    ]
+
+Note:  Every page default size is "1200px  X  768px"
+
+        <body align="justify" leftmargin="100" rightmargin="100" topmargin="50" bottommargin="50">

@@ -1,0 +1,101 @@
+[10:25 AM] Brahma Chary Arroju
+
+* List and AsSet difference
+* Extension Methods
+* IEnumerable and Enumberable
+* Abstract calss have object and constructor?
+* Var and Dynamic keyword
+* Runtime Polymorphism
+* Char and varchar 
+* == and ===
+* file and 
+* how to call li in JQuery
+* write LINQ query  like below query stmt.
+* Have you write join in LINQ
+* How to get data from control to view ?
+* MVC Filters?
+* Scoped and Transient?
+* Trow and Trow.Ex 
+
+EmpId EmpName DeptId
+
+1    Sai    1
+
+2    Ram  2
+
+3    Raj   null
+
+ 
+
+Department
+
+Id  DeptName 
+
+1   IT
+
+2   HR
+
+
+
+SELECT E.EMPID,E.EmpName,D.DeptName FROM EMP AS E
+LEFT JOIN Department AS D
+ON E.DeptId=D.ID
+
+
+
+FROM EMP AS E  E.EMPID,E.EmpName,D.DeptName LEFT JOIN Department AS D
+
+1    Sai    IT
+
+2    Ram    HR
+
+3    Raj   null
+==========================================================
+*Found the repeated characters in given string:
+public static void Main()
+	{
+		string str="Somasekhar";
+		char[] ch=str.ToCharArray();
+		string res=string.Empty;
+		bool b=true;
+		for(int i=0;i<str.Length-1;i++)
+		{
+		 res+=ch[i];
+			b=str.Contains(res);
+			if(b==false)
+				return ;
+			else
+				
+				
+		}
+		Console.WriteLine("Hello World");
+	}
+
+****
+duplicate entries delete:
+
+
+select distinct col1 from tbl
+============================================================
+* Remove the duplicate numbers? 
+*Find the count of duplicate numbers?
+
+static void Main(string[] args)
+		{
+			var arr = new int[] { 1, 1, 2, 3, 2, 5, 1 };
+			int i;
+			int[] result;
+			int count=0;
+			for (i=0;i<arr.Length-1;i++)
+			{
+				//count += arr[i];
+				if (count == arr[i])
+				{
+					count += 1;
+				}
+			}
+
+		}
+
+HashTable,Group,Dictionary
+Enumerable,Lamda expression

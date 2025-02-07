@@ -1,0 +1,38 @@
+select DeptName,Count(Salary) from Employee group by DeptName
+
+Insert into Employee (EmpId,Deptname) Values(123,'AAA')
+
+lIST EMP ()
+SELECT STMT?
+
+NAME,MANAG MANAGER ID IS NULL
+
+SELECT NAME FROM EMPLOYEE WHERE EmpID is Null 
+
+delete duplicate records
+
+with CTE Records
+(select DensRank id (partitionBy id) from Employee ) As Result
+Delete Result from Records where id>1
+
+rank,
+
+3rd and 4th Hsal
+
+Select top 2 from
+(select Distinct top 4 salary from Employee order by salary desc ) Result
+Order by salary asc 
+
+
+keep and peek
+can we use keep in viewBag
+Rank,Dens_Rank,RowNumebr
+Routing
+Transient and Scope
+Throw and Trhow ex
+==========================
+WITH EmpCTE AS
+(
+ Select *, Row_Number() over(partition by Id order By Id) as RowNumber from Emp
+)
+Delete from EmpCTE WHERE RowNumber>1

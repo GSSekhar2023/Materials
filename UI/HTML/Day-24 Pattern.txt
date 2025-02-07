@@ -1,0 +1,132 @@
+Regular Expression
+
+Meta Character            Description
+---------------------------------------------------------------------------------------------------------
+ ?                            It refers to zero or one occurance of character
+
+                             pattern ="colou?r"        => color, colour
+
+ +                            One or more occurances of character
+       
+                             pattern="colou+r"            => colour, colouur, colouuur..
+
+ *                            Zero or more occurances of character
+
+                             pattern="colou*r"            => color, colour, colouur,...
+
+ . (dot)                        It refers any single character.  [A-Za-z0-9!@#$%^&]
+
+ \                            It is escape sequence character.
+                            It can transform a meta character into normal character and
+                            vice versa.
+
+                            pattern="gmail\.com"
+                            pattern="\+91"
+
+ | (pipe)                    It is used as logical OR, It allows any one from the given set of
+                            values or patterns.
+
+                            pattern="red|green|blue"
+                            pattern="color|colour"
+
+ [ ]                            It defines range.        
+
+                            pattern=[a,b,c]
+                            pattern=[a-m]
+
+ ( )                            It defines union.                    
+
+                             pattern=(?=.*a-z)
+
+^                            Starts with
+
+$                            Ends with
+
+                            pattern="^expression$"
+
+\d                            single digit number [0 to 9]
+
+                            pattern="\d"            
+                            pattern="\d\d"            
+                            pattern="\d?\d"
+
+\D                            single char , any char other than number. [non-numeric]
+
+                            pattern="\D"
+                            pattern="\d\D"
+
+\w                            Word chars, any character between  A-Za-z0-9 or "_"
+
+                            pattern="\w"
+
+\W                             Non-word chars,  all special chars only.
+                             all chars other that [a-zA-Z0-9_]
+
+\s                            It defines blank space. [dont' use black space directly in pattern]
+
+
+                            pattern="\D\s\d"            =>   A 4,   a 3,  # 5
+
+[a-z]                        only lower case letter
+
+[A-Z]                        ony uppercase letter
+
+[a-zA-Z]                    both upper and lower case
+[a-Z]                        both upper and lower case
+
+[0-9]                        any number between 0 to 9
+
+[a-zA-Z0-9]                alpha numeric
+
+[!@#$%^&]                specified special chars
+
+[a,d,s]                        only specified chars
+
+[a-d,4-8,A-M]                any char between specified range.
+
+[^a-d]                        excluding specified range all other allowed
+
+
+Quantifier                    Description
+----------------------------------------------------------
+ { 4 }                        exactly 4 chars only
+
+ {4,10}                        minimum 4 and maximum 10
+
+ {4,  }                        minimum 4 and maximum any
+
+
+Syntax:
+                pattern="[A-Z]{4,10}"
+
+1. Write a pattern to validate mobile number start with +91 and 10 digits only.
+
+
+                pattern="\+91\d{10}"
+
+
+2. Write a pattern for validating US mobile format
+
+                +(1)(425) 555-0100                        
+
+                pattern="\+\(1\)\(\d{3}\)\s\d{3}-\d{4}"
+
+3. Pattern for UK phone
+
+                +(44)(20) 1234 5678
+
+4.  Pattern to validate user name 4 to 15 chars alpha numeric.
+
+                 pattern="\w{4,15}"
+                 pattern="[A-Za-z0-9]{4,15}"
+
+5. Built in expressions
+
+                (?=.*[A-Z])             at least one upper case letter
+                (?=.*[0-9])                at least one number
+                (?=.*[!@#$%^&])    at least one special character.
+
+6. Write a pattern for user name 4 to 15 chars alpha numeric with at least one upper case lettter.
+
+                pattern="(?=.*[A-Z])\w{4,15}"
+                pattern="(?=.*[0-9])\w{4,15}"

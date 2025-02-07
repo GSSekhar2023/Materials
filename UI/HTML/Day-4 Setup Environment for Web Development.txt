@@ -1,0 +1,78 @@
+- Web Applications
+- Web Server
+    a) Local
+            IIS, Tomcat
+    b) Cloud
+            Firebase, AWS, Azure..
+
+Setup Environment for Building Web Applications
+
+1. Download and Install "Node JS" on your PC
+
+    - Node JS is required to handle server side
+    - Node JS provides a "Package Manager" software
+    - Package Manager is used by developer to install, update and uninstall various libraries.
+    - The node package manager is "NPM"
+
+            https://nodejs.org/en
+           
+    - Download  "18x version"
+    - Install the setup
+    - Check the version
+
+        run -> cmd
+
+        C:\> node  -v                    >16+
+        C:\> npm -v                    >8+
+
+        [Yarn, NuGet, Composer, Grunt, Bower, RubyGems...]
+
+
+2. Download and install  Visual Studio Code editor
+
+    - Editor provides an IDE [Integrated Development Environment]
+    - You can build, debug, test and deploy applications from one place.
+
+        https://code.visualstudio.com
+
+3. Open Visual Studio Code in your PC and install few extentions
+
+        -  Live Server    (Ritwick Dey)
+        -  vscode-icons    (vscode-icon)
+        -  IntelliSense of CSS class name in HTML
+
+Create a new Project for Web Application
+
+1. Create a new folder on your PC for project
+
+                D:\flipkart
+
+2. Open Project folder in VS-Code editor
+
+            File Menu => Open Folder => D:\Flipkart
+
+
+3. Open your project folder in Terminal [Command Prompt]
+
+            Terminal Menu => New Terminal => Switch to Command Prompt
+            [Don't use Power Shell]
+
+    D:\flipkart>
+
+4. Type the following command
+
+        D:\flipkart>  npm   init   -y
+
+        - This command generates a new file called "package.json"
+        - package.json comprises of project meta data.
+        - It contains information about project
+                name
+                version
+                license
+                author
+                dependencies etc...
+
+5. Add following folder into project
+
+                a) public        : It is used to keep static resources: html, images, docs ...
+                c) src            : It is used for dynamic resources : css, scss, js, ts ...

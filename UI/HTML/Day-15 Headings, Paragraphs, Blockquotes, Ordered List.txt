@@ -1,0 +1,418 @@
+Text Formatting in HTML
+- Font
+        <font face size color>
+- Font Styles
+        <b> <i>  <strong> <em>
+- Font Effects
+        <u> <ins>
+        <strike> <del>
+       
+        <sup>                Superscript        It can raise char above the base line
+        <sub>                Subscript            It can lower char below the base line
+
+        X<sup>2</sup>
+        H<sub>2</sub>O
+
+                                     Headings in HTML
+                                    -------------------------
+
+- HTML headings are defined by using
+    <hn>
+
+- 'n' refers to level number of heading 1 to 6.
+
+- Headings are used to make your topic SEO friendly.
+
+Syntax:
+            <h1> Text </h1>
+            ............
+            ............
+            <h6> Text </h6>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1>Web Technologies</h1>
+     <h2>Front-End</h2>
+     <h3>HTML</h3>
+     It is a markup language.
+     <h3>CSS</h3>
+     It defines styles.
+     <br><br>
+     <font size="4"><b>JAVASCRIPT</b></font>
+     <br><br>
+     It is a language for DOM.
+     <h2>Back-End</h2>
+     <h3>MongoDB </h3>
+     It is a database.
+     <h3>Node JS</h3>
+     It is server side programming.
+</body>
+</html>
+
+FAQ: Why to define text in heading style, if we can configure same appearence without heading style?
+Ans: To keep our topics in page SEO friendly. So that search engines can easily summarize your topics in page.
+
+Note:
+      - Never use too many headings in a page. It may lead to SPAM.
+      - Never use headings to highlight any word or sentence.
+
+FAQ: How to remove the pre-defined style given for heading?
+Ans: By using CSS inheritance attribute "unset".
+
+Syntax:
+        <style>
+            h1 {
+                all:unset;
+            }
+        </style>
+
+FAQ: Can we change the appearence of pre-defined heading styles?
+Ans:  Yes. By using style attributes.
+
+Syntax:
+        <style>
+            h1 {
+                font-family: Algerian;
+                font-size:35px;
+             }
+        </style>
+
+
+                            Paragraphs and Blockquotes
+                            ---------------------------------------
+- Paragraph is defined by using the element <p>
+- Blockquote is defined by using the element <blockquote>
+
+Syntax:
+        <blockquote>  your text </blockquote>
+        <p>  your text </p>
+
+- You define "align" attribute to display left, center, right or justify.
+
+         <blockquote  align="justify">
+         <p align="right">
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        blockquote {
+            margin-left: 300px;
+            margin-right: 300px;
+        }
+    </style>
+</head>
+<body>
+     <h2>HTML</h2>
+     <div>
+        <p>It is a markup language.</p>
+        <p>It is used for presentation.</p>
+        <p>It presents DOM.</p>
+     </div>
+     <h2>License Terms</h2>
+     <div>
+        <blockquote align="justify">
+            <i>
+                The Microsoft Services Agreement is an agreement between you and Microsoft (or one of its affiliates) that governs your use of Microsoft consumer online products and services.
+            </i>
+        </blockquote>
+     <p>
+        We understand that you may have questions about the Microsoft Services Agreement. We have an FAQ page (https://www.microsoft.com/en-us/servicesagreement/upcoming-faq.aspx) that provides more information, including what Microsoft products and services it covers. Whenever we make changes, we provide a summary of the most notable changes to the current Microsoft Services Agreement. We will also continue to provide a summary of the changes to the previous version, and a link to the previous version, of the Microsoft Services Agreement on the Summary of Changes (https://www.microsoft.com/en-us/servicesagreement/upcoming-updates.aspx) page.
+     </p>
+     </div>
+
+</body>
+</html>
+
+FAQ:
+1. How to configure first line indent for paragraph or blockquote?
+A. By using CSS attribute "text-indent".
+
+Syntax:
+        p, blockquote {
+            text-indent: 50px;
+        }
+
+2. How to design a dropcap?
+A. You can access first letter of paragraph by using CSS class "::first-letter".
+     You can set as dropcap using : font, style, size and float.
+
+Syntax:
+    p :: first-letter {
+          font-family : Arial;
+          font-size : 40px;
+          float:left;    
+     }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p::first-letter {
+            font-family: Algerian;
+            text-align: justify;
+            font-size: 50px;
+            float: left;
+            padding-right: 5px;
+            padding-bottom: -20px;
+            color:red;
+        }
+    </style>
+</head>
+<body>
+     
+     <p>
+        We understand that you may have questions about the Microsoft Services Agreement. We have an FAQ page (https://www.microsoft.com/en-us/servicesagreement/upcoming-faq.aspx) that provides more information, including what Microsoft products and services it covers. Whenever we make changes, we provide a summary of the most notable changes to the current Microsoft Services Agreement. We will also continue to provide a summary of the changes to the previous version, and a link to the previous version, of the Microsoft Services Agreement on the Summary of Changes (https://www.microsoft.com/en-us/servicesagreement/upcoming-updates.aspx) page.
+     </p>
+   
+</body>
+</html>
+
+
+3. How to set space between lines in a paragraph?
+A. By using CSS attribute  "line-height".
+
+Syntax:
+        p {
+           line-height: 20px;
+        }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p::first-letter {
+            font-family: Algerian;
+            text-align: justify;
+            font-size: 50px;
+            float: left;
+            padding-right: 5px;
+            padding-bottom: -20px;
+            color:red;
+            line-height: 35px;
+        }
+        p {
+            line-height: 25px;
+        }
+    </style>
+</head>
+<body>
+     
+     <p>
+        We understand that you may have questions about the Microsoft Services Agreement. We have an FAQ page (https://www.microsoft.com/en-us/servicesagreement/upcoming-faq.aspx) that provides more information, including what Microsoft products and services it covers. Whenever we make changes, we provide a summary of the most notable changes to the current Microsoft Services Agreement. We will also continue to provide a summary of the changes to the previous version, and a link to the previous version, of the Microsoft Services Agreement on the Summary of Changes (https://www.microsoft.com/en-us/servicesagreement/upcoming-updates.aspx) page.
+     </p>
+   
+</body>
+</html>
+
+
+                            Ordered and Unordered List
+- Ordered list is defined by using
+        <ol>
+- Ordered list is an auto numbering style for a list of items.
+- Every item in list is defined with
+        <li>
+
+Syntax:
+        <ol>
+          <li> Item-1 </li>
+          <li> Item-2 </li>
+        </ol>
+
+- You can change the numbering style by using "type" attribute
+   
+          type = "a, A, i, I, 1"
+
+          <ol  type="a">
+
+- You can define from where the numbering have to start by using "start" attribute
+
+          start = "5"        => level number
+
+- You can also reverse the numbering, new from HTML 5.
+
+          "reversed"
+
+Syntax:
+          <ol  reversed>
+
+Ex:
+    <ol type="a" reversed start="2">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Bootstrap</li>
+        <li>JavaScript</li>
+     </ol>
+
+- You can keep orderlist nested.
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+     <h2>Web Technologies</h2>
+     <ol>
+        <li>Front-End
+            <ol type="a">
+                <li>HTML
+                    <ol type="i">
+                        <li>Normal Elements</li>
+                        <li>Void Elements</li>
+                    </ol>
+                </li>
+                <li>CSS
+                    <ol type="i">
+                        <li>CSS Units</li>
+                        <li>CSS Selectors</li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+        <li>Back-End
+            <ol type="a">
+                <li>MongoDB</li>
+                <li>Node JS</li>
+            </ol>
+        </li>
+     </ol>
+</body>
+</html>
+
+FAQ:
+1. How to keep list items side by side?
+A. display flex.
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .options {
+        margin-top: 20px;
+        display: flex;
+       }
+       li {
+        margin-right: 50px;
+       }
+    </style>
+</head>
+<body>
+     <ol>
+        <li>
+            HTML is ___________ language.
+            <ol type="a" class="options">
+                <li>Programming</li>
+                <li>Structured</li>
+                <li>Markup</li>
+                <li>Imperative</li>
+            </ol>
+        </li>
+     </ol>
+</body>
+</html>
+
+2. How to keep list items in multiple columns?
+A. display grid
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .options {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 6fr 6fr;
+       }
+       li {
+        margin-bottom: 20px;
+       }
+    </style>
+</head>
+<body>
+     <ol>
+        <li>
+            HTML is ___________ language.
+            <ol type="a" class="options">
+                <li>Programming</li>
+                <li>Structured</li>
+                <li>Markup</li>
+                <li>Imperative</li>
+            </ol>
+        </li>
+     </ol>
+</body>
+</html>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .options {
+        margin-top: 20px;
+        columns: 2;
+       }
+       li {
+        margin-bottom: 20px;
+       }
+    </style>
+</head>
+<body>
+     <ol>
+        <li>
+            HTML is ___________ language.
+            <ol type="a" class="options">
+                <li>Programming</li>
+                <li>Structured</li>
+                <li>Markup</li>
+                <li>Imperative</li>
+            </ol>
+        </li>
+     </ol>
+</body>
+</html>

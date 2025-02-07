@@ -1,0 +1,382 @@
+Transform 2D
+
+1. translate()        : It is used to move element along X and Y axis.
+
+     translate()        shorthand
+    translateX()
+    translateY()
+
+Syntax:
+        translate(10px, 30px)
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blocks {
+            width: 500px;
+            height: 30px;
+            display: flex;
+        }
+        .white-block {
+            background-color: white;
+            border:1px solid black;
+            width: 20px;
+        }
+        .black-block {
+            background-color: black;
+            color:white;
+            width: 20px;
+            transform: translateX(0px);
+            transition: 1s;
+        }
+        .black-block:hover {
+            transform: translateX(10px);
+            transition: 1s;
+        }
+        .white-block:hover {
+            transform: translateY(10px);
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+   <div class="blocks">
+        <div class="white-block"></div>
+        <div class="black-block"></div>
+        <div class="white-block"></div>
+        <div class="black-block"></div>
+        <div class="white-block"></div>
+        <div class="black-block"></div>
+        <div class="white-block"></div>
+        <div class="black-block"></div>
+        <div class="white-block"></div>
+        <div class="black-block"></div>
+        <div class="white-block"></div>
+   </div>
+</body>
+</html>
+
+2. scale()                : It a transform method used to change size of element, which
+                          includes width and height.
+
+    scale()            shorthand for both width and height
+    scaleX()            for width
+    scaleY()            for height
+
+Syntax:
+        transform : scale(1)            1 = 100%,  1.5 = 150%
+
+       
+Note: You can't apply multiple transforms for one element. The last defined transform
+         will apply.
+
+        {
+          transform : translateX(300px);    // overwritten
+          transform: scale(1.3);                // this is applied
+        }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+        img {
+            transform: scale(1,1);
+            transition: 2s;
+        }
+        img:hover {
+            transform: scale(1.5, 2);
+            transition: 2s;
+        }
+    </style>
+</head>
+<body>
+    <img src="../public/images/asp.jpg">
+</body>
+</html>
+
+3. rotate()                : It is used to change the orientation of element by specified angle.
+
+    rotate()            shorthand
+    rotateX()
+    rotateY()
+
+Syntax:
+    {
+     transform: rotateX(45deg);
+    }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+        img {
+            transform: rotate(0deg);
+            transition: 2s;
+        }
+        img:hover {
+            transform: rotate(-180deg);
+            transition: 2s;
+        }
+    </style>
+</head>
+<body>
+    <img src="../public/images/asp.jpg">
+</body>
+</html>
+
+4. skew()            : It is used to tilt element by specified angle.
+
+    skew()            shorthand
+    skewX()
+    skewY()
+
+Syntax:
+    {
+     transform: skewX(20deg);
+    }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+        img {
+            transform: skewY(0deg);
+            transition: 2s;
+        }
+        img:hover {
+            transform: skewY(40deg);
+            transition: 2s;
+        }
+    </style>
+</head>
+<body>
+    <img src="../public/images/asp.jpg">
+</body>
+</html>
+
+5. matrix()            : It is used to define multiple transforms. It have a specific sequence.
+
+Syntax:
+        matrix(scaleX(), skewX(), skewY(), scaleY(), translateX(), translateY())
+
+        scale = 1 => 100%
+        skew = 1  =>  10deg
+        translate 100 => 100px
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+        img {
+            transform: matrix(1,0,0,1,0,0);
+            transition: 2s;
+        }
+        img:hover {
+            transform: matrix(2,2,1,2,-300,100);
+            transition: 2s;
+        }
+    </style>
+</head>
+<body>
+    <img src="../public/images/asp.jpg">
+</body>
+</html>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        .layer-1 {
+            background-color: yellow;
+            width: 50px;
+            height: 200px;
+            position: absolute;
+            transform: skewX(-20deg);
+        }
+        .layer-2 {
+            background-color: red;
+            width: 50px;
+            height: 250px;
+            position: absolute;
+            transform: skewX(20deg);
+            margin-top: -40px;
+            margin-left: -80px;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+   <div>
+    <div class="layer-1">
+
+    </div>
+    <div class="layer-2">
+
+    </div>
+   </div>
+</body>
+</html>
+
+                                        CSS 3D Transforms
+
+- 3D refers to 3 dimensions  X, Y, and Z.
+- All transforms are same as 2D with additional Z axis.
+
+1. translate3D()
+2. scale3D()
+3. skew3D()
+4. rotate3D()
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+        }
+        marquee {
+            width: 800px;
+            padding: 100px;
+        }
+        img {
+            transform: scale3d(1,1,1);
+            transition: 2s;
+            margin: 50px;
+        }
+        img:hover {
+            transform: scale3d(2,2,2);
+            transition: 2s;
+            box-shadow: 10px 10px 2px black;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <marquee scrollamount="10" onmouseover="this.stop()" onmouseout="this.start()">
+            <img src="../public/images/asp.jpg" width="100" height="100">
+            <img src="../public/images/aws.jpg" width="100" height="100">
+            <img src="../public/images/dm.jpg" width="100" height="100">
+            <img src="../public/images/ds.jpg" width="100" height="100">
+        </marquee>
+    </div>
+</body>
+</html>
+
+Note: Several Browsers can't handle transforms. Developer have to use transform with             various plugins.
+
+                transform:scale();
+                -webkit-transform:scale();            => safari, edge
+                -ms-transform:scale();                => internet explorer
+                -o-transform:scale();                => opera
+                -moz-transform:scale();                => firefox
+
+                                    CSS Transitions
+- It is used to control the transformation of element.
+- Transition attributes
+
+    transition                        : short hand
+    transition-duration            : total time taken to complete the transformation
+    transition-delay                : time take to start transformation
+    transition-property            : defines the property name, that uses transition
+    transition-timing-function    : it sets pre-defined transition functions.
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 50px;
+            background-color: red;
+            height: 50px;
+            transition-duration: 5s;
+            transition-delay: 1s;
+            transition-timing-function:linear;
+        }
+        div:hover {
+            width: 1200px;
+            background-color: blue;
+            transition-duration: 3s;
+            transition-property: width;
+            transition-timing-function: steps(15);
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+                                @keyframes and animations

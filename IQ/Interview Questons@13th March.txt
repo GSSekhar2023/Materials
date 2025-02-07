@@ -1,0 +1,27 @@
+middleware
+filters
+Dependency injuction
+authentication and autherization
+Session 
+
+one click
+indxers
+view purpose
+cluser
+why not call sp from funtion 
+
+SOLID
+abstruct method main use
+delegates
+method hiding and method overriding
+Design pattern
+
+
+ADO.NET
+DataReader,DataSet,DataAdapter
+
+
+Table:Employee
+select top 1 Emp_Id,Emp_Name,Emp_Salary from (select top 2 max(salary) from Employee order by salary desc)Results order by salary
+write this query into LINQ OR EF
+How to handle default null values

@@ -1,0 +1,9 @@
+JQuery with API
+Ajax call
+Bootstrap classes
+=============================
+Renu taking details for taking 5days for shortlist the canditate.
+
+Pinki Hr gurugram night shift
+skills:.Net CORE with API
+Interview :Thur,Fri

@@ -1,0 +1,7 @@
+Dispose and Finilizer 
+SOLID
+Dependency in Starup class
+Can I add extention method in static block?
+Convert.ToString and Tostring difference?
+List and IEnumerable 
+Bool datatype in SQL how to represent

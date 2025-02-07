@@ -1,0 +1,91 @@
+EffiaSoft:
+*State management techniques
+*Partial views
+*how to convert var to decimal in javascript
+*How to know API call is from client or hacker
+*Exception handling
+*How to handle Exceptions in QA
+
+*Count the characters in the string:
+string str="Welcome to Hyderabad";
+char[] ch=str.ToChar();
+int count=0;
+for(int i=0;i<str.Length;i++)
+{
+  ch[i]
+  if(str.Contains)
+}
+
+
+========================================================
+Find duplicate records:
+select col2,Count(col2) from tbl group by col2  Having Count(col2)>1
+
+Find count INDIA word repeated
+String str="ABC INDIA SDF INDIA";
+string str1=str.split(' ');
+string s="INDIA";
+INT COUNT=0;
+FOR(INT I=0;I<STR.LENGTH;I++)
+{
+  IF(S==str[i])
+{
+  count+=1;
+}
+
+}
+Console.WriteLine(count);
+
+====================================================================
+static and single
+ado.net and EF is faster
+middleware example realtime using
+dependency injection 
+file.json
+ref and out
+Runtime polymorphism types
+Exceptions
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+===============================
+class Program
+{
+    static void Main()
+    {
+        string input = "This is a sample string. This string contains sample words.";
+
+        // Split the input string into words using spaces as separators.
+        string[] words = input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+        // Create a dictionary to store word counts.
+        Dictionary<string, int> wordCounts = new Dictionary<string, int>();
+
+        // Iterate through the words and count occurrences.
+        foreach (string word in words)
+        {
+            // Normalize the word to lowercase to treat "Word" and "word" as the same.
+            string normalizedWord = word.ToLower();
+
+            if (wordCounts.ContainsKey(normalizedWord))
+            {
+                // If the word is already in the dictionary, increment its count.
+                wordCounts[normalizedWord]++;
+            }
+            else
+            {
+                // If the word is not in the dictionary, add it with a count of 1.
+                wordCounts[normalizedWord] = 1;
+            }
+        }
+
+        // Display repeated words and their counts.
+        foreach (var kvp in wordCounts.Where(kv => kv.Value > 1))
+        {
+            Console.WriteLine($"{kvp.Key}: {kvp.Value} times");
+        }
+    }
+}
+============================
+To trigger a Logic App, you need to define a trigger at the beginning of your workflow. 

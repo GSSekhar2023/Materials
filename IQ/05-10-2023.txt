@@ -1,0 +1,12 @@
+WHEN CTE AND TEMP TABLES
+Index 
+clustered index
+Keys available in sql server
+diff primary key and unique key
+Normalization and 1NF,2NF,3NF
+
+Dependency injection
+
+Garbage collection
+Dispose method
+Abstract method and virtual method

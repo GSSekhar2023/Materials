@@ -1,0 +1,363 @@
+CSS Selectors
+1. Primary
+2. Rational
+3. Attribute
+4. Dynamic Pseudo Classes
+
+                                Element State Pseudo Classes
+
+:disabled            : effects when disabled
+:enabled            : effects when disabled is not defined
+:read-only            : effects when set with read-only
+:checked            : verifies the element checked state and set effects.
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #Password+div {
+            display: none;
+        }
+        #Password:focus+div {
+            display: block;
+            color:red;
+            font-size: 14px;
+        }
+        input[type="text"]:read-only {
+            cursor:not-allowed;
+        }
+        button:disabled {
+            cursor: not-allowed;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <dl>
+        <dt>User Name</dt>
+        <dd><input type="text" readonly value="john"></dd>
+        <dt>Password</dt>
+        <dd>
+            <input type="password" id="Password">
+            <div>Password 4 to 15 chars with atleast one uppercase letter.</div>
+        </dd>
+    </dl>
+    <button disabled>Login</button>
+</body>
+</html>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #terms~button{
+            display: none;
+        }
+        #terms:checked~button {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Terms of Services</legend>
+        <textarea rows="4" cols="40" disabled>Please accept the terms and conditions</textarea>
+        <p>
+            <input type="checkbox" id="terms"> <span>I Accept</span>
+            <br><br>
+            <button>Register</button>
+        </p>
+    </fieldset>
+</body>
+</html>
+
+                        Element Validation State Pseudo Classes
+:optional
+:required
+:in-range
+:out-of-range
+:valid
+:invalid
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #UserName+div {
+            display: none;
+        }
+        #UserName:invalid+div {
+            display: block;
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <dl>
+        <dt>User Name</dt>
+        <dd>
+            <input type="text" required id="UserName">
+            <div>Name Required</div>
+        </dd>
+    </dl>
+</body>
+</html>
+
+                                Structural Pseudo Classes
+
+:nth-child()                specific occurance of child element
+:nth-of-type()                every nth occurance of child element from top
+:nth-last-of-type()        every nth occurance of child element from bottom
+:first-child                    first child
+:last-child                    last child
+
+Syntax:
+    :nth-child(number)
+    {
+    }
+
+    :nth-child(even | odd)
+    {
+    }
+
+    :nth-of-type(2n)        => every 2nd occurance starting with 2
+    :nth-of-type(2n+1)    => every 2nd occurance starting with 1
+    :nth-last-of-type(2n+1)
+
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       ol {
+        list-style: none;
+       }
+       li {
+         box-shadow: 2px 2px 2px gray;
+         padding: 2px;
+         margin-bottom: 10px;
+         width: 200px;
+       }
+       li:nth-child(even) {
+          background-color: aquamarine;
+       }
+       li:nth-child(odd) {
+          background-color: lightpink;
+       }
+       
+    </style>
+</head>
+<body>
+     <ol>
+        <li>Item-1</li>
+        <li>Item-2</li>
+        <li>Item-3</li>
+        <li>Item-4</li>
+        <li>Item-5</li>
+        <li>Item-6</li>
+        <li>Item-7</li>
+        <li>Item-8</li>
+        <li>Item-9</li>
+        <li>Item-10</li>
+     </ol>
+</body>
+</html>
+
+                             Behaviorual and Occurance Classes
+::before
+::after
+::first-letter
+::first-line
+::placeholder
+::selection
+
+Note : "::" refers to implementation with rules.
+
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       ol {
+        list-style: none;
+        display: flex;
+       }
+       li::after {
+         content: "> >";
+         padding-right: 10px;
+         padding-left: 10px;
+       }
+       li:last-child::after {
+         content: " ";
+       }
+       li::first-letter {
+         font-family: jokerman;
+       }
+       p::selection {
+        background-color: yellow;
+       }
+       input::placeholder {
+          color:green;
+          font-size: 10px;
+       }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="User Name">
+    <input type="password" placeholder="Password">
+    <ol>
+        <li>Home</li>
+        <li>Shop</li>
+        <li>Cart</li>
+        <li>Checkout</li>
+        <li>Payment</li>
+        <li>Confirmation</li>
+    </ol>
+    <p>
+        We understand that you may have questions about the Microsoft Services Agreement. We have an FAQ page (https://www.microsoft.com/en-us/servicesagreement/upcoming-faq.aspx) that provides more information, including what Microsoft products and services it covers. Whenever we make changes, we provide a summary of the most notable changes to the current Microsoft Services Agreement. We will also continue to provide a summary of the changes to the previous version, and a link to the previous version, of the Microsoft Services Agreement on the Summary of Changes (https://www.microsoft.com/en-us/servicesagreement/upcoming-updates.aspx) page.
+    </p>
+</body>
+</html>
+
+                                Root, Universal & Language Selector
+
+:root { }            refering to root element of page.
+* { }                universal, it refers to all
+:lang                It refers to language type
+
+
+
+
+
+
+
+Summary
+1. CSS Integration
+2. CSS Selectors
+3. CSS Rules
+
+                                    CSS Rules
+
+- Priority between inline, embeded and external.
+- Priority between type, id and class selectors.
+
+                                    CSS Inheritance
+
+- Inheritance is the process of reusing and extending the code.
+- CSS inheritance is about implementation of effects by child element based on its parent.
+- Inheritance values in CSS are
+        a) inherit
+        b) initial
+        c) unset
+
+Inherit: It implements the effects of parent and applies to child.
+         You can inherit all effects or any specific.
+
+          {
+            all : inherit;
+            color: inherit;
+          }
+
+initial:  It sets the default effect of element.
+
+unset:     It removes all effects for element, including the default.
+
+Syntax:
+          h1 {
+              all : unset;
+            }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            border:4px double red;
+            padding: 20px;
+            color:red;
+            font-family: Brush Script MT;
+        }
+        h1 {
+            color:initial;
+            font-family: initial;
+            border:inherit;
+            padding: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        container text
+        <h1>Heading Text</h1>
+    </div>
+</body>
+</html>
+
+                                    CSS Colors
+1. Color Name
+2. Color Shade Name
+3. Hexadecimal
+4. rgb()
+5. rgba()
+6. hsl()
+7. hsla()
+8. gradient
+
+rgb()        : It sets color share with combination red, green and blue value that ranges
+              from  0 to 255.
+
+              rgb(red, green, blue);            red=0 to 255
+                                                  green=0 to 255
+                                                blue=0 to 255
+              rgb(255,0,0);
+
+rgba()        : It sets rgb with alpha , which is transparent.
+              alpha value ranges from 0 to 1.
+
+              rgb(reg, green, blue, alpha)
+
+              rgb(255,0,0,0.5)
+
+hsl()        : It set hue, saturation and light.
+
+                hue = a color wheel  start with 0 to 360deg [angle]
+                         0 to 120  red
+                        120 to 240 green
+                        240 to 360 blue
+                sat    =   it is grey shade in picture or color - 0 to 100%
+                light= lightning from 0 to 100%
+
+hsla()        : hue, sat, light with alpha
+
+                hsl(110, 50%, 20%)
+                hsla(240, 50%, 30%, 0.6)

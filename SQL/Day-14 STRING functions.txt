@@ -1,0 +1,160 @@
+
+08-APR-23
+
+   => display  ENAME    EXPERIENCE  ?
+                                     M YEARS N MONTHS 
+
+          experience = 40 months = 3 YEARS 4 MONTHS 
+
+          years    =  months/12 = 40/12  = 3     years
+          months =  months%12 = 40%12 = 4  months
+
+         SELECT ENAME,
+                       DATEDIFF(MM,HIREDATE,GETDATE())/12 AS YEARS,
+                       DATEDIFF(MM,HIREDATE,GETDATE())%12 AS MONTH 
+         FROM EMP 
+
+  FORMAT() :- 
+  ----------------
+
+  => used to display dates in different formats 
+
+          FORMAT(DATE,'FORMAT')
+
+ ex :- 
+
+1   SELECT FORMAT(GETDATE(),'MM/dd/yyyy')   =>  04/08/2023
+
+2   SELECT FORMAT(GETDATE(),'MM/dd/yyyy hh:mm:ss') => 04/08/2023 04:38:20
+
+=> display  ENAME    HIREDATE    ?
+     display hriedates in DD-MM-YYYY ?
+
+    SELECT ENAME,
+                  FORMAT(HIREDATE,'dd-MM-yyyy') AS HIREDATE
+    FROM EMP 
+
+ scenario :- 
+ --------------
+
+  INSERT INTO EMP(EMPNO,ENAME,JOB,SAL,HIREDATE)
+                 VALUES(100,'ABC','CLERK',4000,GETDATE())
+
+ => display list of employees joined today ?
+
+     SELECT * 
+     FROM EMP 
+     WHERE HIREDATE =  GETDATE()     =>  NO ROWS 
+ 
+                   2023-04-08  =  2023-04-08 16:54:20.123
+
+   "="  comparision with GETDATE() always fails  because date compared
+    with date & time.  To overcome this problem use FORMAT function
+
+  SELECT *
+  FROM EMP
+  WHERE  HIREDATE = FORMAT(GETDATE(),'yyyy-MM-dd')
+
+ DATEADD() :- 
+ -----------------
+
+ => used to add days,months,years to a date 
+ => can also be used to subtract
+
+      DATEADD(interval,number,date)
+
+ ex :-  
+
+   1    SELECT  DATEADD(DD,10,GETDATE())   => 2023-04-18
+   2   SELECT   DATEADD(MM,6,GETDATE())   => 2023-10-8
+   3   SELECT   DATEADD(MM,-2,GETDATE())  => 2023-02-08
+
+ scenario :- 
+ --------------
+
+ GOLD_RATES
+ DATEID		RATE
+ 2020-01-01	?
+ 2020-01-02	?
+
+ 2023-04-08	?
+
+ 
+1  display today's gold rate ?
+2  display yesterday's gold rate ?
+3  display last month same day gold rate ?
+4  display last year same day gold rate ?
+
+ 
+1  SELECT  RATE 
+    FROM GOLD_RATES
+    WHERE DATEID =  FORMAT(GETDATE(),'yyyy-MM-dd')
+
+ 2  SELECT  RATE 
+     FROM GOLD_RATES
+     WHERE DATEID = DATEADD(DD,-1,FORMAT(GETDATE(),'yyyy-MM-dd'))
+
+3   SELECT  RATE 
+     FROM GOLD_RATES
+     WHERE DATEID = DATEADD(MM,-1,FORMAT(GETDATE(),'yyyy-MM-dd'))
+
+ 4  SELECT  RATE 
+     FROM GOLD_RATES
+     WHERE DATEID = DATEADD(YY,-1,FORMAT(GETDATE(),'yyyy-MM-dd'))
+
+ 5  display last 1 month gold rates  ?
+
+    SELECT *
+    FROM GOLD_RATES
+    WHERE DATEID BETWEEN  DATEADD(MM,-1,GETDATE())  AND GETDATE()
+
+ EOMONTH() :-  
+ -------------------
+
+ => returns last day of the month 
+
+          EOMONTH(DATE,NUMBER)
+
+  1   SELECT EOMONTH(GETDATE(),0)   =>   2023-04-30
+
+  2   SELECT EOMONTH(GETDATE(),1)   =>   2023-05-31
+
+  3   SELECT EOMONTH(GETDATE(),-1)   =>  2023-03-31 
+
+ 
+Questions :- 
+---------------
+
+ 1  display  current month first day ?
+ 2  display  first day of the next month ? 
+ 3  display  first day of the current year ?
+ 4  display last day of the current year ?
+
+STRING functions :- 
+--------------------------
+
+UPPER() :- 
+-------------
+
+ => converts string to uppercase 
+
+    syn :-  UPPER(string) 
+
+ SELECT UPPER('hello')   =>  HELLO
+
+ LOWER() :- 
+ --------------
+
+ => converts string to lowercase 
+
+    syn :- LOWER(string)
+
+  SELECT  LOWER('HELLO')   => hello 
+
+=> display   ENAME   SAL  ?  display names in lowercase ?
+ 
+     SELECT  LOWER(ENAME) AS ENAME,SAL FROM EMP 
+
+=> convert names to lowercase in table ?
+
+    UPDATE EMP SET ENAME = LOWER(ENAME) 

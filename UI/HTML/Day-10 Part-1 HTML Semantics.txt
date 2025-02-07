@@ -1,0 +1,72 @@
+HTML Body Section
+<body>
+
+1. bgcolor
+2. background
+3. text
+4. align
+5. leftmargin
+6. rightmargin
+7. topmargin
+8. bottommargin
+
+Colors in HTML
+1. Color Name or Shade Name
+2. Hexadecimal
+        #RGB,  #RRGGBB        [0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f]
+
+9. alink                It sets color for active links.
+
+10. vlink                It sets color for visited links.
+
+
+Syntax:
+        <body  alink="red"   vlink="gray">
+
+            <a href="http://www.amazon.in"&gt; Amazon India </a> |
+            <a href="http://www.amazon.com"&gt; Amazon US </a>
+
+        </body>
+
+                                HTML Body Semantics
+- HTML have more than 100 semantics for presentation.
+- HTML 5 introduced some new semantics to make the page more SEO friendly.
+
+1. header
+2. footer
+3. section
+4. main
+5. nav
+6. menu                            =>  for designing a layout of page.
+7. dialog
+8. figure
+9. figcaption
+10. aside
+11. article
+12. div
+13. span
+
+                        www.getbootstrap.com  => themes
+
+https://themes.getbootstrap.com/preview/?theme_id=37702
+
+Setup Icons for Project
+-------------------------------
+1. Open Terminal in VS Code
+
+2. Run the command
+
+        >npm  install  bootstrap-icons  --save
+
+3. Bootstrap Icons are copied into a CSS file, which is defined in
+
+        "node_modules/bootstrap-icons/font"
+
+4. Link Bootstrap icons CSS file to webpage
+
+<link rel="stylesheet"  href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+5. You can set icons by using class names.
+
+    <span class="bi bi-person"> </span>
+    <span  class="bi bi-facebook"> </span>

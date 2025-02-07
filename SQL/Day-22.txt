@@ -1,0 +1,205 @@
+
+18-APR-23
+
+ PRIMARY KEY :- 
+ ----------------------
+
+ =>  PRIMARY KEY doesn't accept duplicates & nulls. 
+ =>  primary key is the combination of unique & not null.
+ => in table one column must be there to uniquely identify the records and that
+      column must be declared  with primary key,
+
+ ex :- 
+
+  CREATE TABLE emp11
+  (
+      empid   INT   PRIMARY KEY,
+      ename  VARCHAR(10) NOT NULL,
+      sal        MONEY
+   )
+
+  INSERT INTO emp11 VALUES(100,'A',5000)
+  INSERT INTO emp11 VALUES(100,'B',6000)         => ERROR
+  INSERT INTO emp11 VALUES(NULL,'C',4000)      => ERROR
+     
+  => because it is not allowing duplicates & nulls  into empid , so using empid column
+       we can uniquely identify the records.
+ 
+  =>  only one primary key is allowed per table , if we want multiple primary keys then\
+        declare one column with primary key and  other columns with unique  not null.
+     
+
+       CREATE TABLE CUST
+       (
+        CUSTID   INT   PRIMARY KEY,
+        NAME     VARCHAR(10) NOT NULL,
+        AADHARNO  NUMERIC(12)  UNIQUE NOT NULL,
+        PANNO      CHAR(10)   UNIQUE NOT NULL
+       )
+   
+ => difference between unique & primary key  ?
+
+                 UNIQUE                                          PRIMARY KEY
+
+   1         allows one null                                   doesn't allow nulls 
+
+   2         multiple columns can                         one column can be
+              be declared with unique                     declared with primary key
+
+ CANDIDATE KEY :- 
+  -------------------------
+
+  =>  a field eligible for primary key is called candidate key.
+
+        EX :-
+
+            VEHICLES
+            VEHNO     NAME     MODEL     COST     CHASSISNO 
+ 
+            candidate keys	 :-  	VEHNO,CHASSISNO
+            
+            primary key                   :-            VEHNO
+
+           secondary key               :-             CHASSISNO
+           or
+           alternate key
+            	 
+
+  => secondary key or alternate keys are declared by using  UNIQUE   NOT NULL.
+
+  CHECK :- 
+  -------------
+
+  =>  use check constraint when rule based on condition.
+
+             syn :-   CHECK(condition)
+
+  example 1 :-    sal must be min 3000
+
+       CREATE TABLE emp12
+       (
+             empid  INT  PRIMARY KEY,
+             ename  VARCHAR(10) NOT NULL,
+             sal       MONEY  CHECK(sal>=3000)
+       )
+
+	INSERT INTO EMP12 VALUES(100,'A',1000)   => ERROR
+	INSERT INTO EMP12 VALUES(101,'B',5000)
+	INSERT INTO EMP12 VALUES(102,'C',NULL)
+
+    2    gender must be 'm','f' ? 
+
+          gender    char(1)     CHECK(gender IN ('m','f'))
+
+   3     amt must be multiple of 100  ?
+ 
+          amt   money    CHECK(amt%100=0)
+
+  4     pwd must be min 8 chars 
+
+         pwd    varchar(12)    CHECK( LEN(pwd) >= 8)
+
+
+   5    emailid  must contain '@'
+                      must end with '.com' or '.co' or '.in'
+
+        emailid   varchar(20)  check(emailid like '%@%'
+                                                     and
+                                                     (
+                                                          emailid like '%.com'
+                                                          or
+                                                         emailid like '%.co'
+                                                         or
+                                                        emailid like '%.in'
+                                                     ))
+
+
+FOREIGN KEY :- 
+-----------------------
+
+ => foreign key is used to establish relationship between two tables 
+
+ 
+ PROJECTS
+ projid    name    duration    cost     client
+ 100      A           5 YEARS   300     TATA MOTORS
+ 101      B          3 YEARS   200      DBS BANK
+ 102      C          4 YEARS   400      L&T
+
+ EMP
+ empid   ename   sal            projid    REFERENCE projects(projid)
+ 1           K           5000        100
+ 2           S           4000        101
+ 3           D           3000        100
+ 4           E           4000        NULL
+ 
+ => to establish relationship between two tables then take primary key of one table  
+      and add it to another table as foreign key  and declare with references constraint.
+
+ => values entered in foreign key column should match with values entered in 
+      primary key column
+
+ => foreign key allows duplicates & nulls 
+
+ => after declaring foreign key a relationship is established between two tables 
+      called parent/child relationship.
+
+ =>  primary key table is parent and foreign key table is child.
+
+   CREATE TABLE projects
+   (
+       projid  INT   PRIMARY KEY,
+       pname  VARCHAR(10),
+       client    VARCHAR(10)
+   ) 
+
+  INSERT INTO projects VALUES(100,'A','TATA')
+  INSERT INTO projects VALUES(101,'B','DBS')
+
+  CREATE TABLE emp_proj
+  (
+     empid   INT PRIMARY KEY,
+     ename  VARCHAR(10) NOT NULL,
+     sal        MONEY  CHECK(sal>=3000),
+     projid    INT  REFERENCES projects(projid)
+   )
+
+  INSERT INTO emp_proj VALUES(1,'A',5000,100)
+  INSERT INTO emp_proj VALUES(2,'B',6000,999)  => ERROR
+  INSERT INTO emp_proj VALUES(3,'C',4000,NULL)
+  INSERT INTO emp_proj VALUES(4,'D',3000,100)
+
+ Assignment :- 
+
+ ACCOUNTS
+ ACCNO     ACTYPE     BAL
+
+ Rules :-  
+ ----------
+ 
+ 1   accno should not be duplicate & null
+ 2   actype must be 's' or 'c'
+ 3   bal must be min 1000
+
+ TRANSACTIONS
+ TRID    TTYPE    TDATE     TAMT     ACCNO
+ 
+ Rules :- 
+ ----------
+ 
+ 1  trid should not be duplicate & null
+ 2  ttype must be 'w' or 'd'
+ 3  tamt must be multiple of 100
+ 4  accno should match with accounts table accno
+
+
+ LOANS
+ LOANID      TYPE     AMT    ACCNO
+
+ Rules :- 
+
+  1   loanid should not be duplicate & null
+  2   type must 'p' , 'h', 'g' 
+  3   accno  should match with accounts table accno
+
+  

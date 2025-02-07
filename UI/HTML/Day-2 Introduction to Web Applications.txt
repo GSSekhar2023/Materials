@@ -1,0 +1,30 @@
+1. Software development is all about building various types of applications
+        a) DeskTop Applications
+        b) Web Applications
+        c) Distributed Applications
+        d) Mobile Applications
+        e) AI Applications
+        f) 2D & 3D Gaming Applications
+        g) IoT Applications
+
+2. UI Full Stack Web Developer can build
+        Web Applications        100%
+        Distributed Apps            70%    [Angular | React | Vue | BackBone | Knockout..]
+        Mobile Apps                30%
+        AI                            20%
+        2D 3D                        40%
+        IoT     Apps                    4%
+
+
+                            Web Application Architecture
+- Front End
+        HTML                     : Presentation Language
+        CSS                        : Makes presentation more interactive and responsive
+        Bootstrap                    : Template Library for web designing
+        Sass, Less                : CSS Pre-Compiler | Processors
+        JavaScript                : Client Side Interactions
+        jQuery                        : Interactions Responsive using Ajax
+- Back End
+        MongoDB
+        Express JS
+        Node JS

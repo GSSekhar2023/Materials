@@ -1,0 +1,219 @@
+15-apr-23
+
+ =>  display dept wise and with in dept job wise total salary ?
+
+       SELECT deptno,job,SUM(sal) as totsal
+       FROM emp 
+      GROUP BY deptno,job 
+      ORDER BY deptno ASC 
+
+ 
+ 	10    	CLERK     	1300
+         		MANAGER 	2450
+         		PRESIDENT	5000
+
+ 	20    	ANALYST		6000
+        		 CLERK		1100
+       		 MANAGER	2975
+ 
+ 	30   	SALESMAN	4100
+  
+ 	
+  =>  display year wise and with in year quarter wise no of employees joined ?
+
+      SELECT  DATEPART(yy,hiredate) as year,
+                      DATEPART(q,hiredate) as qrt,
+	      COUNT(*) as cnt
+     FROM emp 
+     GROUP BY DATEPART(yy,hiredate),DATEPART(q,hiredate)
+     ORDER BY year ASC 
+
+  ROLLUP & CUBE :-  
+ ----------------------------
+
+  => both functions are used to calculate subtotals and grand total
+ 
+          GROUP BY  ROLLUP(COL1,COL2,--)
+          GROUP BY  CUBE(COL1,COL2,---)
+
+ ROLLUP :- 
+ --------------
+
+ => rollup displays subtotals for each group and also display grand total
+
+       SELECT deptno,job,SUM(sal) as totsal
+       FROM emp 
+       GROUP BY ROLLUP(deptno,job)
+       ORDER BY deptno ASC 
+
+
+                                                                29225  => grand total
+
+               10    	CLERK     	1300
+         		MANAGER 	2450
+         		PRESIDENT	5000
+                                                                8750   => subtotal
+
+ 	20    	ANALYST		6000
+        		 CLERK		1100
+       		 MANAGER	2975
+                                                                11075  => subtotal
+ 
+ CUBE :- 
+ ------------
+
+  => CUBE displays subtotals for all the group by columns and also
+       displays grand total
+
+         SELECT deptno,job,SUM(sal) as totsal
+         FROM emp 
+         GROUP BY CUBE(deptno,job)
+         ORDER BY deptno ASC,job ASC  
+
+         	NULL	NULL		29225.00  => grand total
+
+	NULL	ANALYST		6000.00  => job subtotal
+	NULL	CLERK		4350.00  => job subtotal
+	NULL	MANAGER	8275.00
+	NULL	PRESIDENT	5000.00
+	NULL	SALESMAN	5600.00
+
+	10	NULL		8750.00  => dept subtotal
+	10	CLERK		1300.00
+	10	MANAGER	2450.00
+	20	NULL		11075.00  => dept subtotal
+	20	ANALYST		6000.00
+	20	CLERK		2100.00
+	20	MANAGER	2975.00
+	30	NULL		9400.00  => dept subtotal
+	30	CLERK		950.00
+	30	MANAGER	2850.00
+	30	SALESMAN	5600.00
+
+=> 
+
+   PERSONS
+   NAME   AGE   GENDER   ADDR    CITY   STATE
+
+   display state wise and with in state gender wise population and display
+   state wise and gender wise subtotals ?
+ 
+   SELECT  state,gender,COUNT(*) as population
+   FROM persons
+   GROUP BY  CUBE(state,gender) 
+   ORDER BY state asc,gender asc 
+
+   NULL  NULL      ????
+              MALE      ????
+              FEMALE  ????
+  AP                        ????
+  AP        MALE       ????
+  AP        FEMALE   ????
+
+ GROUPING_ID() :- 
+ --------------------------
+
+  => function accepts group by columns and returns subtotal belongs to 
+      which group by column
+
+           ex :-  GROUPING_ID(deptno,job)
+
+                    1    =>  subtotal belongs to 1st group by column
+                    2    =>  subtotal belongs to 2nd group by column
+                    3    =>  grand total
+
+               SELECT deptno,job,SUM(sal) as totsal,
+	             grouping_id(deptno,job) as subtotals
+               FROM emp 
+               GROUP BY CUBE(deptno,job)
+               ORDER BY deptno ASC,job ASC  
+
+ CASE statement :- 
+ ------------------------
+
+ => used to implement if-then-else  in sql
+ => similar to switch case
+ => using case we can return values based on condition
+ => case statements are 2 types 
+
+   1  simple case
+   2  searched case 
+
+  simple case :- 
+
+  CASE  COLNAME
+  WHEN VALUE1 THEN RETURN EXPR1
+  WHEN VALUE2 THEN RETURN EXPR2
+  WHEN  VALUE3 THEN RETURN EXPR3
+  -----------------
+  ELSE RETURN EXPR
+  END
+
+ searched case :- 
+ ---------------------- 
+ 
+  CASE  
+  WHEN COND1 THEN RETURN EXPR1
+  WHEN COND2 THEN RETURN EXPR2
+  ---------------
+  ELSE RETURN EXPR
+  END
+
+   
+   SELECT deptno,job,SUM(sal) as totsal,
+	                CASE grouping_id(deptno,job) 
+		 WHEN 1 THEN 'Dept Subtotal'
+		 WHEN 2 THEN 'Job Subtotal'
+		 WHEN 3 THEN 'Grand total'
+		 END as subtotals
+       FROM emp 
+       GROUP BY CUBE(deptno,job)
+       ORDER BY deptno ASC,job ASC  
+ 
+=> display no of employees based on salary range ?
+
+ 	 0-2000               ?
+ 	 2000-4000         ?
+ 	 ABOVE 4000     ? 
+
+       SELECT CASE 
+                     WHEN SAL BETWEEN 0 AND 2000 THEN '0-2000'
+	     WHEN SAL BETWEEN 2001 AND 4000 THEN '2001-4000'
+	     WHEN SAL>4000 THEN 'ABOVE 4000'
+	     END AS SALRANGE , COUNT(*) AS CNT
+      FROM EMP 
+      GROUP BY CASE 
+                         WHEN SAL BETWEEN 0 AND 2000 THEN '0-2000'
+                         WHEN SAL BETWEEN 2001 AND 4000 THEN '2001-4000'
+	          WHEN SAL>4000 THEN 'ABOVE 4000'
+	          END 
+
+Questions :- 
+----------------
+
+PERSONS
+NAME   AGE     GENDER     ADDR    CITY    STATE 
+
+1   display state wise population ?
+2   display gender wise population ?
+3   display age group wise population ?
+
+        0-18    ?
+        19-40  ?
+        40-60  ?
+        >60     ?
+
+4   display state wise and with in state gender wise population
+     and display state wise subtotals ?
+
+5   display state wise and with in state age group wise population ?
+
+
+ SALES
+ DATEID	 	PRODID	  CUSTID    QTY     AMT    
+ 2020-01-01	10	   100	   1	2000
+
+ 1  display year wise total amount ?
+
+ 2  display year wise and with in year quarte wise total amount 
+     and display year wise subtotals ?

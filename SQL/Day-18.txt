@@ -1,0 +1,192 @@
+13-arp-23
+
+  PARTITION BY clause :- 
+  --------------------------------
+
+  => used to find ranks with in group , for example to find ranks with in dept 
+       first we need to divide the table dept wise by using  partition by clause
+       and apply dense_rank function on each dept.
+
+    SELECT  ename,sal,deptno,
+             dense_rank() over (partition by deptno
+                                          order by sal desc) as rnk
+    FROM emp 
+
+      	king	5000.00	10	1
+	clark	2450.00	10	2
+	miller	1300.00	10	3
+
+	ford	3000.00	20	1
+	scott	3000.00	20	1
+	jones	2975.00	20	2
+	adams	1100.00	20	3
+	smith	1000.00	20	4
+  
+ ROW_NUMBER() :- 
+ --------------------------
+
+ =>  returns record number
+ => row_number is also based on a column
+ => for row_number data must be sorted 
+
+     ROW_NUMBER() OVER (ORDER BY COLNAME ASC/DESC)
+
+ Ex :- 
+
+    SELECT empno,ename,sal,
+           row_number() over (order by empno asc) as rno
+   FROM emp 
+
+     	7369	smith	1000.00	1
+	7499	allen	1600.00	2
+	7521	ward	1250.00	3
+	7566	jones	2975.00	4
+	7654	martin	1250.00	5
+
+RANK VS DENSE_RANK VS ROW_NUMBER :- 
+----------------------------------------------------------------
+
+    SAL		RANK	DENSE_RANK	ROW_NUMBER
+
+    5000		1	1		1	
+    4000		2	2		2
+    3000		3	3		3
+    3000		3	3		4
+    3000		3	3		5
+    2000		6	4		6
+    2000		6	4		7
+    1000		8	5		8		
+
+ AGGREGATE functions :-  
+ ----------------------------------
+
+ =>  these functions process groups of rows and returns one value.
+
+  MAX() :- 
+  -----------
+
+ => returns maximum value
+
+     MAX(arg) 
+
+1   SELECT MAX(SAL) FROM EMP    =>  5000
+
+2   SELECT MAX(HIREDATE) FROM EMP  => 1983-01-12
+
+MIN() :- 
+---------
+
+  => returns minimum value
+
+   MIN(arg) 
+
+  SELECT MIN(sal) FROM emp  =>  800
+
+ SUM() :- 
+ ------------
+
+ => returns total
+
+  SUM(arg) 
+
+  SELECT SUM(sal) FROM emp   => 29225
+
+ => round the total sal to thousands ?
+
+ SELECT ROUND(SUM(sal),-3)  FROM emp  => 29000
+     
+ 29000----------------29500--------------------30000
+
+ => after rounding display total sal with thousand seperator ?
+ 
+     SELECT CONVERT(VARCHAR,ROUND(SUM(sal),-3) ,1) 
+     FROM emp
+
+    O/P :-  29,000.00
+
+ => display total sal paid to managers ?
+
+     SELECT SUM(sal)
+     FROM emp 
+     WHERE job='MANAGER' 
+
+  O/P :- 8275
+
+ AVG() :- 
+ -----------
+
+ => returns average value
+
+  AVG(arg) 
+
+ 1  SELECT AVG(sal) FROM emp   =>   2087.50
+
+ 2  SELECT FLOOR(AVG(sal))  FROM emp  => 2087.00
+ 
+COUNT(*) :- 
+----------------
+
+ => returns no of rows in a table
+
+     SELECT COUNT(*) FROM emp   =>  14
+ 
+ => how many employees joined in 1981 year ?
+
+     SELECT COUNT(*) FROM emp 
+                    WHERE DATEPART(YY,HIREDATE) = 1981 
+
+ => how many employees joined on  sunday ?
+
+      SELECT COUNT(*) 
+      FROM emp 
+     WHERE DATEPART(DW,HIREDATE) = 1 
+
+ NOTE :- aggregate functions are not allowed in where clause and they
+ are allowed only in select,having clauses
+
+ 
+  SELECT ename
+  FROM emp
+  WHERE  sal = MAX(sal)   => ERROR 
+
+ WHERE COUNT(*)=3        => ERROR 
+
+ 
+ date       :-   getdate(),datepart,datename,datediff,dateadd,eomonth
+ string     :- upper,lower,len,left,right,substring,replicate,replace,translate,charindex
+ numeric  :-  power,sqrt,abs,sign,round,ceiling,floor
+ conversion :-  cast,convert
+ special     :-  isnull
+ analytical :-  rank,dense_rank,row_number
+ aggregate :- max,min,sum,avg,count(*)
+
+
+ CUST
+ CID	NAME
+ 10	sachin tendulkar
+ 11	virat kohli
+
+ o/p :- 
+
+  CID	FNAME	LNAME
+  
+  first name :-     SUBSTRING(string,start,length)
+
+         SUBSTRING(NAME,1, CHARINDEX(' ',NAME)-1)
+
+  last name :-       
+ 
+         SUBSTRING(NAME,CHARINDEX(' ',NAME)+1,LEN(NAME))
+ 
+  SELECT CID,
+   SUBSTRING(NAME,1, CHARINDEX(' ',NAME)-1) AS FNAME,
+   SUBSTRING(NAME,CHARINDEX(' ',NAME)+1,LEN(NAME)) AS LNAME
+  FROM CUST 
+
+ GROUP BY clause :-  
+ ---------------------------   
+ 
+  => group by clause is used to group rows based  one or more columns
+       to calculate min,max,sum,avg,count for each group. For example
+       to calculate dept wise total sal then first group the records based on
+       dept  and calculate total sal for each dept.

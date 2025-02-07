@@ -1,0 +1,53 @@
+//Group by
+
+Table:Emp
+
+col:Id,Name,city,sal
+
+select count(city) as count,City  from Emp Group By city ;
+
+static class
+Temp Data
+Different Action Results
+Dependence Injection
+Filters
+
+=============================================================
+string str="somasekhar";
+
+string str1=string.Empty;
+string repeat=string.Empty;
+
+char[] ch=str.ToCharArray();
+
+for(int i=0;i<ch.Length;i++)
+{
+ str1+=ch[i];
+ if(repeat==ch[i])
+ {
+
+ }
+}
+
+
+
+Emp:name,sal
+SELECT Top 3 Name,Salary FROM emp order by salary desc;
+
+anonymous method
+Delegate
+Azure Logic Apps vs Functions
+DevOps
+Out,ref
+Delete,Truncate
+OOps Polymorphism
+Solid Principles
+Framework vs .Net Core
+Dependency injection
+Why EF use
+API how to sent data in XML format
+
+
+31-07-2023
+GarbageCollection
+String Reverse

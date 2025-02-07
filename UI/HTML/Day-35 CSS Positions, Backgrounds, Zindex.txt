@@ -1,0 +1,296 @@
+CSS Positions, Backgrounds, Zindex
+
+CSS Box Model
+- Margin
+- Padding
+- Border
+- Border-Radius
+- Width
+- Height
+
+                                        CSS Positions
+position
+- static
+- relative
+- absolute
+- fixed
+- sticky
+
+Static Position:
+- It keeps the element according to normal flow of document.
+- It is not effected by left, right, top or bottom.
+
+Absolute Position:
+- It removes element from normal flow of document.
+- You can place left, right, top and bottom at any position.
+- It keeps the element fixed to content in page.
+- It moves the element along with content in page.
+
+Fixed Position:
+- It removes element from normal flow of document.
+- You can place left, right, top and bottom.
+- It keeps element fixed to page and not to content.
+- It will not scroll.
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            border:1px solid black;
+        }
+        .offer {
+            width: 100px;
+            border:1px solid red;
+            background-color: yellow;
+            position: fixed;
+            right: 10px;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        We understand that you may have questions about the Microsoft Services Agreement. We have an FAQ page (https://www.microsoft.com/en-us/servicesagreement/upcoming-faq.aspx) that provides more information, including what Microsoft products and services it covers. Whenever we make changes, we provide a summary of the most notable changes to the current Microsoft Services Agreement. We will also continue to provide a summary of the changes to the previous version, and a link to the previous version, of the Microsoft Services Agreement on the Summary of Changes (https://www.microsoft.com/en-us/servicesagreement/upcoming-updates.aspx) page.
+        <div class="offer">30% OFF</div>
+    </div>
+</body>
+</html>
+
+Sticky Position:
+- It keeps the element according to normal flow of document.
+- It can stick the element to page after specified units from top or bottom.
+
+Relative Position:
+- It removes the element from its normal flow and keeps at specified position but relative to the parent.
+- It keeps all child elements relative to parent.
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        .count {
+            background-color: red;
+            color:white;
+            padding: 3px;
+            border-radius: 90px;
+            width: 30px;
+            font-size: 10px;
+            position: absolute;
+            right: -20px;
+            top: -10px;
+        }
+        button {
+            height: 50px;
+            width: 200px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <button>
+       <span class="bi bi-cart4"></span> Your Shopping Cart <span class="count">3</span>
+    </button>
+</body>
+</html>
+
+Bootstrap Classes for Position:
+.position-absolute
+.position-relative
+.position-fixed
+.position-static
+.position-sticky
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+       
+    </style>
+</head>
+<body class="container">
+    <button class="btn btn-primary mt-2 position-relative">
+       <span class="bi bi-cart4"></span> Your Shopping Cart <span class="badge bg-danger rounded rounded-circle position-absolute">3</span>
+    </button>
+</body>
+</html>
+
+                                  CSS  Z-Index
+- It is used to control the orientation of element with regard to other overlapping elements.
+- It is the order of elements
+    a) send back
+    b) send backward
+    c) bring front
+    b) bring forward
+
+- Z-index starts with "0" that refers to element at bottom, form 0 to +ve number element sets forward or front direction.
+
+Syntax:
+        {
+          z-index:0
+        }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            width: 100px;
+            height: 50px;
+            border:2px solid black;
+            box-shadow: 2px 2px 2px gray;
+            position: absolute;
+        }
+        .card-yellow {
+            background-color: yellow;
+            z-index: 0;
+            transition: 3s;
+        }
+        .card-green  {
+            background-image: url("../public/images/a2.jpg");
+            margin-left: 20px;
+            margin-top: 20px;
+            z-index: 1;
+            transition: 3s;
+        }
+        .card-red {
+            background-image: url("../public/images/a1.jpg");
+            margin-left: 40px;
+            margin-top: 40px;
+            z-index: 2;
+            transition: 3s;
+        }
+        .card-green:hover {
+            margin-left: 400px;
+            width: 300px;
+            height: 300px;
+            transition: 3s;
+            background-image: url("../public/images/a2.jpg");
+            background-size: cover;
+            border-radius: 300px;
+        }
+        .card-red:hover {
+            margin-left: 400px;
+            width: 300px;
+            height: 150px;
+            transition: 3s;
+            border-radius: 300px;
+        }
+        .card-yellow:hover {
+            margin-left: 400px;
+            width: 300px;
+            height: 150px;
+            transition: 3s;
+            background-image: url("../public/images/a1.jpg");
+            background-size: cover;
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="card card-yellow">
+
+    </div>
+    <div class="card card-green">
+
+    </div>
+    <div class="card card-red">
+
+    </div>
+</body>
+</html>
+
+                                    CSS Background
+background-color
+background-image
+background-size
+background-position
+background-repeat
+background-attachment
+
+FAQ: Can we set multiple background images?
+Ans: Yes.
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url("../public/images/a1.jpg"), url("../public/images/a3.jpg");
+            background-repeat: no-repeat, repeat;
+            background-position: center center;
+            background-size: 400px 400px, 100px 100px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+   
+</body>
+</html>
+
+FAQ: Can we change background image dynamically?
+Ans: Yes. By using CSS media query.
+
+Syntax:
+        @media  screen  and  (orientation:landscape | portrait)
+         {
+             body {
+             }
+         }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media screen and (orientation:landscape) {
+            body {
+                background-image: url("../public/images/netflixBanner.jpg");
+                background-size: cover;
+            }
+        }
+        @media screen and (orientation:portrait) {
+            body {
+                background-image: url("../public/images/netflix-logo.jfif");
+                background-size: cover;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+</body>
+</html>

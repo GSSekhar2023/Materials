@@ -1,0 +1,162 @@
+
+ 
+07-apr-23
+
+ SP_RENAME :-    (SP => stored procedure)
+ --------------------
+
+ =>  used to change table name and column name
+
+         SP_RENAME   ' OLD NAME ' , ' NEW NAME ' 
+
+  Ex :- rename table emp to employees ?
+
+         SP_RENAME  'EMP', 'EMPLOYEES' 
+
+          rename column comm to bonus in employees table ?
+
+          SP_RENAME  'EMPLOYEES.COMM','BONUS'
+
+ Built-in Functions in SQL SERVER :- 
+ ------------------------------------------------
+
+ => a function accepts some input performs some calculation and
+      returns one value.
+ 
+ Types of functions :- 
+ -------------------------
+
+  1  DATE
+  2  STRING
+  3  NUMERIC
+  4  CONVERSION
+  5  SPECIAL
+  6  ANALYTICAL
+  7  AGGREGATE
+
+  DATE functions :- 
+  ------------------------
+
+  GETDATE() :- 
+  -----------------
+
+   => returns current date & time
+
+      SELECT GETDATE()  => 2023-04-07 16:34:34.510
+                                             ---------------  ----------  -----
+                                                  DATE       TIME     MS
+
+ DATEPART() :- 
+ --------------------
+
+  => used to extract part of the date.
+
+             DATEPART(interval,date)
+
+   ex :- 
+
+             SELECT  DATEPART(YY,GETDATE())    =>   2023
+                                               MM                       =>   04
+                                               DD                        =>   07
+                                               DW                       =>   06 (DAY OF THE WEEK)
+
+                                                                                   1  SUNDAY
+                                                                                   2  MONDAY
+
+                                                                                   7  SATURDAY
+                                               Q                          =>   2  (QUARTER)  
+                                              
+                                                                                  JAN-MAR    1
+                                                                                  APR-JUN     2
+                                                                                  JUL-SEP     3
+                                                                                  OCT-DEC    4
+
+                                               HH                        =>  hour part
+                                               MI                         =>  minutes
+                                               SS                        =>  seconds
+                                               DAYOFYEAR        =>  97
+                                               WW                      =>  14
+
+ => employees joined in 1980,1983,1985 ?
+
+     SELECT *
+     FROM EMP
+     WHERE HIREDATE LIKE '1980%'
+                    OR
+	   HIREDATE LIKE '1983%'
+	    OR
+	   HIREDATE LIKE '1985%'
+
+    SELECT *
+    FROM EMP
+    WHERE DATEPART(YY,HIREDATE)   IN (1980,1983,1985)
+
+ => employees joined in leap year ?
+
+     condition :-     year%4=0
+
+     SELECT *
+     FROM EMP
+     WHERE  DATEPART(yy,HIREDATE)%4=0
+
+ => employees joined between  jan and apr ?
+
+     SELECT *
+     FROM EMP
+     WHERE  DATEPART(mm,HIRERDATE)  BETWEEN 1 AND 4 
+
+=> employees joined on sunday ?
+
+     SELECT *
+     FROM EMP
+     WHERE  DATEPART(DW,HIREDATE) = 1 
+
+=> employees joined in 2nd quarter of 1981 year ?
+ 
+    SELECT *
+    FROM EMP
+    WHERE DATEPART(yy,HIREDATE) = 1981
+                  AND
+                  DATEPART(q,HIREDATE) = 2 
+
+  DATENAME() :- 
+  ---------------------
+
+  => similar to datepart used to extract part of the date.
+ 
+  		   MM		DW
+
+        DATEPART         4 		6
+
+  
+       DATENAME        APRIL		FRIDAY
+
+ 
+   => display   ENAME        DAY OF THE WEEK   ? 
+
+                      
+     SELECT  ENAME,DATENAME(DW,HIREDATE) AS DAY
+     FROM EMP 
+
+   => write a query to display on which day india got independence ?
+
+        SELECT DATENAME(DW,'1947-08-15')   =>  Friday
+
+  DATEDIFF() :- 
+  --------------------
+
+ => used to calculate difference between two dates 
+
+          DATEDIFF(interval,start date,end date)
+
+   ex :-  
+
+     SELECT  DATEDIFF(yy,'2022-04-07',getdate())    =>  1
+     SELECT  DATEDIFF(mm,'2022-04-07',getdate())  =>  12
+     SELECT  DATEDIFF(dd,'2022-04-07',getdate())    =>  365
+      
+  => display  ENAME    EXPERIENCE  in years ?
+
+      SELECT ENAME,
+                    DATEDIFF(yy,HIREDATE,GETDATE()) as EXPERIENCE
+     FROM EMP 

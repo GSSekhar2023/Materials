@@ -1,0 +1,147 @@
+ToString and Convert.ToString
+Const and ReadOnly
+Abstraction
+Sealed class and Partial class
+var dynamic
+
+Dependency Injection
+Middleware
+Types of filters
+API 
+Session handling in MVC,webforms
+keep and peak
+view bag ,view data,Temp
+
+clustered and non clustered
+SP,FUN,Triggers
+Rank and dis
+
+24-05-2023
+Oops conctept
+value type and reference type
+array are which type
+asyncrous 
+thread and 
+Garbage collector
+
+
+api
+500 status is for
+Entity framework
+what is code first approach
+webhost build if for hosting the application
+postman app
+dependency injection
+HTTP PUT,GET,POST Methods
+
+
+primary key and foreign key
+normalization
+joins
+
+
+01-06-2023
+Mphasis
+find owals in a string and rearrang in reverse order?
+Tuples
+how to find null values in tuples
+API
+solid principles
+Dependency injection
+how to remove dependency injection
+
+
+
+03-06-23
+Photon Hiring Team
+
+*Can you explain different between REST API and RESTful API?
+ Protocol		Strong protocol and is more secure, built-in architecture layers.	Has a transport protocol, is less secure as compared to REST.
+ Format of Data		Format of data is based on HTTP.					Format of data is based on HTTP, text, and JSON.
+ Bandwidth		This consumes minimum bandwidth.					This consumes less bandwidth.
+ Cache	        	It represents cacheable and non-cacheable data 				The client can access cacheable information anytime and anywhere.
+			and displaces the non-cacheable data when not required.
+
+
+*Can you explain that return type in MVC?
+  The result type can be “ViewResult”,
+ “RedirectToRouteResult”, “PartialViewResult”, “RedirectResult”, “ContentResult”, “JsonResult”, “FileResult”, and “EmptyResult”.
+
+*Can you explain the action filters?
+ Action Filters: Action Filters can be applied to a controller action method or an entire controller.
+ These filters will be called before the action method starts executing and after the action method has executed. 
+ Action filters implement the IActionFilter interface that has 2 methods OnActionExecuting and OnActionExecuted. 
+ OnActionExecuting method executes before an action method and gives an opportunity to cancel the Action call
+ and OnActionExecuted method executes after an action method and gives an opportunity to modify the view data that a controller action method returns.
+
+*How to handle exception globally in mvc?
+ HandleError: This is an Exception Filters to handle errors in ASP.NET MVC which can be applied over the action method as well as Controller or at the global level.
+ The HandleError Error filter has a set of properties that are very useful in handling the exception. This comes under Exception Filter.
+
+	ExceptionType: Type of exception to be catch. If this property is not specified, then the HandleError filter handles all exceptions.
+	View: Name of the view page for displaying the exception information. 
+	Master: Master View for displaying the exception. 
+
+Input: nums = [1,1,2]Output: 2, nums = [1,2,_]
+
+*List of collection, how to remove 2 row in the collection using linq?
+ Below is the list of generic collections available in C# -
+
+	List
+	Dictionary
+	SortedList
+	HashSet
+ Below is the list of few non-generic collections available in C# -
+
+	ArrayList
+	Hashtable
+
+
+*Can you explain different types of storage available in Azure?
+ 	Azure Blob Storage. Blob is one of the most common Azure storage types. ...
+	Azure Files. Azure Files is Microsoft's managed file storage in the cloud. ...
+	Azure Queue Storage. ...
+	Azure Table. ...
+	Azure Managed Disks.
+
+*How many resource groups a subscription can have?
+	980
+
+*How many different types of applications provided by App Services in Azure?
+	There are 4 types of App Services:
+
+	Web App – used for hosting websites and web applications (previously Azure Websites)
+	API App – used for hosting the RESTful APIs
+	Logic App – used for business process automation, system integration and sharing data across clouds
+	Mobile App – used for hosting mobile app back ends (previously delivered by Azure Mobile services)
+
+How the app services can be scaled?
+	Scale up:Get more CPU, memory, disk space, and extra features like dedicated virtual machines (VMs), custom domains and certificates, staging slots,
+	 autoscaling, and more. You scale up by changing the pricing tier of the App Service plan that your app belongs to.
+	Scale out: Increase the number of VM instances that run your app. You can scale out to as many as 30 instances, depending on your pricing tier. 
+*How many Azure SQL Database Models?
+	There are two purchasing models:
+
+	vCore-based purchasing model is available for both Azure SQL Database and Azure SQL Managed Instance.
+	The Hyperscale service tier is available for single databases and elastic pools that are using the vCore-based purchasing model.
+
+*types of backups available in Azure?
+
+*SOLID Principle? Provide example open/close
+
+
+01-07-2023
+Difference between .net and .net core
+Startup.cs files
+javascript validations ?Email validation
+how many methods are there in this file?
+Azure keyvalt?wt contains in key
+
+
+
+100000 chit 10th auction
+Cheeti pata  -  16,000/-
+Cheeti amt   -  84,000/-
+Bonus           -  700/-
+This month installment  -  4300/-
+           Thank you🙏

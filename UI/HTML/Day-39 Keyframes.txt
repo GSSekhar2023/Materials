@@ -1,0 +1,219 @@
+CSS 2D and 3D Animations
+Transitions
+
+                           CSS  Keyframes and Animations
+
+- Keyframe comprises of any object that changes the style, size and effects.
+- 30 frames / second is the normal frame rate for animation.
+- CSS provides "@keyframes" to create frame by frame animation or tweening animation.
+
+Syntax:
+            @keyframes   animationName
+            {
+                from {                    => initial state        1%
+
+                }
+                to {                        => final state            100%
+
+                }
+             }
+
+            elementSelector {
+                animation-name : animationName;
+                animation-duration: 3s;
+                animation-direction: alternate;
+                animation-delay: 3s;
+                animation-timing-function: ease In;
+                animation-iteration-count: 3 | infinite;
+            }
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes Zoom
+        {
+            from {
+                width:50px;
+                height: 50px;
+                margin-left: 0%;
+                margin-top: 0%;
+            }
+            50% {
+                width:200px;
+                height: 200px;
+                margin-left: 50%;
+                margin-top: 10%;
+            }
+            60% {
+                width:200px;
+                height: 200px;
+                margin-left: 50%;
+                margin-top: 10%;
+                transform: rotate(360deg);
+            }
+            to {
+                width:50px;
+                height: 50px;
+                margin-left: 110%;
+                margin-top: 0%;
+            }
+        }
+        img {
+            animation-name: Zoom;
+            animation-duration: 5s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+        }
+        body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <img src="../public/images/asp.jpg">
+</body>
+</html>
+
+Samples : https://loading.io/css/
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+        @keyframes circleEffect
+        {
+            from {
+                font-size: 20px;
+                opacity: 1;
+            }
+            to {
+                font-size: 200px;
+                opacity: 0;
+            }
+        }
+        #circle {
+            animation-name: circleEffect;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="circle" class="bi bi-circle"></div>
+    </div>
+</body>
+</html>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+        @keyframes circleEffect
+        {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+               transform: rotateY(180deg);
+            }
+        }
+        @keyframes circleEffect2
+        {
+            from {
+                transform: rotateX(0deg);
+                font-size: 30px;
+            }
+            to {
+               transform: rotateX(180deg);
+               font-size: 300px;
+            }
+        }
+        #circle1 {
+            animation-name: circleEffect;
+            animation-duration: 0.3s;
+            animation-iteration-count: infinite;
+           
+        }
+        #circle2 {
+            animation-name: circleEffect2;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+           
+        }
+        #circle1, #circle2 {
+            position: absolute;
+            font-size: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="circle1" class="bi bi-circle"></div>
+        <div id="circle2" class="bi bi-circle"></div>
+    </div>
+</body>
+</html>
+
+                                    Bootstrap
+- It is an open source and cross platform component library for building effective UI.
+- Open source allows to customize according the requirements.
+- Cross platform allows to run on any device or any environment.
+- A component is set of
+    a) UI
+    b) Logic
+    c) Styles
+- Bootstrap provides pre-defined components for building effective UI.
+- Other 3rd Party component library for UI are
+        Twitter Bootstrap
+        Telerik
+        DevExpress
+        MUI [Material UI]
+
+Setup and Install Bootstrap for Project:
+
+>npm install  bootstrap --save
+>npm install  bootstrap-icons --save
+>npm install  jquery --save
+
+Link the following files to use bootstrap in any Page:
+
+<head>
+ <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+ <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+
+    <script src="../node_modules/jquery/dist/jquery.js"> </script>
+     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"> </script>
+</body>

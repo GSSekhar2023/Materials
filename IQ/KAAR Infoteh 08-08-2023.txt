@@ -1,0 +1,40 @@
+asyn and await
+parallel programmig?
+IEnumerable vs IEnumerator
+SP execution time how to optimize?
+how to call the functions in JS?
+MultiThreading
+
+Collections
+Dictionary
+Indexers how to implement in Emp table
+Multithreading
+Class
+using keyword
+How to create instance of class
+Static Class
+Constructor
+How to call static class method in another class?
+Interfaces
+why Interfaces
+Authentication filter and Action filter?
+Views
+Azure Tokens
+Routing
+Ajax 
+
+
+============================================
+Exception Handling log files how to handle in catch block
+Collections how to implement in our project?
+Generics example?
+Joins :Left and right join
+SOLID Principles
+AD: how to authorized
+Ajax call in jquery 
+Filters types
+Partial view 
+Middleware
+MVC passing data from Action method to view  what are the types?
+Difference b/w .Net and .Net Core
+What do u know in Azure 

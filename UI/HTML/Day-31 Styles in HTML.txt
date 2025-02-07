@@ -1,0 +1,262 @@
+FAQ: What is the media type for styles?
+Ans: You can target the styles for various media content like
+        a) screen
+        b) print
+        c) speech
+
+      Syntax:
+         <style  type="text/css"   media="screen | print | speech | all">
+
+         </style>
+
+        Default media type is "all".
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+        .container {
+         border:2px double red;
+         box-shadow: 2px 2px 3px black;
+         padding: 20px;
+         position: relative;
+        }
+        dt {
+         background-color: gray;
+         color:white;
+         margin-bottom: 10px;
+        }
+        dl {
+         display: grid;
+         grid-template-columns: 6fr 6fr;
+        }
+        .offer {
+           border-radius: 100px;
+           border:1px solid red;
+           background-color: yellow;
+           width: 30px;
+           padding: 10px;
+           position: absolute;
+           right: 20px;
+           top: 20px;
+        }
+     </style>
+     <style type="text/css" media="print">
+         .container {
+             border:1px solid black;
+             box-shadow: none;
+             padding: 10px;
+         }
+         dt {
+            background-color: none;
+            color:black;
+         }
+         button {
+            display: none;
+         }
+         .offer {
+            display: none;
+         }
+     </style>
+</head>
+<body>
+   <div class="container">
+      <div class="offer">20% Off</div>
+      <dl>
+         <dt>Ticket Number</dt>
+         <dd>TRN4059322</dd>
+         <dt>Departure</dt>
+         <dd>04-26-2023</dd>
+      </dl>
+      <button>Print Ticket</button>
+   </div>
+</body>
+</html>
+
+FAQ: What are the issues with Embedded Technique?
+Ans:
+       a) It is slower when compared to inline.
+       b) You can't access styles accross pages.
+
+3. Styles in External File [CSS] Cascade Style Sheets
+
+- In this technique you can maintain styles in a separate style sheet with extention ".css"
+- You can link to any page and access styles accross pages.
+- Cascade is a type of arrangement, where pages can cascade over stylesheet.
+
+Note: Issue with external style sheet is, the number of requests for page will increase which effects the page load time.
+
+Ex:
+1. Go to "src" folder
+2. Add a sub folder by name "styles"
+3. Add a new stylesheet into styles folder
+            "effects.css"
+       .container {
+         border:1px solid red;
+         box-shadow:2px 2px 2px red;
+      }
+
+4. Link the style sheet to any page by using "<link>" element.
+
+    <link rel="stylesheet"  href="../src/styles/effects.css">
+
+
+Ex:
+ effects.css
+
+ .container {
+         border:2px double red;
+         box-shadow: 2px 2px 3px black;
+         padding: 20px;
+         position: relative;
+        }
+        dt {
+         background-color: gray;
+         color:white;
+         margin-bottom: 10px;
+        }
+        dl {
+         display: grid;
+         grid-template-columns: 6fr 6fr;
+        }
+        .offer {
+           border-radius: 100px;
+           border:1px solid red;
+           background-color: yellow;
+           width: 30px;
+           padding: 10px;
+           position: absolute;
+           right: 20px;
+           top: 20px;
+        }
+
+  demo.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/styles/effects.css">
+</head>
+<body>
+   <div class="container">
+      <div class="offer">20% Off</div>
+      <dl>
+         <dt>Ticket Number</dt>
+         <dd>TRN4059322</dd>
+         <dt>Departure</dt>
+         <dd>04-26-2023</dd>
+      </dl>
+      <button>Print Ticket</button>
+   </div>
+</body>
+</html>
+
+Note: Never use ".css" directly in any website while publishing website. Always "Minified" files are used for publishing.  
+
+                        effects.css        un-minified [un-compressed]
+                        effects.min.css    minified [compressed]
+
+FAQ: What is minification?
+Ans:  It is a coding technique followed by developers to keep the content in file compressed, so that it can reduce the file size and improve the load time.
+           
+            www.cssminifier.com
+
+        Unminified File            :  used for Development
+        Minified File                :  used for Production
+
+
+Ex:
+ effects.css            => 504 bytes
+
+.container {
+    border:2px double red;
+    box-shadow: 2px 2px 3px black;
+    padding: 20px;
+    position: relative;
+   }
+   dt {
+    background-color: gray;
+    color:white;
+    margin-bottom: 10px;
+   }
+   dl {
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+   }
+   .offer {
+      border-radius: 100px;
+      border:1px solid red;
+      background-color: yellow;
+      width: 30px;
+      padding: 10px;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+   }
+
+effects.min.css        => 325 bytes
+
+.container{border:2px double red;box-shadow:2px 2px 3px #000;padding:20px;position:relative}dt{background-color:gray;color:#fff;margin-bottom:10px}dl{display:grid;grid-template-columns:6fr 6fr}.offer{border-radius:100px;border:1px solid red;background-color:#ff0;width:30px;padding:10px;position:absolute;right:20px;top:20px}
+
+FAQ: Can we modify the minified code directly?
+Ans: Yes. But not reccomended.
+
+FAQ: What is CDN for styles and scripts?
+Ans: CDN is content delivery network. It is a repository on server, which you can access and use in any project.
+
+Ex:
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"&gt;
+
+FAQ: If styles for any element are defined by using all 3 techniques, then which set of styles are applied to element?
+Ans:
+        a) If same set of effects are defined then it will apply according to priority
+                1st            Inline
+                2nd        Embedded
+                3rd            External File
+
+        b) If different set of effects are defined then all will apply.
+
+
+                                    Style Syntax
+1. If style is written in-line
+
+        <div  style="attribute1:value; attribute2:value">
+
+2. If style is written embedded or external file then it requires "selector".
+
+        <style type="text/css">
+
+            selector
+            {
+             color:red;
+             text-align:center;
+            }
+
+        </style>
+
+                                    CSS Selectors    
+                                      --------------------
+- A selector selects the HTML element to apply given set of effects.
+- CSS selectors are classified into various categories
+
+1. Primary Selectors
+2. Rational Selectors
+3. Attribute Selectors
+4. Dynamic Pseudo Classes
+5. Structural Pseudo classes
+6. Element state pseudo classes
+7. Element validation state pseudo classes etc..
+
+                                Primary Selectors
+1. Type Selector
+2. ID Selector
+3. Class Selector

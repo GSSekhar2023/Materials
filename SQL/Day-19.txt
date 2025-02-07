@@ -1,0 +1,163 @@
+14-apr-23
+
+ GROUP BY clause :-  
+ ---------------------------   
+ 
+  => group by clause is used to group rows based  one or more columns
+       to calculate min,max,sum,avg,count for each group. For example
+       to calculate dept wise total sal then first group the records based on
+       dept  and calculate total sal for each dept.
+
+        EMP
+        EMPNO ENAME  SAL    DNO
+        1            A            3000   10
+        2           B             4000   20      GROUP BY        10      9000
+        3           C            5000   30     =========>       20      7000
+        4           D            6000  10                                  30      5000
+        5          E             3000   20
+       
+          detailed data                                                     summarized data 
+
+    
+   => GROUP BY clause converts detailed into summarized data which is useful for analysis
+
+    syn :- 
+
+     SELECT columns
+     FROM tabname
+    [WHERE cond] 
+    GROUP BY col1,col2,------
+    [HAVING cond]
+    [ORDER BY col1,col2,----]
+
+ execution :- 
+
+  FROM
+  WHERE
+  GROUP BY
+  HAVING
+  SELECT
+  ORDER BY 
+
+ => display dept wise total salary ?
+
+	SELECT deptno,SUM(sal) as totsal
+	FROM emp 
+	GROUP BY deptno 
+
+FROM emp :-
+------------------
+       
+       EMP
+        EMPNO ENAME  SAL    DEPTNO
+        1            A            3000   10
+        2           B             4000   20      
+        3           C            5000    30     
+        4           D            6000    10                               
+        5          E             3000     20
+
+ GROUP BY deptno :- 
+ ----------------------------
+
+   10
+	1	A	3000
+	4	D	6000
+
+  20
+	2	B	4000
+	5	E	3000
+
+  30
+	3	C	5000
+
+SELECT deptno,SUM(sal) as totsal :- 
+------------------------------------------------
+
+  10	9000
+  20	7000
+  30	5000
+
+ => display job wise no of employees ?
+
+     SELECT JOB,COUNT(*) AS CNT
+    FROM EMP 
+    GROUP BY JOB 
+  
+ => display no of employees joined in each year ?
+
+    SELECT  DATEPART(YY,HIREDATE) AS YEAR,COUNT(*) AS CNT
+    FROM EMP 
+    GROUP BY DATEPART(YY,HIREDATE)
+ 
+    SELECT  DATEPART(YY,HIREDATE) AS YEAR,COUNT(*) AS CNT
+    FROM EMP 
+    GROUP BY YEAR    => INVALID
+    ORDER BY YEAR DESC  => VALID
+ 
+     NOTE :-  
+
+    1  alias cannot be used in  group by clause because  group by clause is executed 
+        before select 
+
+   2   alias can be used in order by clause because order by clause is executed after select 
+
+ => display day wise no of employees joined ?
+
+   SELECT  DATENAME(DW,HIREDATE) AS DAY,COUNT(*) AS CNT
+   FROM EMP 
+   GROUP BY DATENAME(DW,HIREDATE)
+ 
+ =>  display month wise no of employees joined in the year 1981 ?
+
+        SELECT DATENAME(MM,HIREDATE) AS MONTH,COUNT(*)
+        FROM EMP 
+       WHERE DATEPART(YY,HIREDATE)=1981
+       GROUP BY DATENAME(MM,HIREDATE) 
+
+=> find the depts having more than 3 employees ?
+
+    SELECT DEPTNO,COUNT(*) AS CNT
+    FROM EMP 
+    WHERE COUNT(*) > 3 
+    GROUP BY DEPTNO      => ERROR
+
+    sql server cannot calculate dept wise count before group by and it can calculate
+    only after group by , so apply the condition COUNT(*) > 3 after group by  using
+    having clause.
+
+    SELECT DEPTNO,COUNT(*) AS CNT
+    FROM EMP  
+    GROUP BY DEPTNO
+    HAVING COUNT(*) > 3 
+
+   WHERE VS HAVING clause :- 
+  -----------------------------------------
+
+                   WHERE                                        HAVING 
+
+ 1    selects specific rows                                  selects specific group
+ 
+ 2    conditions applied                                      conditions applied
+       before group by                                         after group by 
+
+ 3    use where clause if                                   use having clause
+       cond doesn't contain                                 if cond contains 
+       aggregate function                                    aggregate function
+
+ 
+=>  find southern states having more than 5cr population ?
+
+ PERSONS
+ NAME  AGE  GENDER    ADDR   CITY   STATE 
+
+ SELECT STATE,COUNT(*)
+ FROM PERSONS
+ WHERE state IN ('AP','TS','KA','TN','KL')
+ GROUP BY STATE 
+ HAVING COUNT(*) > 50000000
+
+
+ 
+ 
+
+ 

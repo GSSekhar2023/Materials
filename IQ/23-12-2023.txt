@@ -1,0 +1,10 @@
+
+
+question:
+find out the 2nd largest number in the list;
+
+List Numbers={5,2,8,3,9};
+
+LINQ:
+
+FROM N IN NUMBERS ORDERBY N DESCENDING SELECT N;

@@ -1,0 +1,223 @@
+Bootstrap Form Classes
+- Bootstrap Icons
+        >npm install bootstrap-icons  --save
+- Bootstrap
+        >npm  install bootstrap --save
+- Bootstrap CSS library
+        node_modules/bootstrap/dist/css/bootstrap.css
+
+Bootstrap Margin Classes
+
+.m            all directions
+.ms        left [start]
+.me        right [end]
+.mt            top
+.mb        bottom
+
+value:  1 to 4
+
+Syntax:
+            <div class="me-4">
+
+Bootstrap Padding Classes
+
+.p            all directions
+.ps            left
+.pe            right
+.pt            top
+.pb            bottom
+
+Value : 1 to 4
+
+Syntax:
+            <div class="pe-4">
+
+Bootstrap Border Classes
+
+.border
+.border-{size}  1 to 3
+.border-{contextual}  primary, secondary, success, danger, warning, info, dark, light..
+
+Syntax:
+            <div  class="border border-3 border-primary">
+
+.rounded
+.rounded-{size} 1 to 3
+.rounded-pill
+.rounded-circle
+
+Syntax:
+            <img  class="rounded  rounded-circle">
+
+Bootstrap Button Classes
+
+.btn
+.btn-{contextual}  primary, danger, warning, success...
+.btn-{lg | sm}  size
+.btn-outline-{contextual}
+.btn-group
+.btn-group-vertical
+.btn-close
+.btn-link
+.btn-toolbar
+
+Syntax:
+    <button  class="btn btn-outline-primary btn-sm"> Insert </button>
+
+    <div class="btn-group">
+        <button></button>
+        <button></button>
+    </div>
+
+Bootstrap Form Element Classes
+
+.form-control            : text, password, number, date, email, url, textarea
+.form-select            : dropdown and listbox
+.form-range            : range
+.form-color            : color
+.form-file                : file
+.form-label            : labels
+.form-check-input    : radio and checkbox
+.form-check-label    : labels used for checkbox and radio
+.form-switch            : radio and checkbox container
+
+Bootstrap Width class
+.w-{25, 50, 75, 100}
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Form</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+        }
+     
+    </style>
+</head>
+<body>
+    <form class="ps-4 pe-4 pt-2 pb-3 rounded border border-3 border-primary">
+       
+        <h3> <img src="images/developer.jpg" class="rounded rounded-circle" width="50" height="50"> Register User <button class="btn-close"></button> </h3>
+        <div class="mb-2">
+            <label for="UserName" class="form-label">User Name</label>
+            <div>
+                <input type="text" class="form-control" name="UserName">
+            </div>
+        </div>
+        <div class="mb-2">
+            <label for="Password" class="form-label">Password</label>
+            <div>
+                <input type="password" class="form-control" name="Password">
+            </div>
+        </div>
+        <div class="mb-2">
+            <label for="City" class="form-label">Your City</label>
+            <div>
+                <select name="City" class="form-select">
+                    <option>Choose City</option>
+                    <option>Delhi</option>
+                    <option>Hyd</option>
+                </select>
+            </div>
+        </div>
+        <div class="mt-2">
+            <label for="Price" class="form-label">Select Price</label>
+            <div>
+                <input type="range" min="1" max="1000" value="200" class="form-range" name="Price">
+            </div>
+        </div>
+        <div class="mt-2">
+            <label class="form-label">Subscribe</label>
+            <div class="form-switch">
+                <input type="checkbox" class="form-check-input" name="Subscribe"> <label class="form-check-label">Yes</label>
+            </div>
+        </div>
+        <div class="mt-3">
+            <button class="btn btn-primary w-100">Register</button>
+        </div>
+        <div class="mt-3">
+            <button class="btn btn-link w-100">Existing User? Login</button>
+        </div>
+    </form>
+</body>
+</html>
+
+Bootstrap Form Input Group classes
+
+.input-group
+.input-group-text
+.input-group-{sm | lg}
+
+Bootstrap Background and Text Colors
+
+.bg-{contextual}
+.text-{contextual}
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Group</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body class="p-4 m-4">
+    <h2>Amazon Search</h2>
+    <div class="input-group">
+        <select class="input-group-text">
+            <option>All</option>
+            <option>Electronics</option>
+            <option>Shoes</option>
+        </select>
+        <input type="text" class="form-control">
+        <button class="btn btn-warning">
+            <span class="bi bi-search"></span>
+        </button>
+    </div>
+    <h2>Netflix</h2>
+    <div class="input-group input-group-lg bg-dark p-4">
+        <input type="email" class="form-control" placeholder="Your email address">
+        <button class="btn btn-danger">
+           Get Started <span class="bi bi-chevron-right"></span>
+        </button>
+    </div>
+    <h2>Price</h2>
+    <div class="input-group">
+        <span class="input-group-text">&#8377;</span>
+        <input type="text" class="form-control">
+        <span class="input-group-text">.00</span>
+    </div>
+</body>
+</html>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Group</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body class="p-4 m-4">
+ 
+    <h2>Cart</h2>
+    <button class="btn btn-dark position-relative">
+        <span class="bi bi-cart4"></span> <span class="badge bg-danger rounded-circle position-absolute">3</span>
+    </button>
+</body>
+</html>

@@ -1,0 +1,24 @@
+STRING str="somasekhar";
+
+reverse string:
+
+string str="somasekhar";
+
+string rev=Empty.String;
+string result="";
+
+Char ch=str.ToCharArray();
+for(int i=3;i<=str.Length;i++)
+{
+ 
+ result+=ch[i].ToUpeer();
+
+}
+
+for(int i=str.Length; i>=0;i--)
+{
+  rev+=ch[i];
+  
+
+}
+Console.WriteLine(rev);

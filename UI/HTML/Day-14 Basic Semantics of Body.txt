@@ -1,0 +1,154 @@
+Body Section Entities and Elements
+- Browser can't display content exactly how it is defined in editor.
+- Body section requires special elements and entities to display the content exactly as defined in editor.
+
+1. Line Break                    <br>
+
+Ex:
+<body>
+    HTML <br>
+    It is a markup language. <br>
+    It is used for <br><br><br> presentation.
+</body>
+
+Note:
+      - Avoid using <br> in a page.
+      - Few developers use  <br />, there is no <br /> in HTML
+     - It is just a notation to specify that it is a self ending element.
+
+2. Blank Space                &nbsp;    [Non-Breakable Space]
+
+      - It is also not recommended.
+
+Ex:
+<body>
+    H &nbsp;&nbsp;TML
+</body>
+
+
+3. Pre Formatted Content            <pre>
+
+    - It presents the content block exaclty with same line breaks and spaces that are
+    defined in container.
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        pre {
+            background-color: black;
+            color:white;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>Hello ! World Program</div>
+    <div>
+       <pre>
+        #include &lt;stdio.h&gt;
+        int main()
+        {
+            printf("Hello ! World");
+            return 0;
+        }
+       </pre>
+    </div>
+</body>
+</html>
+
+4. Code                    <code>             It is for displaying Code block
+5. Variables                <var>                It is for variables in programming
+6. Sample Text            <samp>            It is used for comments in program
+7. Bigger Text            <big>                It sets large font size
+8. Smaller Text            <small>            It sets small font size
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        pre {
+            background-color: black;
+            color:white;
+            padding: 5px;
+        }
+        var {
+            color:yellow;
+        }
+        samp {
+            color:gray;
+        }
+    </style>
+</head>
+<body>
+    <div>
+       
+       <pre>
+        <samp>A C program to print Hello World.</samp>
+        <code>
+            #include &lt;stdio.h&gt;
+            int main()
+            {
+                int <var>x</var> = 10;
+                printf("Hello ! World");
+                return 0;
+            }
+        </code>
+       </pre>
+    </div>
+</body>
+</html>
+
+9. Address                    <address>        It is used to make contact details SEO.
+
+
+10. Font                         <font>                It is used to set face, size and color.
+
+
+Syntax:
+        <font  face=""  size=""  color="">  Your Text <font>
+
+        a) face            : It defines font family name.
+        b) size                : It defines size from 1 to 7 levels.
+        c) color            : It defines text color
+
+Ex:
+        <font face="Jokerman" size="5"  color="red">  Text </font>    Default size = 3
+
+FAQ: What are web safe fonts?
+Ans: Web safe fonts refer to the font family which are available to all devices.
+                a) Sans-Serif
+                b) Serif
+                c) Monospace
+
+
+Ex:
+<body>
+     <font face="Algerian" color="red" size="7">H</font><font size="5" color="blue" face="Jokerman">T</font>ML <br>
+     <font face="Brush Script MT" size="4" color="green">It is a markup language.</font>
+</body>
+
+11. Font Styles                    <b> bold   <strong>  bold
+                                    <i>  Italic   <em>         Italic [Emphasized]
+
+FAQ: What is difference between <b> and <strong>?
+Ans:  <b> is used in design
+        <strong> is used in review
+
+12. Font Effects                    <u> Underline    <ins>  Inserted Underline
+                                    <strike> Strikeout <del> Deleted
+
+
+<body>
+     The style <b><i><ins>Bold</ins></i></b> is same as <strong><em><u>Strong</u></em></strong>
+</body>

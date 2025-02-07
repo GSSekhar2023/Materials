@@ -1,0 +1,57 @@
+using System;
+public class Hello {
+    public static void Main() {
+        System.Console.WriteLine("hello, world");
+        string str="one two three four five";
+        char[] ch=str.ToCharArray();
+        string ord=string.Empty;
+        //string[] ord1=str.Split(' ');
+        //System.Console.WriteLine(ord1);
+        for(int i=str.Length-1;i>-1;i--)
+        {
+            ord+=ch[i];
+        }
+        System.Console.WriteLine(ord);
+        System.Console.ReadLine();
+    }
+}
+//Program - Reverse each word of a sentence without using the in-built reverse method.
+//Input = "one two three four five" 
+//Output = "eno owt eerht ruof evif" 
+//Make sure you are following best practices
+***************************************************************
+using System;
+public class Hello {
+    public static void Main() {
+        System.Console.WriteLine("hello, world");
+        string str="one two three four five";
+        string[] ord=str.Split(" ");
+        foreach(string s in ord)
+        {
+            string rev=string.Empty;
+            for(int i=s.Length-1;i>-1;i--)
+            {
+                char[] ch=s.ToCharArray();
+                rev+=ch[i];
+            }
+            Console.Write(rev+" ");
+        }
+         System.Console.ReadLine();
+    }
+}
+***************************************************************
+
+table class ::ID,Name;
+table2 ::student::ID,Name;
+table3:clsStudent::cls_ID,std_ID;
+
+QUERY:ALL STUDENTS
+CLASS NAME='CS'
+
+SELECT S.ID,S.NAME 
+FROM STUDENT AS S
+JOIN CLASS AS C 
+ON C.cls_ID=s.std_ID
+where c.Name='CS'
+
+

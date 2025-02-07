@@ -1,0 +1,186 @@
+
+21-apr-23
+
+DELETE rules :- 
+----------------------
+
+ 1  ON DELETE NO ACTION  (DEFAULT)
+ 2  ON DELETE CASCADE
+ 3  ON DELETE SET NULL
+ 4  ON DELETE SET DEFAULT
+
+ => these rules are declared with foreign key.
+ => delete rule specifies how child rows are affected if parent row is deleted.
+ 
+ ON DELETE NO ACTION :- 
+  ----------------------------------
+
+ => parent row cannot be deleted if associated with child rows.
+
+  CREATE TABLE dept88
+  (
+   dno int primary key,
+   dname varchar(10) 
+  )
+
+  INSERT INTO dept88 VALUES(10,'HR'),(20,'IT') 
+
+  CREATE TABLE emp88
+  (
+   empno INT PRIMARY KEY,
+   ename VARCHAR(10),
+   dno    INT  REFERENCES dept88(dno)
+ )
+
+  INSERT INTO emp88 VALUES(1,'A',10),(2,'B',10)
+
+  DELETE FROM dept88 WHERE dno = 10  => ERROR
+
+  scenario :- 
+  --------------
+
+  ACCOUNTS
+  ACCNO     BAL
+  100
+  101
+
+  LOANS
+  ID	TYPE	AMT	ACCNO   REFERENCES  ACCOUNTS(ACCNO)
+ 1	H	30	100
+ 2	C	10	100
+
+ RULE :-  account closing is not possible if associated with loans
+
+ ON DELETE CASCADE :- 
+ ----------------------------------
+
+ =>  if parent row is deleted then it is deleted along with child rows
+
+   CREATE TABLE dept88
+  (
+   dno int primary key,
+   dname varchar(10) 
+  )
+
+  INSERT INTO dept88 VALUES(10,'HR'),(20,'IT') 
+
+  CREATE TABLE emp88
+  (
+   empno INT PRIMARY KEY,
+   ename VARCHAR(10),
+   dno    INT  REFERENCES dept88(dno)
+                    ON DELETE CASCADE
+ )
+
+  INSERT INTO emp88 VALUES(1,'A',10),(2,'B',10)
+
+  DELETE FROM dept88 WHERE dno=10   =>   1  row deleted
+
+  SELECT * FROM emp88     => no rows 
+
+ scenario :- 
+ ------------
+
+ ACCOUNTS
+ ACCNO    BAL
+100	 10000
+1O1	 20000
+
+TRANSACTIONS
+TRID    TTYPE     TDATE      TAMT     ACCNO    REFERENCES ACCOUNTS(ACCNO)
+1          W             ??             1000     100           ON DELETE CASCADE
+2          D              ??             2000     100
+
+Rule :-  if account is closed then along with account delete transactions also 
+
+
+ON DELETE SET NULL :- 
+---------------------------------
+
+ => if  parent row is deleted then it is deleted but child rows are not deleted  but fk will be
+      set to null.
+
+    CREATE TABLE dept88
+  (
+   dno int primary key,
+   dname varchar(10) 
+  )
+
+  INSERT INTO dept88 VALUES(10,'HR'),(20,'IT') 
+
+  CREATE TABLE emp88
+  (
+   empno INT PRIMARY KEY,
+   ename VARCHAR(10),
+   dno    INT  REFERENCES dept88(dno)
+                    ON DELETE SET NULL
+ )
+
+  INSERT INTO emp88 VALUES(1,'A',10),(2,'B',10)
+
+    DELETE FROM DEPT88 WHERE DNO=10   => 1 ROW DELETED
+
+  SELECT * FROM EMP88
+ 
+  EMPNO	ENAME	DNO 
+  1	A	NULL
+  2	B	NULL
+
+ scenario :- 
+ -------------
+
+ PROJECTS
+ projid   pname   duration
+ 100
+101
+
+EMP
+empid	ename	projid   REFERENCES projects(projid) 
+1	A	100     ON DELETE SET NULL
+2	B	100
+
+ RULE :-  if project is deleted (completed)  then set the employee projid to null
+
+ON DELETE SET DEFAULT :- 
+ --------------------------------------
+
+=>  if  parent row is deleted then it is deleted but child rows are not deleted  but fk will be
+      set to default value.
+
+   CREATE TABLE dept88
+  (
+   dno int primary key,
+   dname varchar(10) 
+  )
+
+  INSERT INTO dept88 VALUES(10,'HR'),(20,'IT') 
+
+  CREATE TABLE emp88
+  (
+   empno INT PRIMARY KEY,
+   ename VARCHAR(10),
+   dno    INT  DEFAULT 20 
+                    REFERENCES dept88(dno)
+                    ON DELETE SET DEFAULT
+ )
+
+  INSERT INTO emp88 VALUES(1,'A',10),(2,'B',10)
+
+  DELETE FROM DEPT88 WHERE DNO = 10  => 1 row affected
+
+ SELECT * FROM EMP88
+
+  ENO	ENAME	DNO
+  1	A	20
+ 2	B	20
+
+Summary :- 
+
+ importance of constraints
+ types of constraints
+ declaring constraints
+     column level
+     table level
+ adding constraints to existing table 
+ droping constraints
+ delete rules

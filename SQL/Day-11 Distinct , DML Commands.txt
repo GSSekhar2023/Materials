@@ -1,0 +1,114 @@
+  05-apr-23 
+
+   DISTINCT clause :- 
+   -------------------------
+
+  =>  DISTINCT claus eliminates duplicates from select statement output
+
+             SELECT  DISTINCT col1
+                            DISTINCT col1,col2,----
+
+    ex :-  
+
+   1	SELECT DISTINCT DNO FROM EMP
+
+      	10
+	20	
+	30
+
+   2           SELECT DISTINCT JOB FROM EMP 
+
+                ANALYST
+               CLERK
+               MANAGER
+
+    TOP clause :- 
+    ------------------
+
+    => used to display top n rows from table.
+
+         SELECT   TOP  <n>    COLNAMES / *
+         FROM TABNAME
+         [WHERE COND]
+         [ORDER BY COLNAME ASC/DESC]
+
+ =>  display first 5 rows from emp table ?
+
+      SELECT TOP 5  *
+      FROM EMP 
+      
+ => display top 5 highest paid employees ?
+ 
+      SELECT TOP 5 *
+      FROM EMP
+      ORDER BY SAL DESC 
+
+ => display top 5 employees based on experience ?
+
+      SELECT TOP 5 *
+      FROM EMP 
+      ORDER BY HIREDATE ASC 
+
+ => display top 5 max salaries ?
+
+    SELECT DISTINCT TOP 5 SAL
+    FROM EMP 
+   ORDER BY SAL DESC
+
+  DML  commands :-   (Data Manipulation Lang)
+  --------------------------
+
+ INSERT
+ UPDATE
+ DELETE
+ MERGE 
+
+=> all dml commands acts on table data.
+=> by default all dml commands are auto committed.
+=> to stop auto commit execute the following command
+
+         SET IMPLICIT_TRANSACTIONS ON 
+
+ => to save the operation execute COMMIT.
+ => to cancel the operation execute ROLLBACK.
+
+ UPDATE command :- 
+ ---------------------------
+
+ => used to modify the table data.
+ => we can update all rows or specific rows
+ => we can update single column or multiple columns
+
+  syn :-  UPDATE <tabname>
+             SET colname = value , colname = value ,------------
+             [WHERE cond] 
+
+  ex :- 
+
+ => update all employees comm with 500 ?
+
+      UPDATE emp SET comm = 500 
+
+ => update employees comm with 500 whose comm = null ?
+ 
+      UPDATE emp SET comm = 500 WHERE comm IS NULL 
+
+ => update employees comm with null whose comm <> null ?
+
+      UPDATE emp SET comm = NULL  WHERE comm IS NOT NULL 
+
+         NULL assignment   =
+         NULL comparision  IS
+ 
+ => update sal with 2000 and comm with 500 whose empno = 7369 ?
+
+     UPDATE emp SET sal = 2000 , comm = 500  WHERE empno = 7369
+
+ => increment sal by 20% and comm by 10% those working as salesman
+      and joined in 1981 year ?
+
+      UPDATE emp 
+      SET sal = sal + (sal*0.2 ) , comm = comm + (comm*0.1)
+      WHERE job='SALESMAN'
+                    AND
+                    hiredate LIKE '1981%' 

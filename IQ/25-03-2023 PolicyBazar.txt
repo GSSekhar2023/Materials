@@ -1,0 +1,143 @@
+Boxing and UnBoxing?
+
+In List of employees 
+list<Employee> emps=new List<Employee>();
+how to filter particular employee in the list?
+
+Why we are using abstract class?
+
+Enum 
+take ex:weekdays
+sun=0,mon=1...
+I'm given one number that number day I want to display?
+how to print paticular day?
+
+How to write JSon?
+From Employees list how to take in Json data?
+
+Stored procedures?
+
+what is difference string and Convert.ToString()
+
+Const and ReadOnly keywords?
+
+
+==============
+Capgemini
+
+what are the advantages in .NET CORE compare to .NET Framework
+Middleware
+how to call middleware
+
+singleton
+scoped
+transient
+
+Data validations
+how to validate in UI
+
+Design patterns
+singleton design pattern how to write
+
+how to handle errors in MVC
+
+OPPS Concepts
+
+API 
+How to call or consume API
+
+SP checking
+
+Constraints
+
+indexers
+
+CTE,TEMP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Syed Niyaz Alam10:10
+??
+You10:11
+list<employee> emp=(employee.id,employee.name,employee.mobile);
+if(emp.id>5)
+{}
+emp.id;
+emp.name;
+You10:12
+}
+Syed Niyaz Alam10:14
+list<Employee> emps=new List<Employee>();
+You10:15
+emps.id>5
+if(emps.id>5)
+You10:20
+emps.li==li.lenth?1st record:null
+;
+Syed Niyaz Alam10:22
+var emp=emp?.FirstOrDefault()??null;
+You10:24
+pi=3.14;
+You10:26
+411
+You10:27
+enum weekdays
+{ sun,mon,tue,wed,thur,fri,sat}
+You10:30
+sun=0,mon=1,tue=2,wed=3,thur=4,fri=5,sat=6
+Syed Niyaz Alam10:30
+int days=1;
+You10:32
+if(days==weekdays)
+Console.WriteLine($"You are selected {weekdays(days)}")
+Syed Niyaz Alam10:36
+"intPolicyDataIO": {
+		"policy": {
+			"partyDOList": [
+				{
+					"guid": "85546560-44a9-4b92-8a83-3b44660523ac",
+					"firstName": "Shayam",
+					"lastName": }
+yaj-umfk-mzn
+==================================
+e[1]=(int)weekdays.sun;
+  e[2]=(int)weekdays.mon;
+  e[3]=(int)weekdays.tue;
+  e[4]=(int)weekdays.wed;
+  e[5]=(int)weekdays.thur;
+  e[6]=(int)weekdays.fri;
+  e[7]=(int)weekdays.sat;
+  Console.WriteLine(e[1]);
+
+if(i==e[1])
+  Console.WriteLine("Sunday");
+  else if(i==e[2])
+  Console.WriteLine("Monday");
+  else if(i==e[3])
+  Console.WriteLine("Tuesday");
+  else if(i==e[4])
+  Console.WriteLine("Wednesday");
+  else if(i==e[5])
+  Console.WriteLine("Thuresday");
+  else if(i==e[6])
+  Console.WriteLine("Friday");
+  else if(i==e[7])
+  Console.WriteLine("Saturday");
+  else
+  Console.WriteLine("Not in range");

@@ -1,0 +1,26 @@
+*Find 3rd highist salary
+
+
+select top 1 salary from
+(select distinct salary top 3 from Employee order by salary desc) as Result
+order by salary
+
+**find top 2 max and min salary
+
+select top 2 max(salary) from employee order by salary desc
+select top 2 min(salary) from employee order by salary 
+
+
+========================
+Find factioral number
+
+int i=6;
+int f,mul=0;
+for(int j=1;j<=i;j++)
+{
+ 
+ mul=j* mul //0+1*0
+ 
+}
+console.WriteLine("Factioral of i is",mul);
+Console.ReadLine();

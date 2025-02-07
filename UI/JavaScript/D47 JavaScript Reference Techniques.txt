@@ -1,0 +1,317 @@
+JavaScript Reference Techniques
+
+How JavaScript refers HTML elements?
+
+1. JavaScript can refer to HTML elements by using DOM hierarchy.
+
+Syntax:
+            window.document.images[]
+            window.document.forms[].elements[]
+
+       - It is the fastest way to render elements.
+    - It is native to HTML.
+    - If element position changes in page, then every position change need to update
+      index number in logic.
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function bodyload(){
+            window.document.images[0].src = "../public/images/a1.jpg";
+            window.document.forms[0].elements[0].value = "Register";
+            window.document.forms[1].elements[1].value = "Login";
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <div>
+        <img width="100" height="100" border="1">
+    </div>
+    <div>
+      <form>
+        <h2>Register User</h2>
+        User Name : <input type="button"> <input type="text">
+      </form>
+    </div>
+    <div>
+        <form>
+            <h3>User Login</h3>
+            Your Email : <input type="email"> <input type="button">
+        </form>
+    </div>
+</body>
+</html>
+
+2. JavaScript can refer elements by using the reference name.
+
+    - Every element can have a reference name
+            <img name="pic">
+    - You can access element by using its name.
+             pic.src="images/ad.jpg"
+    - You can't access any child element directly without refering to its parent.
+    - Same name can be defined for multiple elements, hence name reference can't
+     work if elements are defined with mutex.
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function bodyload(){
+           poster.src="../public/images/a2.jpg";
+           frmRegister.btnRegister.value = "Register";
+           frmLogin.btnLogin.value = "Login";
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <div>
+        <img width="100" name="poster" height="100" border="1">
+    </div>
+    <div>
+      <form name="frmRegister">
+        <h2>Register User</h2>
+        User Name : <input name="txtName" type="text">  <input name="btnRegister" type="button">
+      </form>
+    </div>
+    <div>
+        <form name="frmLogin">
+            <h3>User Login</h3>
+            Your Email : <input name="txtEmail" type="email"> <input name="btnLogin" type="button">
+        </form>
+    </div>
+</body>
+</html>
+
+
+3. JavaScript can refer elements by using "ID"
+   
+    - JavaScript provides a method
+            "document.getElementById()"
+    - It can access element directly from any level of hierarchy.
+
+Syntax:
+            <img id="pic">
+            document.getElementById("pic").src="";
+
+    - ID reference can be used by CSS.
+    - In CSS ID can be same for multiple elements.
+    - Hence it is an issue for JavaScript to use ID reference at every location.
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function bodyload(){
+            document.getElementById("poster").src = "../public/images/a4.jpg";
+            document.getElementById("btnRegister").value = "Register";
+            document.getElementById("btnLogin").value = "Login";
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <div>
+        <img width="100" id="poster" name="poster" height="100" border="1">
+    </div>
+    <div>
+      <form name="frmRegister">
+        <h2>Register User</h2>
+        User Name : <input name="txtName" type="text">  <input id="btnRegister" name="btnRegister" type="button">
+      </form>
+    </div>
+    <div>
+        <form name="frmLogin">
+            <h3>User Login</h3>
+            Your Email : <input name="txtEmail" type="email"> <input id="btnLogin" name="btnLogin" type="button">
+        </form>
+    </div>
+</body>
+</html>
+
+
+4. JavaScript can refer HTML elements by using CSS selectors
+
+  - JavaScript can use various CSS selectors, which include
+        a) Type
+        b) Class
+        c) ID
+        d) Rational
+        e) Structural
+        f) Attribute etc..
+
+Syntax:        
+        <img>
+
+    - JavaScript uses "document.querySelector()"
+
+        document.querySelector("img")
+        document.querySelector("#id")
+        document.querySelector(".classname")
+        document.querySelector("nav+div")            
+        document.querySelector("input[type=button]")
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function bodyload(){
+            document.querySelector("img").src= "../public/images/asp.jpg";
+            document.querySelector("#btnRegister").value = "Register";
+            document.querySelector(".btn").value="Login";
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <div>
+        <img width="100" id="poster" name="poster" height="100" border="1">
+    </div>
+    <div>
+      <form name="frmRegister">
+        <h2>Register User</h2>
+        User Name : <input name="txtName" type="text">  <input id="btnRegister" name="btnRegister" type="button">
+      </form>
+    </div>
+    <div>
+        <form name="frmLogin">
+            <h3>User Login</h3>
+            Your Email : <input name="txtEmail" type="email"> <input class="btn" id="btnLogin" name="btnLogin" type="button">
+        </form>
+    </div>
+</body>
+</html>
+
+                            JavaScript Output Techniques
+- Output is the process of rendering data into UI.
+- Technically it is the process of emitting value.
+- JavaScript provides various output methods and properites
+
+    1. alert()
+    2. confirm()
+    3. document.write()
+    4. innerHTML
+    5. outerHTML
+    6. innerText
+    7. console method
+    8. textContent
+                                        alert()
+
+- It is a window element.
+- It pops up a message in browser window.
+- It will not allow to handle any interaction until it is confirmed with OK.
+- It doesn't have any option for Cancel.
+- You have to use "Esc" for cancel, which is not technically cancel.
+
+Syntax:        
+            alert("Your Message");
+
+- alert() is RC data type, It can have string or expression and not any markup.
+
+            alert("Hello");
+            alert(10+20);
+
+- If you want alert to display message in multiple lines then use "\n" for line break.
+
+            alert("Line1 \n Line2 \n Line3");
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function DeleteClick(){
+            alert("Delete Record\nRecord will be deleted permanently");
+        }
+    </script>
+</head>
+<body>
+    <button onclick="DeleteClick()">Delete</button>
+</body>
+</html>
+
+
+                                        confirm()
+- It is similar to alert but provides an option to cancel.
+- It is a boolean type
+        OK            true
+        Cancel    false
+
+Syntax:
+            confirm("message | expression");
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function DeleteClick(){
+            flag = confirm("Delete Record\nAre you sure want to delete?");
+            if(flag==true){
+                alert("Deleted..");
+            } else {
+                alert("You canceled..");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="DeleteClick()">Delete</button>
+</body>
+</html>
+
+                                    document.write()
+  - It presents output on a new screen of same page.
+  - It supports any string , expression or markup.
+ 
+Syntax:
+        document.write("message | expression | <markup>");
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function DeleteClick(){
+            flag = confirm("Delete Record\nAre you sure want to delete?");
+            if(flag==true){
+                document.write("<font color='red'><b><i>Record Deleted Successfully..</i></b></font><br><a href='output.html'>Back</a>")
+            } else {
+                alert("You canceled..");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="DeleteClick()">Delete</button>
+</body>
+</html>

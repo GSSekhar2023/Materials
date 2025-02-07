@@ -1,0 +1,14 @@
+SELECT empid, empName, MAX(Salary) FROM Employee group by salary ;
+
+select empid, empName,salary
+From (select top 1 salary from employee order by salary desc) as Result
+Order by salary;
+
+SELECT DISTINCT D.Departmentid FROM DEPT AS D
+JOIN Emp AS E
+ON EMP.NAME=DEPT.ID
+ORDER BY D.Departmentid 
+
+SELECT DISTINCT Departmentid FROM EMPTABLE;
+
+
